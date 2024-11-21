@@ -1,0 +1,3176 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 1 1
+Title "Tralala 8088 Homebrew Computer"
+Date "2017-02-25"
+Rev "0.1"
+Comp "Copyright (C) 2016, 2017 Nikolay Nikolov <nickysn@users.sourceforge.net>"
+Comment1 "PO Box 1866, Mountain View, CA 94042, USA."
+Comment2 "http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons,"
+Comment3 "License. To view a copy of this license, visit"
+Comment4 "This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported"
+$EndDescr
+$Comp
+L tralala8088homebrew-rescue:8284 U1
+U 1 1 57E55EE3
+P 2200 1900
+F 0 "U1" H 1650 2700 50  0000 L CNN
+F 1 "8284" H 2550 2700 50  0000 L CNN
+F 2 "Package_DIP:DIP-18_W7.62mm" H 2200 1900 50  0001 C CIN
+F 3 "" H 2200 1900 50  0000 C CNN
+	1    2200 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR01
+U 1 1 57E55F79
+P 2200 1000
+F 0 "#PWR01" H 2200 850 50  0001 C CNN
+F 1 "+5V" H 2200 1140 50  0000 C CNN
+F 2 "" H 2200 1000 50  0000 C CNN
+F 3 "" H 2200 1000 50  0000 C CNN
+	1    2200 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR02
+U 1 1 57E56058
+P 2200 2800
+F 0 "#PWR02" H 2200 2550 50  0001 C CNN
+F 1 "GND" H 2200 2650 50  0000 C CNN
+F 2 "" H 2200 2800 50  0000 C CNN
+F 3 "" H 2200 2800 50  0000 C CNN
+	1    2200 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR03
+U 1 1 57E5685C
+P 1500 2100
+F 0 "#PWR03" H 1500 1850 50  0001 C CNN
+F 1 "GND" H 1500 1950 50  0000 C CNN
+F 2 "" H 1500 2100 50  0000 C CNN
+F 3 "" H 1500 2100 50  0000 C CNN
+	1    1500 2100
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR04
+U 1 1 57E56876
+P 1500 1700
+F 0 "#PWR04" H 1500 1450 50  0001 C CNN
+F 1 "GND" H 1500 1550 50  0000 C CNN
+F 2 "" H 1500 1700 50  0000 C CNN
+F 3 "" H 1500 1700 50  0000 C CNN
+	1    1500 1700
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR05
+U 1 1 57E5688E
+P 1500 1800
+F 0 "#PWR05" H 1500 1550 50  0001 C CNN
+F 1 "GND" H 1500 1650 50  0000 C CNN
+F 2 "" H 1500 1800 50  0000 C CNN
+F 3 "" H 1500 1800 50  0000 C CNN
+	1    1500 1800
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR06
+U 1 1 57E568A6
+P 1500 2300
+F 0 "#PWR06" H 1500 2050 50  0001 C CNN
+F 1 "GND" H 1500 2150 50  0000 C CNN
+F 2 "" H 1500 2300 50  0000 C CNN
+F 3 "" H 1500 2300 50  0000 C CNN
+	1    1500 2300
+	0    1    -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:DIL8 P1
+U 1 1 57E56A1E
+P 3350 2550
+F 0 "P1" H 3350 2800 50  0000 C CNN
+F 1 "DIL8" V 3350 2550 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm_Socket" H 3350 2550 50  0001 C CNN
+F 3 "" H 3350 2550 50  0000 C CNN
+	1    3350 2550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:R R2
+U 1 1 57E56E5E
+P 3650 2200
+F 0 "R2" V 3730 2200 50  0000 C CNN
+F 1 "510" V 3650 2200 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3580 2200 50  0001 C CNN
+F 3 "" H 3650 2200 50  0000 C CNN
+	1    3650 2200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR07
+U 1 1 57E56F52
+P 3800 2200
+F 0 "#PWR07" H 3800 1950 50  0001 C CNN
+F 1 "GND" H 3800 2050 50  0000 C CNN
+F 2 "" H 3800 2200 50  0000 C CNN
+F 3 "" H 3800 2200 50  0000 C CNN
+	1    3800 2200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:R R3
+U 1 1 57E57033
+P 3650 2900
+F 0 "R3" V 3730 2900 50  0000 C CNN
+F 1 "510" V 3650 2900 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3580 2900 50  0001 C CNN
+F 3 "" H 3650 2900 50  0000 C CNN
+	1    3650 2900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR08
+U 1 1 57E570B3
+P 3800 2900
+F 0 "#PWR08" H 3800 2650 50  0001 C CNN
+F 1 "GND" H 3800 2750 50  0000 C CNN
+F 2 "" H 3800 2900 50  0000 C CNN
+F 3 "" H 3800 2900 50  0000 C CNN
+	1    3800 2900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:CP C1
+U 1 1 57E573D9
+P 1050 1550
+F 0 "C1" H 1075 1650 50  0000 L CNN
+F 1 "4.7uF" H 1075 1450 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 1088 1400 50  0001 C CNN
+F 3 "" H 1050 1550 50  0000 C CNN
+	1    1050 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR09
+U 1 1 57E57470
+P 1050 1700
+F 0 "#PWR09" H 1050 1450 50  0001 C CNN
+F 1 "GND" H 1050 1550 50  0000 C CNN
+F 2 "" H 1050 1700 50  0000 C CNN
+F 3 "" H 1050 1700 50  0000 C CNN
+	1    1050 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:R R1
+U 1 1 57E577CE
+P 1050 1150
+F 0 "R1" V 1130 1150 50  0000 C CNN
+F 1 "10K" V 1050 1150 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 980 1150 50  0001 C CNN
+F 3 "" H 1050 1150 50  0000 C CNN
+	1    1050 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR010
+U 1 1 57E5789A
+P 1050 1000
+F 0 "#PWR010" H 1050 850 50  0001 C CNN
+F 1 "+5V" H 1050 1140 50  0000 C CNN
+F 2 "" H 1050 1000 50  0000 C CNN
+F 3 "" H 1050 1000 50  0000 C CNN
+	1    1050 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:SW_PUSH SW1
+U 1 1 57E57949
+P 750 1300
+F 0 "SW1" H 900 1410 50  0000 C CNN
+F 1 "RESET_8088" H 750 1220 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm_H5mm" H 750 1300 50  0001 C CNN
+F 3 "" H 750 1300 50  0000 C CNN
+	1    750  1300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:D D1
+U 1 1 57E5810B
+P 1350 1150
+F 0 "D1" H 1350 1250 50  0000 C CNN
+F 1 "1N4148" H 1350 1050 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 1350 1150 50  0001 C CNN
+F 3 "" H 1350 1150 50  0000 C CNN
+	1    1350 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:CONN_02X20 P2
+U 1 1 57E59B48
+P 15100 1650
+F 0 "P2" H 15100 2700 50  0000 C CNN
+F 1 "CONN_02X20" V 15100 1650 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x20_P2.54mm_Vertical" H 15100 700 50  0001 C CNN
+F 3 "" H 15100 700 50  0000 C CNN
+	1    15100 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR011
+U 1 1 57E59D4F
+P 14850 1100
+F 0 "#PWR011" H 14850 850 50  0001 C CNN
+F 1 "GND" H 14850 950 50  0000 C CNN
+F 2 "" H 14850 1100 50  0000 C CNN
+F 3 "" H 14850 1100 50  0000 C CNN
+	1    14850 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR012
+U 1 1 57E59D77
+P 15350 1100
+F 0 "#PWR012" H 15350 850 50  0001 C CNN
+F 1 "GND" H 15350 950 50  0000 C CNN
+F 2 "" H 15350 1100 50  0000 C CNN
+F 3 "" H 15350 1100 50  0000 C CNN
+	1    15350 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR013
+U 1 1 57E5A265
+P 14850 2100
+F 0 "#PWR013" H 14850 1850 50  0001 C CNN
+F 1 "GND" H 14850 1950 50  0000 C CNN
+F 2 "" H 14850 2100 50  0000 C CNN
+F 3 "" H 14850 2100 50  0000 C CNN
+	1    14850 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR014
+U 1 1 57E5A28D
+P 15350 2100
+F 0 "#PWR014" H 15350 1850 50  0001 C CNN
+F 1 "GND" H 15350 1950 50  0000 C CNN
+F 2 "" H 15350 2100 50  0000 C CNN
+F 3 "" H 15350 2100 50  0000 C CNN
+	1    15350 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR015
+U 1 1 57E5A39B
+P 14850 2600
+F 0 "#PWR015" H 14850 2350 50  0001 C CNN
+F 1 "GND" H 14850 2450 50  0000 C CNN
+F 2 "" H 14850 2600 50  0000 C CNN
+F 3 "" H 14850 2600 50  0000 C CNN
+	1    14850 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR016
+U 1 1 57E5ADEB
+P 14850 1600
+F 0 "#PWR016" H 14850 1350 50  0001 C CNN
+F 1 "GND" H 14850 1450 50  0000 C CNN
+F 2 "" H 14850 1600 50  0000 C CNN
+F 3 "" H 14850 1600 50  0000 C CNN
+	1    14850 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:8088_Max_Mode U2
+U 1 1 57E5D043
+P 5750 2600
+F 0 "U2" H 5250 4300 50  0000 C CNN
+F 1 "8088" H 6150 4300 50  0000 C CNN
+F 2 "Socket:DIP_Socket-40_W22.1_W22.86_W25.4_W27.94_W28.7_3M_240-3639-00-0602J" H 5800 2700 50  0001 C CIN
+F 3 "" H 5750 2650 50  0000 C CNN
+	1    5750 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR017
+U 1 1 57E5D850
+P 5750 800
+F 0 "#PWR017" H 5750 650 50  0001 C CNN
+F 1 "+5V" H 5750 940 50  0000 C CNN
+F 2 "" H 5750 800 50  0000 C CNN
+F 3 "" H 5750 800 50  0000 C CNN
+	1    5750 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C3
+U 1 1 57E5D885
+P 11450 6450
+F 0 "C3" H 11475 6550 50  0000 L CNN
+F 1 "100nF" H 11475 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 11488 6300 50  0001 C CNN
+F 3 "" H 11450 6450 50  0000 C CNN
+	1    11450 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR018
+U 1 1 57E5E968
+P 5650 4400
+F 0 "#PWR018" H 5650 4150 50  0001 C CNN
+F 1 "GND" H 5650 4250 50  0000 C CNN
+F 2 "" H 5650 4400 50  0000 C CNN
+F 3 "" H 5650 4400 50  0000 C CNN
+	1    5650 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR019
+U 1 1 57E5E994
+P 5850 4400
+F 0 "#PWR019" H 5850 4150 50  0001 C CNN
+F 1 "GND" H 5850 4250 50  0000 C CNN
+F 2 "" H 5850 4400 50  0000 C CNN
+F 3 "" H 5850 4400 50  0000 C CNN
+	1    5850 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR020
+U 1 1 57E5FEAB
+P 5050 4100
+F 0 "#PWR020" H 5050 3850 50  0001 C CNN
+F 1 "GND" H 5050 3950 50  0000 C CNN
+F 2 "" H 5050 4100 50  0000 C CNN
+F 3 "" H 5050 4100 50  0000 C CNN
+	1    5050 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C2
+U 1 1 57E68D0A
+P 11150 6450
+F 0 "C2" H 11175 6550 50  0000 L CNN
+F 1 "100nF" H 11175 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 11188 6300 50  0001 C CNN
+F 3 "" H 11150 6450 50  0000 C CNN
+	1    11150 6450
+	1    0    0    -1  
+$EndComp
+Text Label 15600 1600 0    60   ~ 0
+CLK
+Text Label 3100 1300 0    60   ~ 0
+CLK
+Text Label 4700 1100 0    60   ~ 0
+CLK
+Text Label 3100 1500 0    60   ~ 0
+READY
+Text Label 3100 1700 0    60   ~ 0
+RESET
+Text Label 4700 1300 0    60   ~ 0
+READY
+Text Label 4700 1500 0    60   ~ 0
+RESET
+NoConn ~ 1500 2500
+NoConn ~ 2900 1900
+NoConn ~ 2900 2000
+NoConn ~ 1500 2000
+NoConn ~ 1500 1600
+NoConn ~ 1500 1500
+$Comp
+L tralala8088homebrew-rescue:PWR_FLAG #FLG021
+U 1 1 57E6FC92
+P 1050 2900
+F 0 "#FLG021" H 1050 2995 50  0001 C CNN
+F 1 "PWR_FLAG" H 1050 3080 50  0000 C CNN
+F 2 "" H 1050 2900 50  0000 C CNN
+F 3 "" H 1050 2900 50  0000 C CNN
+	1    1050 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR022
+U 1 1 57E6FCBE
+P 1050 2900
+F 0 "#PWR022" H 1050 2650 50  0001 C CNN
+F 1 "GND" H 1050 2750 50  0000 C CNN
+F 2 "" H 1050 2900 50  0000 C CNN
+F 3 "" H 1050 2900 50  0000 C CNN
+	1    1050 2900
+	1    0    0    -1  
+$EndComp
+Text Label 6700 1400 2    60   ~ 0
+AD0
+Text Label 6700 1500 2    60   ~ 0
+AD1
+Text Label 6700 1600 2    60   ~ 0
+AD2
+Text Label 6700 1700 2    60   ~ 0
+AD3
+Text Label 6700 1800 2    60   ~ 0
+AD4
+Text Label 6700 1900 2    60   ~ 0
+AD5
+Text Label 6700 2000 2    60   ~ 0
+AD6
+Text Label 6700 2100 2    60   ~ 0
+AD7
+Text Label 14600 700  0    60   ~ 0
+AD0
+Text Label 15600 700  0    60   ~ 0
+AD1
+Text Label 14600 800  0    60   ~ 0
+AD2
+Text Label 15600 800  0    60   ~ 0
+AD3
+Text Label 14600 900  0    60   ~ 0
+AD4
+Text Label 15600 900  0    60   ~ 0
+AD5
+Text Label 14600 1000 0    60   ~ 0
+AD6
+Text Label 15600 1000 0    60   ~ 0
+AD7
+Text Label 6700 2300 2    60   ~ 0
+A8
+Text Label 6700 2400 2    60   ~ 0
+A9
+Text Label 6700 2500 2    60   ~ 0
+A10
+Text Label 6700 2600 2    60   ~ 0
+A11
+Text Label 6700 2700 2    60   ~ 0
+A12
+Text Label 6700 2800 2    60   ~ 0
+A13
+Text Label 6700 2900 2    60   ~ 0
+A14
+Text Label 6700 3000 2    60   ~ 0
+A15
+Text Label 14600 1200 0    60   ~ 0
+A8
+Text Label 15600 1200 0    60   ~ 0
+A9
+Text Label 14600 1300 0    60   ~ 0
+A10
+Text Label 15600 1300 0    60   ~ 0
+A11
+Text Label 14600 1400 0    60   ~ 0
+A12
+Text Label 15600 1400 0    60   ~ 0
+A13
+Text Label 14600 1500 0    60   ~ 0
+A14
+Text Label 15600 1500 0    60   ~ 0
+A15
+Text Label 6800 3200 2    60   ~ 0
+A16_S3
+Text Label 6800 3300 2    60   ~ 0
+A17_S4
+Text Label 6800 3400 2    60   ~ 0
+A18_S5
+Text Label 6800 3500 2    60   ~ 0
+A19_S6
+Text Label 14450 1700 0    60   ~ 0
+A16_S3
+Text Label 15600 1700 0    60   ~ 0
+A17_S4
+Text Label 14450 1800 0    60   ~ 0
+A18_S5
+Text Label 15600 1800 0    60   ~ 0
+A19_S6
+Text Label 6700 3700 2    60   ~ 0
+S0
+Text Label 6700 3800 2    60   ~ 0
+S1
+Text Label 6700 3900 2    60   ~ 0
+S2
+$Comp
+L tralala8088homebrew-rescue:GND #PWR023
+U 1 1 57E75D79
+P 5050 2300
+F 0 "#PWR023" H 5050 2050 50  0001 C CNN
+F 1 "GND" H 5050 2150 50  0000 C CNN
+F 2 "" H 5050 2300 50  0000 C CNN
+F 3 "" H 5050 2300 50  0000 C CNN
+	1    5050 2300
+	1    0    0    -1  
+$EndComp
+Text Label 6700 1100 2    60   ~ 0
+QS0
+Text Label 6700 1200 2    60   ~ 0
+QS1
+Text Label 15600 1900 0    60   ~ 0
+QS1
+Text Label 14450 1900 0    60   ~ 0
+QS0
+Text Label 14450 2000 0    60   ~ 0
+S0
+Text Label 15600 2000 0    60   ~ 0
+S1
+Text Label 14450 2200 0    60   ~ 0
+S2
+Text Label 6700 4000 2    60   ~ 0
+LOCK
+Text Label 15600 2200 0    60   ~ 0
+LOCK
+Text Label 14450 2300 0    60   ~ 0
+RESET
+Text Label 15600 2300 0    60   ~ 0
+READY
+$Comp
+L tralala8088homebrew-rescue:8288 U3
+U 1 1 57E7D979
+P 1450 4300
+F 0 "U3" H 900 5100 50  0000 L CNN
+F 1 "8288" H 1800 5100 50  0000 L CNN
+F 2 "Package_DIP:DIP-20_W7.62mm" H 1450 4300 50  0001 C CIN
+F 3 "" H 900 5100 50  0000 C CNN
+	1    1450 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR024
+U 1 1 57E7DD66
+P 1450 5200
+F 0 "#PWR024" H 1450 4950 50  0001 C CNN
+F 1 "GND" H 1450 5050 50  0000 C CNN
+F 2 "" H 1450 5200 50  0000 C CNN
+F 3 "" H 1450 5200 50  0000 C CNN
+	1    1450 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR025
+U 1 1 57E7DD94
+P 1450 3400
+F 0 "#PWR025" H 1450 3250 50  0001 C CNN
+F 1 "+5V" H 1450 3540 50  0000 C CNN
+F 2 "" H 1450 3400 50  0000 C CNN
+F 3 "" H 1450 3400 50  0000 C CNN
+	1    1450 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C4
+U 1 1 57E7DDC2
+P 11750 6450
+F 0 "C4" H 11775 6550 50  0000 L CNN
+F 1 "100nF" H 11775 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 11788 6300 50  0001 C CNN
+F 3 "" H 11750 6450 50  0000 C CNN
+	1    11750 6450
+	1    0    0    -1  
+$EndComp
+Text Label 550  3700 0    60   ~ 0
+S0
+Text Label 550  3800 0    60   ~ 0
+S1
+Text Label 550  3900 0    60   ~ 0
+S2
+Text Label 550  4600 0    60   ~ 0
+CLK
+$Comp
+L tralala8088homebrew-rescue:GND #PWR026
+U 1 1 57E7ED6F
+P 750 4700
+F 0 "#PWR026" H 750 4450 50  0001 C CNN
+F 1 "GND" H 750 4550 50  0000 C CNN
+F 2 "" H 750 4700 50  0000 C CNN
+F 3 "" H 750 4700 50  0000 C CNN
+	1    750  4700
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR027
+U 1 1 57E7ED9F
+P 750 4500
+F 0 "#PWR027" H 750 4250 50  0001 C CNN
+F 1 "GND" H 750 4350 50  0000 C CNN
+F 2 "" H 750 4500 50  0000 C CNN
+F 3 "" H 750 4500 50  0000 C CNN
+	1    750  4500
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR028
+U 1 1 57E7EDF1
+P 750 4800
+F 0 "#PWR028" H 750 4650 50  0001 C CNN
+F 1 "+5V" H 750 4940 50  0000 C CNN
+F 2 "" H 750 4800 50  0000 C CNN
+F 3 "" H 750 4800 50  0000 C CNN
+	1    750  4800
+	0    -1   -1   0   
+$EndComp
+Text Label 2450 4700 2    60   ~ 0
+ALE
+NoConn ~ 2150 3800
+NoConn ~ 2150 3700
+$Comp
+L tralala8088homebrew-rescue:74LS245 U4
+U 1 1 57E807AE
+P 3700 4200
+F 0 "U4" H 3800 4775 50  0000 L BNN
+F 1 "74HCT245" H 3750 3625 50  0000 L TNN
+F 2 "Package_DIP:DIP-20_W7.62mm" H 3700 4200 50  0001 C CNN
+F 3 "" H 3700 4200 50  0000 C CNN
+	1    3700 4200
+	1    0    0    -1  
+$EndComp
+Text Label 2750 3700 0    60   ~ 0
+AD0
+Text Label 2750 3800 0    60   ~ 0
+AD1
+Text Label 2750 3900 0    60   ~ 0
+AD2
+Text Label 2750 4000 0    60   ~ 0
+AD3
+Text Label 2750 4100 0    60   ~ 0
+AD4
+Text Label 2750 4200 0    60   ~ 0
+AD5
+Text Label 2750 4300 0    60   ~ 0
+AD6
+Text Label 2750 4400 0    60   ~ 0
+AD7
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR029
+U 1 1 57E815AB
+P 3700 3650
+F 0 "#PWR029" H 3700 3500 50  0001 C CNN
+F 1 "+5V" H 3700 3790 50  0000 C CNN
+F 2 "" H 3700 3650 50  0000 C CNN
+F 3 "" H 3700 3650 50  0000 C CNN
+	1    3700 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C5
+U 1 1 57E81A66
+P 12050 6450
+F 0 "C5" H 12075 6550 50  0000 L CNN
+F 1 "100nF" H 12075 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 12088 6300 50  0001 C CNN
+F 3 "" H 12050 6450 50  0000 C CNN
+	1    12050 6450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 2200 3200 2200
+Connection ~ 3300 2200
+Connection ~ 3400 2200
+Wire Wire Line
+	3000 2900 3200 2900
+Connection ~ 3300 2900
+Connection ~ 3400 2900
+Wire Wire Line
+	15350 1600 15600 1600
+Wire Wire Line
+	2900 1300 3100 1300
+Wire Wire Line
+	4700 1100 5050 1100
+Wire Wire Line
+	2900 1500 3100 1500
+Wire Wire Line
+	2900 1700 3100 1700
+Wire Wire Line
+	4700 1300 5050 1300
+Wire Wire Line
+	4700 1500 5050 1500
+Wire Wire Line
+	6450 1500 6700 1500
+Wire Wire Line
+	6450 1600 6700 1600
+Wire Wire Line
+	6450 1700 6700 1700
+Wire Wire Line
+	6450 1800 6700 1800
+Wire Wire Line
+	6450 1900 6700 1900
+Wire Wire Line
+	6450 2000 6700 2000
+Wire Wire Line
+	6450 2100 6700 2100
+Wire Wire Line
+	14600 700  14850 700 
+Wire Wire Line
+	14600 800  14850 800 
+Wire Wire Line
+	14600 900  14850 900 
+Wire Wire Line
+	14600 1000 14850 1000
+Wire Wire Line
+	15350 700  15600 700 
+Wire Wire Line
+	15350 800  15600 800 
+Wire Wire Line
+	15350 900  15600 900 
+Wire Wire Line
+	15350 1000 15600 1000
+Wire Wire Line
+	6450 2400 6700 2400
+Wire Wire Line
+	6450 2500 6700 2500
+Wire Wire Line
+	6450 2600 6700 2600
+Wire Wire Line
+	6450 2700 6700 2700
+Wire Wire Line
+	6450 2800 6700 2800
+Wire Wire Line
+	6450 2900 6700 2900
+Wire Wire Line
+	6450 3000 6700 3000
+Wire Wire Line
+	14600 1200 14850 1200
+Wire Wire Line
+	14600 1300 14850 1300
+Wire Wire Line
+	14600 1400 14850 1400
+Wire Wire Line
+	14600 1500 14850 1500
+Wire Wire Line
+	15350 1200 15600 1200
+Wire Wire Line
+	15350 1300 15600 1300
+Wire Wire Line
+	15350 1400 15600 1400
+Wire Wire Line
+	15350 1500 15600 1500
+Wire Wire Line
+	6450 3300 6800 3300
+Wire Wire Line
+	6450 3400 6800 3400
+Wire Wire Line
+	6450 3500 6800 3500
+Wire Wire Line
+	15350 1700 15600 1700
+Wire Wire Line
+	15350 1800 15600 1800
+Wire Wire Line
+	14450 1700 14850 1700
+Wire Wire Line
+	14450 1800 14850 1800
+Wire Wire Line
+	14450 1900 14850 1900
+Wire Wire Line
+	15600 1900 15350 1900
+Wire Wire Line
+	14450 2000 14850 2000
+Wire Wire Line
+	15600 2000 15350 2000
+Wire Wire Line
+	14450 2200 14850 2200
+Wire Wire Line
+	15350 2200 15600 2200
+Wire Wire Line
+	14450 2300 14850 2300
+Wire Wire Line
+	15350 2300 15600 2300
+Wire Wire Line
+	550  4600 750  4600
+Wire Wire Line
+	550  3900 750  3900
+Wire Wire Line
+	550  3800 750  3800
+Wire Wire Line
+	550  3700 750  3700
+Wire Wire Line
+	2150 4700 2450 4700
+Wire Wire Line
+	2750 3700 3000 3700
+Wire Wire Line
+	2750 3800 3000 3800
+Wire Wire Line
+	2750 3900 3000 3900
+Wire Wire Line
+	2750 4000 3000 4000
+Wire Wire Line
+	2750 4100 3000 4100
+Wire Wire Line
+	2750 4200 3000 4200
+Wire Wire Line
+	2750 4300 3000 4300
+Wire Wire Line
+	2750 4400 3000 4400
+Text Label 4400 3700 0    60   ~ 0
+BUF_D0
+Text Label 4400 3800 0    60   ~ 0
+BUF_D1
+Text Label 4400 3900 0    60   ~ 0
+BUF_D2
+Text Label 4400 4000 0    60   ~ 0
+BUF_D3
+Text Label 4400 4100 0    60   ~ 0
+BUF_D4
+Text Label 4400 4200 0    60   ~ 0
+BUF_D5
+Text Label 4400 4300 0    60   ~ 0
+BUF_D6
+Text Label 4400 4400 0    60   ~ 0
+BUF_D7
+$Comp
+L tralala8088homebrew-rescue:74LS373 U5
+U 1 1 57E834A0
+P 1500 6950
+F 0 "U5" H 1500 6950 50  0000 C CNN
+F 1 "74HCT373" H 1550 6600 50  0000 C CNN
+F 2 "Package_DIP:DIP-20_W7.62mm" H 1500 6950 50  0001 C CNN
+F 3 "" H 1500 6950 50  0000 C CNN
+	1    1500 6950
+	1    0    0    -1  
+$EndComp
+Text Label 600  6450 0    60   ~ 0
+AD0
+Text Label 600  6550 0    60   ~ 0
+AD1
+Text Label 600  6650 0    60   ~ 0
+AD2
+Text Label 600  6750 0    60   ~ 0
+AD3
+Text Label 600  6850 0    60   ~ 0
+AD4
+Text Label 600  6950 0    60   ~ 0
+AD5
+Text Label 600  7050 0    60   ~ 0
+AD6
+Text Label 600  7150 0    60   ~ 0
+AD7
+Wire Wire Line
+	600  6450 800  6450
+Wire Wire Line
+	600  6550 800  6550
+Wire Wire Line
+	600  6650 800  6650
+Wire Wire Line
+	600  6750 800  6750
+Wire Wire Line
+	600  6850 800  6850
+Wire Wire Line
+	600  6950 800  6950
+Wire Wire Line
+	600  7050 800  7050
+Wire Wire Line
+	600  7150 800  7150
+Text Label 600  7350 0    60   ~ 0
+ALE
+Wire Wire Line
+	600  7350 800  7350
+$Comp
+L tralala8088homebrew-rescue:GND #PWR030
+U 1 1 57E83A77
+P 800 7450
+F 0 "#PWR030" H 800 7200 50  0001 C CNN
+F 1 "GND" H 800 7300 50  0000 C CNN
+F 2 "" H 800 7450 50  0000 C CNN
+F 3 "" H 800 7450 50  0000 C CNN
+	1    800  7450
+	1    0    0    -1  
+$EndComp
+Text Label 2200 6450 0    60   ~ 0
+BUF_A0
+Text Label 2200 6550 0    60   ~ 0
+BUF_A1
+Text Label 2200 6650 0    60   ~ 0
+BUF_A2
+Text Label 2200 6750 0    60   ~ 0
+BUF_A3
+Text Label 2200 6850 0    60   ~ 0
+BUF_A4
+Text Label 2200 6950 0    60   ~ 0
+BUF_A5
+Text Label 2200 7050 0    60   ~ 0
+BUF_A6
+Text Label 2200 7150 0    60   ~ 0
+BUF_A7
+$Comp
+L tralala8088homebrew-rescue:74LS373 U6
+U 1 1 57E888B6
+P 4000 6100
+F 0 "U6" H 4000 6100 50  0000 C CNN
+F 1 "74HCT373" H 4050 5750 50  0000 C CNN
+F 2 "Package_DIP:DIP-20_W7.62mm" H 4000 6100 50  0001 C CNN
+F 3 "" H 4000 6100 50  0000 C CNN
+	1    4000 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR031
+U 1 1 57E88901
+P 3300 6600
+F 0 "#PWR031" H 3300 6350 50  0001 C CNN
+F 1 "GND" H 3300 6450 50  0000 C CNN
+F 2 "" H 3300 6600 50  0000 C CNN
+F 3 "" H 3300 6600 50  0000 C CNN
+	1    3300 6600
+	1    0    0    -1  
+$EndComp
+Text Label 3100 5600 0    60   ~ 0
+A8
+Text Label 3100 5700 0    60   ~ 0
+A9
+Text Label 3100 5800 0    60   ~ 0
+A10
+Text Label 3100 5900 0    60   ~ 0
+A11
+Text Label 3100 6000 0    60   ~ 0
+A12
+Text Label 3100 6100 0    60   ~ 0
+A13
+Text Label 3100 6200 0    60   ~ 0
+A14
+Text Label 3100 6300 0    60   ~ 0
+A15
+Wire Wire Line
+	3100 5600 3300 5600
+Wire Wire Line
+	3100 5700 3300 5700
+Wire Wire Line
+	3100 5800 3300 5800
+Wire Wire Line
+	3100 5900 3300 5900
+Wire Wire Line
+	3100 6000 3300 6000
+Wire Wire Line
+	3100 6100 3300 6100
+Wire Wire Line
+	3100 6200 3300 6200
+Wire Wire Line
+	3100 6300 3300 6300
+Text Label 4700 5600 0    60   ~ 0
+BUF_A8
+Text Label 4700 5700 0    60   ~ 0
+BUF_A9
+Text Label 4700 5800 0    60   ~ 0
+BUF_A10
+Text Label 4700 5900 0    60   ~ 0
+BUF_A11
+Text Label 4700 6000 0    60   ~ 0
+BUF_A12
+Text Label 4700 6100 0    60   ~ 0
+BUF_A13
+Text Label 4700 6200 0    60   ~ 0
+BUF_A14
+Text Label 4700 6300 0    60   ~ 0
+BUF_A15
+Wire Wire Line
+	3100 6500 3300 6500
+Text Label 3100 6500 0    60   ~ 0
+ALE
+$Comp
+L tralala8088homebrew-rescue:GND #PWR032
+U 1 1 57E89ADF
+P 1200 7500
+F 0 "#PWR032" H 1200 7250 50  0001 C CNN
+F 1 "GND" H 1200 7350 50  0000 C CNN
+F 2 "" H 1200 7500 50  0000 C CNN
+F 3 "" H 1200 7500 50  0000 C CNN
+	1    1200 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR033
+U 1 1 57E89B17
+P 3700 6650
+F 0 "#PWR033" H 3700 6400 50  0001 C CNN
+F 1 "GND" H 3700 6500 50  0000 C CNN
+F 2 "" H 3700 6650 50  0000 C CNN
+F 3 "" H 3700 6650 50  0000 C CNN
+	1    3700 6650
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR034
+U 1 1 57E89B4F
+P 3750 5550
+F 0 "#PWR034" H 3750 5400 50  0001 C CNN
+F 1 "+5V" H 3750 5690 50  0000 C CNN
+F 2 "" H 3750 5550 50  0000 C CNN
+F 3 "" H 3750 5550 50  0000 C CNN
+	1    3750 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR035
+U 1 1 57E89D37
+P 1250 6400
+F 0 "#PWR035" H 1250 6250 50  0001 C CNN
+F 1 "+5V" H 1250 6540 50  0000 C CNN
+F 2 "" H 1250 6400 50  0000 C CNN
+F 3 "" H 1250 6400 50  0000 C CNN
+	1    1250 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR036
+U 1 1 57E89F8B
+P 3700 4750
+F 0 "#PWR036" H 3700 4500 50  0001 C CNN
+F 1 "GND" H 3700 4600 50  0000 C CNN
+F 2 "" H 3700 4750 50  0000 C CNN
+F 3 "" H 3700 4750 50  0000 C CNN
+	1    3700 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C6
+U 1 1 57E8A34D
+P 12350 6450
+F 0 "C6" H 12375 6550 50  0000 L CNN
+F 1 "100nF" H 12375 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 12388 6300 50  0001 C CNN
+F 3 "" H 12350 6450 50  0000 C CNN
+	1    12350 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C7
+U 1 1 57E8A4D6
+P 12650 6450
+F 0 "C7" H 12675 6550 50  0000 L CNN
+F 1 "100nF" H 12675 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 12688 6300 50  0001 C CNN
+F 3 "" H 12650 6450 50  0000 C CNN
+	1    12650 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR037
+U 1 1 57E8E2F0
+P 6150 5200
+F 0 "#PWR037" H 6150 5050 50  0001 C CNN
+F 1 "+5V" H 6150 5340 50  0000 C CNN
+F 2 "" H 6150 5200 50  0000 C CNN
+F 3 "" H 6150 5200 50  0000 C CNN
+	1    6150 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C8
+U 1 1 57E8E469
+P 12950 6450
+F 0 "C8" H 12975 6550 50  0000 L CNN
+F 1 "100nF" H 12975 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 12988 6300 50  0001 C CNN
+F 3 "" H 12950 6450 50  0000 C CNN
+	1    12950 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR038
+U 1 1 57E8E6BA
+P 6100 6300
+F 0 "#PWR038" H 6100 6050 50  0001 C CNN
+F 1 "GND" H 6100 6150 50  0000 C CNN
+F 2 "" H 6100 6300 50  0000 C CNN
+F 3 "" H 6100 6300 50  0000 C CNN
+	1    6100 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR039
+U 1 1 57E8E8B2
+P 5700 6250
+F 0 "#PWR039" H 5700 6000 50  0001 C CNN
+F 1 "GND" H 5700 6100 50  0000 C CNN
+F 2 "" H 5700 6250 50  0000 C CNN
+F 3 "" H 5700 6250 50  0000 C CNN
+	1    5700 6250
+	1    0    0    -1  
+$EndComp
+Text Label 5350 5250 0    60   ~ 0
+A16_S3
+Text Label 5350 5350 0    60   ~ 0
+A17_S4
+Text Label 5350 5450 0    60   ~ 0
+A18_S5
+Text Label 5350 5550 0    60   ~ 0
+A19_S6
+Text Label 5500 6150 0    60   ~ 0
+ALE
+Wire Wire Line
+	5500 6150 5700 6150
+Wire Wire Line
+	5350 5550 5700 5550
+Wire Wire Line
+	5350 5450 5700 5450
+Wire Wire Line
+	5350 5350 5700 5350
+Wire Wire Line
+	5350 5250 5700 5250
+NoConn ~ 5700 5650
+NoConn ~ 5700 5750
+NoConn ~ 5700 5850
+NoConn ~ 5700 5950
+Text Label 7100 5250 0    60   ~ 0
+BUF_A16
+Text Label 7100 5350 0    60   ~ 0
+BUF_A17
+Text Label 7100 5450 0    60   ~ 0
+BUF_A18
+Text Label 7100 5550 0    60   ~ 0
+BUF_A19
+NoConn ~ 7100 5950
+NoConn ~ 7100 5850
+NoConn ~ 7100 5750
+NoConn ~ 7100 5650
+NoConn ~ 2150 4800
+NoConn ~ 6450 4100
+Wire Wire Line
+	6450 4000 6700 4000
+Wire Wire Line
+	6450 3900 6700 3900
+Wire Wire Line
+	6450 3800 6700 3800
+Wire Wire Line
+	6450 3700 6700 3700
+Wire Wire Line
+	6450 1100 6700 1100
+Wire Wire Line
+	6450 1400 6700 1400
+Wire Wire Line
+	6450 2300 6700 2300
+Wire Wire Line
+	6450 3200 6800 3200
+Wire Wire Line
+	6450 1200 6700 1200
+NoConn ~ 5050 2600
+NoConn ~ 5050 2800
+NoConn ~ 5050 3900
+$Comp
+L tralala8088homebrew-rescue:SRAM_512Ko U8
+U 1 1 57E762F9
+P 9500 5350
+F 0 "U8" H 9600 6550 50  0000 L CNN
+F 1 "SRAM_512Ko" H 9600 4150 50  0000 L CNN
+F 2 "Package_DIP:DIP-32_W15.24mm" H 9500 5350 50  0001 C CNN
+F 3 "" H 9500 5350 50  0000 C CNN
+	1    9500 5350
+	1    0    0    -1  
+$EndComp
+Text Label 8400 4250 0    60   ~ 0
+BUF_A0
+Text Label 8400 4350 0    60   ~ 0
+BUF_A1
+Text Label 8400 4450 0    60   ~ 0
+BUF_A2
+Text Label 8400 4550 0    60   ~ 0
+BUF_A3
+Text Label 8400 4650 0    60   ~ 0
+BUF_A4
+Text Label 8400 4750 0    60   ~ 0
+BUF_A5
+Text Label 8400 4850 0    60   ~ 0
+BUF_A6
+Text Label 8400 4950 0    60   ~ 0
+BUF_A7
+Text Label 8400 5050 0    60   ~ 0
+BUF_A8
+Text Label 8400 5150 0    60   ~ 0
+BUF_A9
+Text Label 8400 5250 0    60   ~ 0
+BUF_A10
+Text Label 8400 5350 0    60   ~ 0
+BUF_A11
+Text Label 8400 5450 0    60   ~ 0
+BUF_A12
+Text Label 8400 5550 0    60   ~ 0
+BUF_A13
+Text Label 8400 5650 0    60   ~ 0
+BUF_A14
+Text Label 8400 5750 0    60   ~ 0
+BUF_A15
+Text Label 8400 5850 0    60   ~ 0
+BUF_A16
+Text Label 8400 5950 0    60   ~ 0
+BUF_A17
+Text Label 8400 6050 0    60   ~ 0
+BUF_A18
+Wire Wire Line
+	8400 4250 8800 4250
+Wire Wire Line
+	8400 4350 8800 4350
+Wire Wire Line
+	8400 4450 8800 4450
+Wire Wire Line
+	8400 4550 8800 4550
+Wire Wire Line
+	8400 4650 8800 4650
+Wire Wire Line
+	8400 4750 8800 4750
+Wire Wire Line
+	8400 4850 8800 4850
+Wire Wire Line
+	8400 4950 8800 4950
+Wire Wire Line
+	8400 5050 8800 5050
+Wire Wire Line
+	8400 5150 8800 5150
+Wire Wire Line
+	8400 5250 8800 5250
+Wire Wire Line
+	8400 5350 8800 5350
+Wire Wire Line
+	8400 5450 8800 5450
+Wire Wire Line
+	8400 5550 8800 5550
+Wire Wire Line
+	8400 5650 8800 5650
+Wire Wire Line
+	8400 5750 8800 5750
+Wire Wire Line
+	8400 5850 8800 5850
+Wire Wire Line
+	8400 5950 8800 5950
+Wire Wire Line
+	8400 6050 8800 6050
+$Comp
+L tralala8088homebrew-rescue:GND #PWR040
+U 1 1 57E78588
+P 9500 6650
+F 0 "#PWR040" H 9500 6400 50  0001 C CNN
+F 1 "GND" H 9500 6500 50  0000 C CNN
+F 2 "" H 9500 6650 50  0000 C CNN
+F 3 "" H 9500 6650 50  0000 C CNN
+	1    9500 6650
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR041
+U 1 1 57E78774
+P 9500 4050
+F 0 "#PWR041" H 9500 3900 50  0001 C CNN
+F 1 "+5V" H 9500 4190 50  0000 C CNN
+F 2 "" H 9500 4050 50  0000 C CNN
+F 3 "" H 9500 4050 50  0000 C CNN
+	1    9500 4050
+	1    0    0    -1  
+$EndComp
+Text Label 10500 4250 2    60   ~ 0
+BUF_D0
+Wire Wire Line
+	10200 4250 10500 4250
+$Comp
+L tralala8088homebrew-rescue:C C9
+U 1 1 57E799DC
+P 13250 6450
+F 0 "C9" H 13275 6550 50  0000 L CNN
+F 1 "100nF" H 13275 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 13288 6300 50  0001 C CNN
+F 3 "" H 13250 6450 50  0000 C CNN
+	1    13250 6450
+	1    0    0    -1  
+$EndComp
+Text Label 10500 4350 2    60   ~ 0
+BUF_D1
+Text Label 10500 4450 2    60   ~ 0
+BUF_D2
+Text Label 10500 4550 2    60   ~ 0
+BUF_D3
+Text Label 10500 4650 2    60   ~ 0
+BUF_D4
+Text Label 10500 4750 2    60   ~ 0
+BUF_D5
+Text Label 10500 4850 2    60   ~ 0
+BUF_D6
+Text Label 10500 4950 2    60   ~ 0
+BUF_D7
+Wire Wire Line
+	10200 4350 10500 4350
+Wire Wire Line
+	10200 4450 10500 4450
+Wire Wire Line
+	10200 4550 10500 4550
+Wire Wire Line
+	10200 4650 10500 4650
+Wire Wire Line
+	10200 4750 10500 4750
+Wire Wire Line
+	10200 4850 10500 4850
+Wire Wire Line
+	10200 4950 10500 4950
+$Comp
+L tralala8088homebrew-rescue:SST39SF020 U9
+U 1 1 57E7BF03
+P 9650 2150
+F 0 "U9" H 9750 3450 50  0000 C CNN
+F 1 "SST39SF020" H 9650 950 50  0000 C CNN
+F 2 "Socket:DIP_Socket-32_W11.9_W12.7_W15.24_W17.78_W18.5_3M_232-1285-00-0602J" H 9650 2450 50  0001 C CNN
+F 3 "" H 9650 2450 50  0000 C CNN
+	1    9650 2150
+	1    0    0    -1  
+$EndComp
+Text Label 10600 950  2    60   ~ 0
+BUF_D0
+Text Label 10600 1050 2    60   ~ 0
+BUF_D1
+Text Label 10600 1150 2    60   ~ 0
+BUF_D2
+Text Label 10600 1250 2    60   ~ 0
+BUF_D3
+Text Label 10600 1350 2    60   ~ 0
+BUF_D4
+Text Label 10600 1450 2    60   ~ 0
+BUF_D5
+Text Label 10600 1550 2    60   ~ 0
+BUF_D6
+Text Label 10600 1650 2    60   ~ 0
+BUF_D7
+Wire Wire Line
+	10250 950  10600 950 
+Wire Wire Line
+	10250 1050 10600 1050
+Wire Wire Line
+	10250 1150 10600 1150
+Wire Wire Line
+	10250 1250 10600 1250
+Wire Wire Line
+	10250 1350 10600 1350
+Wire Wire Line
+	10250 1450 10600 1450
+Wire Wire Line
+	10250 1550 10600 1550
+Wire Wire Line
+	10250 1650 10600 1650
+NoConn ~ 9050 2750
+Text Label 8650 950  0    60   ~ 0
+BUF_A0
+Text Label 8650 1050 0    60   ~ 0
+BUF_A1
+Text Label 8650 1150 0    60   ~ 0
+BUF_A2
+Text Label 8650 1250 0    60   ~ 0
+BUF_A3
+Text Label 8650 1350 0    60   ~ 0
+BUF_A4
+Text Label 8650 1450 0    60   ~ 0
+BUF_A5
+Text Label 8650 1550 0    60   ~ 0
+BUF_A6
+Text Label 8650 1650 0    60   ~ 0
+BUF_A7
+Text Label 8650 1750 0    60   ~ 0
+BUF_A8
+Text Label 8650 1850 0    60   ~ 0
+BUF_A9
+Text Label 8650 1950 0    60   ~ 0
+BUF_A10
+Text Label 8650 2050 0    60   ~ 0
+BUF_A11
+Text Label 8650 2150 0    60   ~ 0
+BUF_A12
+Text Label 8650 2250 0    60   ~ 0
+BUF_A13
+Text Label 8650 2350 0    60   ~ 0
+BUF_A14
+Text Label 8650 2450 0    60   ~ 0
+BUF_A15
+Text Label 8650 2550 0    60   ~ 0
+BUF_A16
+Text Label 8650 2650 0    60   ~ 0
+BUF_A17
+Wire Wire Line
+	8650 950  9050 950 
+Wire Wire Line
+	8650 1050 9050 1050
+Wire Wire Line
+	8650 1150 9050 1150
+Wire Wire Line
+	8650 1250 9050 1250
+Wire Wire Line
+	8650 1350 9050 1350
+Wire Wire Line
+	8650 1450 9050 1450
+Wire Wire Line
+	8650 1550 9050 1550
+Wire Wire Line
+	8650 1650 9050 1650
+Wire Wire Line
+	8650 1750 9050 1750
+Wire Wire Line
+	8650 1850 9050 1850
+Wire Wire Line
+	8650 1950 9050 1950
+Wire Wire Line
+	8650 2050 9050 2050
+Wire Wire Line
+	8650 2150 9050 2150
+Wire Wire Line
+	8650 2250 9050 2250
+Wire Wire Line
+	8650 2350 9050 2350
+Wire Wire Line
+	8650 2450 9050 2450
+Wire Wire Line
+	8650 2550 9050 2550
+Wire Wire Line
+	8650 2650 9050 2650
+$Comp
+L tralala8088homebrew-rescue:GND #PWR042
+U 1 1 57E7DCAB
+P 9650 3300
+F 0 "#PWR042" H 9650 3050 50  0001 C CNN
+F 1 "GND" H 9650 3150 50  0000 C CNN
+F 2 "" H 9650 3300 50  0000 C CNN
+F 3 "" H 9650 3300 50  0000 C CNN
+	1    9650 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR043
+U 1 1 57E7DCF1
+P 9650 850
+F 0 "#PWR043" H 9650 700 50  0001 C CNN
+F 1 "+5V" H 9650 990 50  0000 C CNN
+F 2 "" H 9650 850 50  0000 C CNN
+F 3 "" H 9650 850 50  0000 C CNN
+	1    9650 850 
+	1    0    0    -1  
+$EndComp
+Text Label 2450 4900 2    60   ~ 0
+DEN
+Text Label 2450 4600 2    60   ~ 0
+DTR
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR044
+U 1 1 57EB2F1F
+P 8850 2950
+F 0 "#PWR044" H 8850 2800 50  0001 C CNN
+F 1 "+5V" H 8850 3090 50  0000 C CNN
+F 2 "" H 8850 2950 50  0000 C CNN
+F 3 "" H 8850 2950 50  0000 C CNN
+	1    8850 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8850 2950 9050 2950
+Text Label 6950 3150 0    60   ~ 0
+BUF_A19
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR045
+U 1 1 57EB6DC9
+P 7850 2950
+F 0 "#PWR045" H 7850 2800 50  0001 C CNN
+F 1 "+5V" H 7850 3090 50  0000 C CNN
+F 2 "" H 7850 2950 50  0000 C CNN
+F 3 "" H 7850 2950 50  0000 C CNN
+	1    7850 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR046
+U 1 1 57EB6E11
+P 7850 3350
+F 0 "#PWR046" H 7850 3100 50  0001 C CNN
+F 1 "GND" H 7850 3200 50  0000 C CNN
+F 2 "" H 7850 3350 50  0000 C CNN
+F 3 "" H 7850 3350 50  0000 C CNN
+	1    7850 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2150 4100 2450 4100
+Text Label 2450 4100 2    60   ~ 0
+MRDC
+Wire Wire Line
+	8650 3150 9050 3150
+Text Label 8750 3250 0    60   ~ 0
+MRDC
+Wire Wire Line
+	8750 3250 9050 3250
+Text Label 8400 6450 0    60   ~ 0
+BUF_A19
+Wire Wire Line
+	8400 6450 8800 6450
+Text Label 8400 6250 0    60   ~ 0
+MRDC
+Wire Wire Line
+	8400 6250 8800 6250
+Text Label 2450 4000 2    60   ~ 0
+MWTC
+Wire Wire Line
+	2150 4000 2450 4000
+Text Label 8400 6350 0    60   ~ 0
+MWTC
+Wire Wire Line
+	8400 6350 8800 6350
+$Comp
+L tralala8088homebrew-rescue:8259A U11
+U 1 1 57EEC6D7
+P 12300 3850
+F 0 "U11" H 11900 4850 50  0000 C CNN
+F 1 "8259A" H 12650 4850 50  0000 C CNN
+F 2 "Package_DIP:DIP-28_W15.24mm" H 12300 3850 50  0001 C CIN
+F 3 "" H 12300 3850 50  0000 C CNN
+	1    12300 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR047
+U 1 1 57EEC755
+P 12300 4950
+F 0 "#PWR047" H 12300 4700 50  0001 C CNN
+F 1 "GND" H 12300 4800 50  0000 C CNN
+F 2 "" H 12300 4950 50  0000 C CNN
+F 3 "" H 12300 4950 50  0000 C CNN
+	1    12300 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR048
+U 1 1 57EEC79F
+P 12300 2750
+F 0 "#PWR048" H 12300 2600 50  0001 C CNN
+F 1 "+5V" H 12300 2890 50  0000 C CNN
+F 2 "" H 12300 2750 50  0000 C CNN
+F 3 "" H 12300 2750 50  0000 C CNN
+	1    12300 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C10
+U 1 1 57EECA0C
+P 13550 6450
+F 0 "C10" H 13575 6550 50  0000 L CNN
+F 1 "100nF" H 13575 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 13588 6300 50  0001 C CNN
+F 3 "" H 13550 6450 50  0000 C CNN
+	1    13550 6450
+	1    0    0    -1  
+$EndComp
+Text Label 11500 3050 0    60   ~ 0
+AD0
+Text Label 11500 3150 0    60   ~ 0
+AD1
+Text Label 11500 3250 0    60   ~ 0
+AD2
+Text Label 11500 3350 0    60   ~ 0
+AD3
+Text Label 11500 3450 0    60   ~ 0
+AD4
+Text Label 11500 3550 0    60   ~ 0
+AD5
+Text Label 11500 3650 0    60   ~ 0
+AD6
+Text Label 11500 3750 0    60   ~ 0
+AD7
+Wire Wire Line
+	11500 3050 11700 3050
+Wire Wire Line
+	11500 3150 11700 3150
+Wire Wire Line
+	11500 3250 11700 3250
+Wire Wire Line
+	11500 3350 11700 3350
+Wire Wire Line
+	11500 3450 11700 3450
+Wire Wire Line
+	11500 3550 11700 3550
+Wire Wire Line
+	11500 3650 11700 3650
+Wire Wire Line
+	11500 3750 11700 3750
+NoConn ~ 12900 3050
+NoConn ~ 12900 3150
+NoConn ~ 12900 3250
+NoConn ~ 12900 3350
+NoConn ~ 12900 3450
+NoConn ~ 12900 3550
+NoConn ~ 12900 3650
+NoConn ~ 12900 3750
+Text Label 11500 4650 0    60   ~ 0
+INTA
+Wire Wire Line
+	11500 4650 11700 4650
+Text Label 2450 4300 2    60   ~ 0
+INTA
+Wire Wire Line
+	2150 4300 2450 4300
+Text Label 4700 2000 0    60   ~ 0
+INTR
+Wire Wire Line
+	4700 2000 5050 2000
+Text Label 11500 4550 0    60   ~ 0
+INTR
+Wire Wire Line
+	11500 4550 11700 4550
+Text Label 2450 3900 2    60   ~ 0
+IOWC
+Text Label 2450 4200 2    60   ~ 0
+IORC
+Wire Wire Line
+	2150 3900 2450 3900
+Wire Wire Line
+	2150 4200 2450 4200
+Text Label 11500 4350 0    60   ~ 0
+IOWC
+Text Label 11500 4250 0    60   ~ 0
+IORC
+Wire Wire Line
+	11500 4250 11700 4250
+Wire Wire Line
+	11500 4350 11700 4350
+$Comp
+L tralala8088homebrew-rescue:74LS138 U12
+U 1 1 57EF1F9E
+P 12300 1350
+F 0 "U12" H 12400 1850 50  0000 C CNN
+F 1 "74HCT138" H 12450 801 50  0000 C CNN
+F 2 "Package_DIP:DIP-16_W7.62mm" H 12300 1350 50  0001 C CNN
+F 3 "" H 12300 1350 50  0000 C CNN
+	1    12300 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR049
+U 1 1 57EF226F
+P 12300 1800
+F 0 "#PWR049" H 12300 1550 50  0001 C CNN
+F 1 "GND" H 12300 1650 50  0000 C CNN
+F 2 "" H 12300 1800 50  0000 C CNN
+F 3 "" H 12300 1800 50  0000 C CNN
+	1    12300 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR050
+U 1 1 57EF22BD
+P 12300 900
+F 0 "#PWR050" H 12300 750 50  0001 C CNN
+F 1 "+5V" H 12300 1040 50  0000 C CNN
+F 2 "" H 12300 900 50  0000 C CNN
+F 3 "" H 12300 900 50  0000 C CNN
+	1    12300 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C11
+U 1 1 57EF2548
+P 13850 6450
+F 0 "C11" H 13875 6550 50  0000 L CNN
+F 1 "100nF" H 13875 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 13888 6300 50  0001 C CNN
+F 3 "" H 13850 6450 50  0000 C CNN
+	1    13850 6450
+	1    0    0    -1  
+$EndComp
+Text Label 11300 1000 0    60   ~ 0
+BUF_A5
+Text Label 11300 1100 0    60   ~ 0
+BUF_A6
+Text Label 11300 1200 0    60   ~ 0
+BUF_A7
+Wire Wire Line
+	11300 1200 11700 1200
+Wire Wire Line
+	11300 1100 11700 1100
+Wire Wire Line
+	11300 1000 11700 1000
+Text Label 13400 1100 2    60   ~ 0
+8259A_CS
+NoConn ~ 12900 1600
+NoConn ~ 12900 1500
+NoConn ~ 12900 1400
+NoConn ~ 12900 1300
+NoConn ~ 12900 1200
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR051
+U 1 1 57EF3E14
+P 11700 1500
+F 0 "#PWR051" H 11700 1350 50  0001 C CNN
+F 1 "+5V" H 11700 1640 50  0000 C CNN
+F 2 "" H 11700 1500 50  0000 C CNN
+F 3 "" H 11700 1500 50  0000 C CNN
+	1    11700 1500
+	1    0    0    -1  
+$EndComp
+Text Label 11200 4150 0    60   ~ 0
+8259A_CS
+Wire Wire Line
+	11200 4150 11700 4150
+Text Label 11350 3950 0    60   ~ 0
+BUF_A0
+Wire Wire Line
+	11350 3950 11700 3950
+$Comp
+L tralala8088homebrew-rescue:R R4
+U 1 1 57EF5722
+P 1700 5650
+F 0 "R4" V 1780 5650 50  0000 C CNN
+F 1 "4.7K" V 1700 5650 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1630 5650 50  0001 C CNN
+F 3 "" H 1700 5650 50  0000 C CNN
+	1    1700 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR052
+U 1 1 57EF578B
+P 1700 5500
+F 0 "#PWR052" H 1700 5350 50  0001 C CNN
+F 1 "+5V" H 1700 5640 50  0000 C CNN
+F 2 "" H 1700 5500 50  0000 C CNN
+F 3 "" H 1700 5500 50  0000 C CNN
+	1    1700 5500
+	1    0    0    -1  
+$EndComp
+NoConn ~ 12900 4150
+NoConn ~ 12900 4050
+NoConn ~ 12900 3950
+$Comp
+L tralala8088homebrew-rescue:CONN_01X02 P3
+U 1 1 58027EEB
+P 14250 2450
+F 0 "P3" H 14250 2600 50  0000 C CNN
+F 1 "CONN_01X02" V 14350 2450 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 14250 2450 50  0001 C CNN
+F 3 "" H 14250 2450 50  0000 C CNN
+	1    14250 2450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	14450 2400 14850 2400
+Wire Wire Line
+	14450 2500 14850 2500
+Wire Wire Line
+	2900 2500 3000 2500
+Wire Wire Line
+	3000 2500 3000 2900
+Connection ~ 3200 2900
+Wire Wire Line
+	2900 2300 3000 2300
+Wire Wire Line
+	3000 2300 3000 2200
+Connection ~ 3200 2200
+Connection ~ 3500 2200
+Connection ~ 3500 2900
+Wire Wire Line
+	750  1700 1050 1700
+Connection ~ 1050 1700
+Wire Wire Line
+	900  1000 900  1400
+Wire Wire Line
+	900  1000 750  1000
+Connection ~ 1050 1300
+Connection ~ 1350 1300
+Wire Wire Line
+	1050 1000 1350 1000
+Connection ~ 1050 1000
+Wire Wire Line
+	750  1600 750  1700
+Wire Wire Line
+	1050 1400 1050 1300
+Wire Wire Line
+	1050 1300 1350 1300
+Connection ~ 1050 1400
+$Comp
+L tralala8088homebrew-rescue:CONN_01X03 P4
+U 1 1 5803B48F
+P 15800 2500
+F 0 "P4" H 15800 2300 50  0000 C CNN
+F 1 "CONN_01X03" V 15900 2500 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 15800 2500 50  0001 C CNN
+F 3 "" H 15800 2500 50  0000 C CNN
+	1    15800 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	15350 2400 15600 2400
+Wire Wire Line
+	15350 2500 15600 2500
+Wire Wire Line
+	15350 2600 15600 2600
+Wire Wire Line
+	2150 4900 2450 4900
+Wire Wire Line
+	2450 4900 2450 5000
+Wire Wire Line
+	2450 5000 2100 5000
+Wire Wire Line
+	12900 1100 13400 1100
+NoConn ~ 12900 1000
+$Comp
+L tralala8088homebrew-rescue:CONN_01X03 P5
+U 1 1 580B87D1
+P 4300 1700
+F 0 "P5" H 4300 1900 50  0000 C CNN
+F 1 "CONN_01X03" V 4400 1700 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4300 1700 50  0001 C CNN
+F 3 "" H 4300 1700 50  0000 C CNN
+	1    4300 1700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5050 1800 4800 1800
+Wire Wire Line
+	4800 1800 4800 1700
+Wire Wire Line
+	4800 1700 4500 1700
+$Comp
+L tralala8088homebrew-rescue:GND #PWR053
+U 1 1 580B8A15
+P 4500 1800
+F 0 "#PWR053" H 4500 1550 50  0001 C CNN
+F 1 "GND" H 4500 1650 50  0000 C CNN
+F 2 "" H 4500 1800 50  0000 C CNN
+F 3 "" H 4500 1800 50  0000 C CNN
+	1    4500 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR054
+U 1 1 580B8A6F
+P 4500 1600
+F 0 "#PWR054" H 4500 1450 50  0001 C CNN
+F 1 "+5V" H 4500 1740 50  0000 C CNN
+F 2 "" H 4500 1600 50  0000 C CNN
+F 3 "" H 4500 1600 50  0000 C CNN
+	1    4500 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:8255A U13
+U 1 1 580C2860
+P 2600 9300
+F 0 "U13" H 2050 10800 50  0000 L CNN
+F 1 "82C55A" H 2950 10800 50  0000 L CNN
+F 2 "Package_DIP:DIP-40_W15.24mm" H 2600 9600 50  0001 C CNN
+F 3 "" H 2600 9600 50  0000 C CNN
+	1    2600 9300
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR055
+U 1 1 580C31AD
+P 2600 10900
+F 0 "#PWR055" H 2600 10650 50  0001 C CNN
+F 1 "GND" H 2600 10750 50  0000 C CNN
+F 2 "" H 2600 10900 50  0000 C CNN
+F 3 "" H 2600 10900 50  0000 C CNN
+	1    2600 10900
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR056
+U 1 1 580C3449
+P 2600 7700
+F 0 "#PWR056" H 2600 7550 50  0001 C CNN
+F 1 "+5V" H 2600 7840 50  0000 C CNN
+F 2 "" H 2600 7700 50  0000 C CNN
+F 3 "" H 2600 7700 50  0000 C CNN
+	1    2600 7700
+	1    0    0    -1  
+$EndComp
+NoConn ~ 3300 8900
+NoConn ~ 3300 9000
+NoConn ~ 3300 9100
+NoConn ~ 3300 9200
+NoConn ~ 3300 9300
+NoConn ~ 3300 9400
+NoConn ~ 3300 9500
+NoConn ~ 3300 9600
+NoConn ~ 3300 10100
+Text Label 1550 9200 0    60   ~ 0
+BUF_D0
+Text Label 1550 9300 0    60   ~ 0
+BUF_D1
+Text Label 1550 9400 0    60   ~ 0
+BUF_D2
+Text Label 1550 9500 0    60   ~ 0
+BUF_D3
+Text Label 1550 9600 0    60   ~ 0
+BUF_D4
+Text Label 1550 9700 0    60   ~ 0
+BUF_D5
+Text Label 1550 9800 0    60   ~ 0
+BUF_D6
+Text Label 1550 9900 0    60   ~ 0
+BUF_D7
+Wire Wire Line
+	1550 9200 1900 9200
+Wire Wire Line
+	1550 9300 1900 9300
+Wire Wire Line
+	1550 9400 1900 9400
+Wire Wire Line
+	1550 9500 1900 9500
+Wire Wire Line
+	1550 9600 1900 9600
+Wire Wire Line
+	1550 9700 1900 9700
+Wire Wire Line
+	1550 9800 1900 9800
+Wire Wire Line
+	1550 9900 1900 9900
+Text Label 1550 8800 0    60   ~ 0
+BUF_A0
+Text Label 1550 8900 0    60   ~ 0
+BUF_A1
+Wire Wire Line
+	1550 8800 1900 8800
+Wire Wire Line
+	1550 8900 1900 8900
+Text Label 1550 8400 0    60   ~ 0
+IORC
+Text Label 1550 8500 0    60   ~ 0
+IOWC
+Wire Wire Line
+	1550 8400 1900 8400
+Wire Wire Line
+	1550 8500 1900 8500
+Text Label 13400 1700 2    60   ~ 0
+8255_CS
+Wire Wire Line
+	12900 1700 13400 1700
+Text Label 1500 8300 0    60   ~ 0
+8255_CS
+Wire Wire Line
+	1500 8300 1900 8300
+Text Label 1550 8000 0    60   ~ 0
+RESET
+Wire Wire Line
+	1550 8000 1900 8000
+$Comp
+L tralala8088homebrew-rescue:7805 U14
+U 1 1 58374996
+P 15000 5150
+F 0 "U14" H 15150 4954 50  0000 C CNN
+F 1 "7805" H 15000 5350 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 15000 5150 50  0001 C CNN
+F 3 "" H 15000 5150 50  0000 C CNN
+	1    15000 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR057
+U 1 1 58374AAA
+P 15000 5550
+F 0 "#PWR057" H 15000 5300 50  0001 C CNN
+F 1 "GND" H 15000 5400 50  0000 C CNN
+F 2 "" H 15000 5550 50  0000 C CNN
+F 3 "" H 15000 5550 50  0000 C CNN
+	1    15000 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR058
+U 1 1 58374B08
+P 15500 5050
+F 0 "#PWR058" H 15500 4900 50  0001 C CNN
+F 1 "+5V" H 15500 5190 50  0000 C CNN
+F 2 "" H 15500 5050 50  0000 C CNN
+F 3 "" H 15500 5050 50  0000 C CNN
+	1    15500 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C13
+U 1 1 58374B66
+P 15500 5300
+F 0 "C13" H 15525 5400 50  0000 L CNN
+F 1 "100nF" H 15525 5200 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 15538 5150 50  0001 C CNN
+F 3 "" H 15500 5300 50  0000 C CNN
+	1    15500 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:BARREL_JACK CON1
+U 1 1 5837734A
+P 13450 5200
+F 0 "CON1" H 13450 5450 50  0000 C CNN
+F 1 "BARREL_JACK" H 13450 5000 50  0000 C CNN
+F 2 "Connector_BarrelJack:BarrelJack_Horizontal" H 13450 5200 50  0001 C CNN
+F 3 "" H 13450 5200 50  0000 C CNN
+	1    13450 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C12
+U 1 1 58377B51
+P 14500 5300
+F 0 "C12" H 14525 5400 50  0000 L CNN
+F 1 "330nF" H 14525 5200 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 14538 5150 50  0001 C CNN
+F 3 "" H 14500 5300 50  0000 C CNN
+	1    14500 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:74HC00 U10
+U 3 1 583CB136
+P 8050 3150
+F 0 "U10" H 8050 3200 50  0000 C CNN
+F 1 "74HCT00" H 8050 3050 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm" H 8050 3150 50  0001 C CNN
+F 3 "" H 8050 3150 50  0000 C CNN
+	3    8050 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:74HC00 U10
+U 2 1 583CB4B7
+P 2800 5300
+F 0 "U10" H 2800 5350 50  0000 C CNN
+F 1 "74HCT00" H 2800 5200 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm" H 2800 5300 50  0001 C CNN
+F 3 "" H 2800 5300 50  0000 C CNN
+	2    2800 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 3150 7450 3150
+Wire Wire Line
+	7450 3050 7450 3150
+Connection ~ 7450 3150
+Wire Wire Line
+	2100 5000 2100 5400
+Wire Wire Line
+	2100 5400 2200 5400
+Wire Wire Line
+	2150 4600 3000 4600
+Wire Wire Line
+	3400 5300 3400 4900
+Wire Wire Line
+	3400 4900 3000 4900
+Wire Wire Line
+	3000 4900 3000 4700
+Text Label 13600 4350 2    60   ~ 0
+8259A_SP_EN
+Wire Wire Line
+	12900 4350 13600 4350
+Text Label 800  5800 0    60   ~ 0
+8259A_SP_EN
+Wire Wire Line
+	800  5800 1700 5800
+Wire Wire Line
+	1950 5200 2200 5200
+Wire Wire Line
+	1950 5800 1950 5200
+Connection ~ 1700 5800
+$Comp
+L tralala8088homebrew-rescue:Q_NPN_EBC Q1
+U 1 1 583E221F
+P 4400 9700
+F 0 "Q1" H 4700 9750 50  0000 R CNN
+F 1 "2N3904" H 5000 9650 50  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4600 9800 50  0001 C CNN
+F 3 "" H 4400 9700 50  0000 C CNN
+	1    4400 9700
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR059
+U 1 1 583E22FA
+P 4500 9900
+F 0 "#PWR059" H 4500 9650 50  0001 C CNN
+F 1 "GND" H 4500 9750 50  0000 C CNN
+F 2 "" H 4500 9900 50  0000 C CNN
+F 3 "" H 4500 9900 50  0000 C CNN
+	1    4500 9900
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:R R5
+U 1 1 583E2656
+P 4050 9700
+F 0 "R5" V 4130 9700 50  0000 C CNN
+F 1 "10K" V 4050 9700 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3980 9700 50  0001 C CNN
+F 3 "" H 4050 9700 50  0000 C CNN
+	1    4050 9700
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:R R6
+U 1 1 583E27AC
+P 4500 9350
+F 0 "R6" V 4580 9350 50  0000 C CNN
+F 1 "100" V 4500 9350 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4430 9350 50  0001 C CNN
+F 3 "" H 4500 9350 50  0000 C CNN
+	1    4500 9350
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR060
+U 1 1 583E2C80
+P 4500 8900
+F 0 "#PWR060" H 4500 8750 50  0001 C CNN
+F 1 "+5V" H 4500 9040 50  0000 C CNN
+F 2 "" H 4500 8900 50  0000 C CNN
+F 3 "" H 4500 8900 50  0000 C CNN
+	1    4500 8900
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:R R7
+U 1 1 583E5861
+P 4950 10100
+F 0 "R7" V 5030 10100 50  0000 C CNN
+F 1 "10K" V 4950 10100 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4880 10100 50  0001 C CNN
+F 3 "" H 4950 10100 50  0000 C CNN
+	1    4950 10100
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:Q_NPN_EBC Q2
+U 1 1 583E5FE7
+P 5300 10100
+F 0 "Q2" H 5600 10150 50  0000 R CNN
+F 1 "2N3904" H 5900 10050 50  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5500 10200 50  0001 C CNN
+F 3 "" H 5300 10100 50  0000 C CNN
+	1    5300 10100
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR061
+U 1 1 583E61F0
+P 5400 10300
+F 0 "#PWR061" H 5400 10050 50  0001 C CNN
+F 1 "GND" H 5400 10150 50  0000 C CNN
+F 2 "" H 5400 10300 50  0000 C CNN
+F 3 "" H 5400 10300 50  0000 C CNN
+	1    5400 10300
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:R R8
+U 1 1 583E659E
+P 5400 9750
+F 0 "R8" V 5480 9750 50  0000 C CNN
+F 1 "100" V 5400 9750 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5330 9750 50  0001 C CNN
+F 3 "" H 5400 9750 50  0000 C CNN
+	1    5400 9750
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR062
+U 1 1 583E67D2
+P 5400 9300
+F 0 "#PWR062" H 5400 9150 50  0001 C CNN
+F 1 "+5V" H 5400 9440 50  0000 C CNN
+F 2 "" H 5400 9300 50  0000 C CNN
+F 3 "" H 5400 9300 50  0000 C CNN
+	1    5400 9300
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:R R9
+U 1 1 583E6B21
+P 6050 10400
+F 0 "R9" V 6130 10400 50  0000 C CNN
+F 1 "10K" V 6050 10400 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5980 10400 50  0001 C CNN
+F 3 "" H 6050 10400 50  0000 C CNN
+	1    6050 10400
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:Q_NPN_EBC Q3
+U 1 1 583E6C78
+P 6400 10400
+F 0 "Q3" H 6700 10450 50  0000 R CNN
+F 1 "2N3904" H 7000 10350 50  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 6600 10500 50  0001 C CNN
+F 3 "" H 6400 10400 50  0000 C CNN
+	1    6400 10400
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:R R10
+U 1 1 583E6D3B
+P 6500 10050
+F 0 "R10" V 6580 10050 50  0000 C CNN
+F 1 "100" V 6500 10050 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6430 10050 50  0001 C CNN
+F 3 "" H 6500 10050 50  0000 C CNN
+	1    6500 10050
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR063
+U 1 1 583E6F77
+P 6500 9600
+F 0 "#PWR063" H 6500 9450 50  0001 C CNN
+F 1 "+5V" H 6500 9740 50  0000 C CNN
+F 2 "" H 6500 9600 50  0000 C CNN
+F 3 "" H 6500 9600 50  0000 C CNN
+	1    6500 9600
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR064
+U 1 1 583E6FF5
+P 6500 10600
+F 0 "#PWR064" H 6500 10350 50  0001 C CNN
+F 1 "GND" H 6500 10450 50  0000 C CNN
+F 2 "" H 6500 10600 50  0000 C CNN
+F 3 "" H 6500 10600 50  0000 C CNN
+	1    6500 10600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 9800 3900 9800
+Wire Wire Line
+	3300 9900 3900 9900
+Wire Wire Line
+	3300 10000 3800 10000
+Wire Wire Line
+	4750 10200 4750 10600
+Wire Wire Line
+	4750 10600 5900 10600
+Wire Wire Line
+	5900 10600 5900 10400
+$Comp
+L tralala8088homebrew-rescue:PIC18(L)F4553-I_P U15
+U 1 1 5863154C
+P 8800 9300
+F 0 "U15" H 7900 10600 50  0000 C CNN
+F 1 "PIC18(L)F4553-I/P" H 9350 8000 50  0000 C CNN
+F 2 "Package_DIP:DIP-40_W15.24mm" H 8800 9500 50  0001 C CIN
+F 3 "" H 8800 9050 50  0000 C CNN
+	1    8800 9300
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR065
+U 1 1 586319F5
+P 8700 11000
+F 0 "#PWR065" H 8700 10750 50  0001 C CNN
+F 1 "GND" H 8700 10850 50  0000 C CNN
+F 2 "" H 8700 11000 50  0000 C CNN
+F 3 "" H 8700 11000 50  0000 C CNN
+	1    8700 11000
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C15
+U 1 1 58631CE2
+P 8950 11000
+F 0 "C15" H 8975 11100 50  0000 L CNN
+F 1 "100nF" H 8975 10900 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 8988 10850 50  0001 C CNN
+F 3 "" H 8950 11000 50  0000 C CNN
+	1    8950 11000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C14
+U 1 1 58631D91
+P 8550 11000
+F 0 "C14" H 8575 11100 50  0000 L CNN
+F 1 "100nF" H 8575 10900 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 8588 10850 50  0001 C CNN
+F 3 "" H 8550 11000 50  0000 C CNN
+	1    8550 11000
+	0    -1   -1   0   
+$EndComp
+Connection ~ 8700 11000
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR066
+U 1 1 5863200E
+P 9100 11000
+F 0 "#PWR066" H 9100 10850 50  0001 C CNN
+F 1 "+5V" H 9100 11140 50  0000 C CNN
+F 2 "" H 9100 11000 50  0000 C CNN
+F 3 "" H 9100 11000 50  0000 C CNN
+	1    9100 11000
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR067
+U 1 1 58632102
+P 8400 11000
+F 0 "#PWR067" H 8400 10850 50  0001 C CNN
+F 1 "+5V" H 8400 11140 50  0000 C CNN
+F 2 "" H 8400 11000 50  0000 C CNN
+F 3 "" H 8400 11000 50  0000 C CNN
+	1    8400 11000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR068
+U 1 1 58632DC1
+P 8800 7900
+F 0 "#PWR068" H 8800 7750 50  0001 C CNN
+F 1 "+5V" H 8800 8040 50  0000 C CNN
+F 2 "" H 8800 7900 50  0000 C CNN
+F 3 "" H 8800 7900 50  0000 C CNN
+	1    8800 7900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 11000 8700 10700
+Wire Wire Line
+	8700 11000 8800 11000
+Wire Wire Line
+	8800 11000 8800 10700
+Connection ~ 8800 11000
+Wire Wire Line
+	8700 7900 8800 7900
+Connection ~ 8800 7900
+$Comp
+L tralala8088homebrew-rescue:C C16
+U 1 1 58639772
+P 10250 9000
+F 0 "C16" H 10275 9100 50  0000 L CNN
+F 1 "220nF" H 10275 8900 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 10288 8850 50  0001 C CNN
+F 3 "" H 10250 9000 50  0000 C CNN
+	1    10250 9000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR069
+U 1 1 58639DB5
+P 10400 9000
+F 0 "#PWR069" H 10400 8750 50  0001 C CNN
+F 1 "GND" H 10400 8850 50  0000 C CNN
+F 2 "" H 10400 9000 50  0000 C CNN
+F 3 "" H 10400 9000 50  0000 C CNN
+	1    10400 9000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:Crystal Y1
+U 1 1 5863A609
+P 6850 8850
+F 0 "Y1" H 6850 9000 50  0000 C CNN
+F 1 "20.000 MHz" H 6850 8700 50  0000 C CNN
+F 2 "Crystal:Crystal_HC49-U_Vertical" H 6850 8850 50  0001 C CNN
+F 3 "" H 6850 8850 50  0000 C CNN
+	1    6850 8850
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C17
+U 1 1 5863BB1A
+P 6400 8700
+F 0 "C17" H 6425 8800 50  0000 L CNN
+F 1 "22pF" H 6425 8600 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 6438 8550 50  0001 C CNN
+F 3 "" H 6400 8700 50  0000 C CNN
+	1    6400 8700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C18
+U 1 1 5863BF45
+P 6400 9000
+F 0 "C18" H 6425 9100 50  0000 L CNN
+F 1 "22pF" H 6425 8900 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 6438 8850 50  0001 C CNN
+F 3 "" H 6400 9000 50  0000 C CNN
+	1    6400 9000
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6850 8700
+Connection ~ 6850 9000
+$Comp
+L tralala8088homebrew-rescue:GND #PWR070
+U 1 1 5863C75C
+P 6250 9000
+F 0 "#PWR070" H 6250 8750 50  0001 C CNN
+F 1 "GND" H 6250 8850 50  0000 C CNN
+F 2 "" H 6250 9000 50  0000 C CNN
+F 3 "" H 6250 9000 50  0000 C CNN
+	1    6250 9000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 9000 6250 8700
+$Comp
+L tralala8088homebrew-rescue:CONN_01X10 P7
+U 1 1 586458DB
+P 11600 9750
+F 0 "P7" H 11600 10300 50  0000 C CNN
+F 1 "CONN_01X10" V 11700 9750 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 11600 9750 50  0001 C CNN
+F 3 "" H 11600 9750 50  0000 C CNN
+	1    11600 9750
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR073
+U 1 1 58645DB8
+P 11400 9300
+F 0 "#PWR073" H 11400 9150 50  0001 C CNN
+F 1 "+5V" H 11400 9440 50  0000 C CNN
+F 2 "" H 11400 9300 50  0000 C CNN
+F 3 "" H 11400 9300 50  0000 C CNN
+	1    11400 9300
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR074
+U 1 1 58646197
+P 11400 10200
+F 0 "#PWR074" H 11400 9950 50  0001 C CNN
+F 1 "GND" H 11400 10050 50  0000 C CNN
+F 2 "" H 11400 10200 50  0000 C CNN
+F 3 "" H 11400 10200 50  0000 C CNN
+	1    11400 10200
+	1    0    0    -1  
+$EndComp
+Text Label 10900 9400 0    60   ~ 0
+TFT_MISO
+Wire Wire Line
+	10900 9400 11400 9400
+Text Label 7250 9200 0    60   ~ 0
+TFT_MISO
+Wire Wire Line
+	7250 9200 7700 9200
+Text Label 10900 9500 0    60   ~ 0
+TFT_SCK
+Wire Wire Line
+	10900 9500 11400 9500
+Text Label 7250 9300 0    60   ~ 0
+TFT_SCK
+Wire Wire Line
+	7250 9300 7700 9300
+Wire Wire Line
+	6550 9000 6850 9000
+Wire Wire Line
+	7700 8800 7100 8800
+Wire Wire Line
+	7100 8800 7100 8700
+Wire Wire Line
+	7100 8700 6850 8700
+Text Label 10900 9600 0    60   ~ 0
+TFT_MOSI
+Wire Wire Line
+	10600 9600 11400 9600
+Text Label 10400 8800 2    60   ~ 0
+TFT_MOSI
+Wire Wire Line
+	9900 8800 10600 8800
+Text Label 10900 9700 0    60   ~ 0
+TFT_LCD_CS
+Wire Wire Line
+	10500 9700 11400 9700
+Wire Wire Line
+	10500 9700 10500 10100
+Wire Wire Line
+	10500 10100 9900 10100
+Text Label 10900 9800 0    60   ~ 0
+TFT_SD_CS
+Wire Wire Line
+	10600 9800 11400 9800
+Wire Wire Line
+	10600 9800 10600 10200
+Wire Wire Line
+	10600 10200 9900 10200
+Text Label 10900 9900 0    60   ~ 0
+TFT_D_C
+Wire Wire Line
+	10700 9900 11400 9900
+Wire Wire Line
+	10700 10300 9900 10300
+Wire Wire Line
+	10700 9900 10700 10300
+Text Label 10900 10000 0    60   ~ 0
+TFT_Reset
+Text Label 10400 8700 2    60   ~ 0
+TFT_Reset
+Wire Wire Line
+	9900 8700 10800 8700
+Wire Wire Line
+	10800 10000 11400 10000
+NoConn ~ 11400 10100
+NoConn ~ 9900 8400
+NoConn ~ 9900 8300
+NoConn ~ 9900 8200
+NoConn ~ 7700 8200
+NoConn ~ 7700 8300
+NoConn ~ 7700 8400
+NoConn ~ 7700 8500
+NoConn ~ 7700 8600
+NoConn ~ 7700 8700
+Wire Wire Line
+	9900 9000 10100 9000
+$Comp
+L tralala8088homebrew-rescue:CONN_02X03 P8
+U 1 1 5886789D
+P 13850 8900
+F 0 "P8" H 13850 9100 50  0000 C CNN
+F 1 "CONN_02X03" H 13850 8700 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" H 13850 7700 50  0001 C CNN
+F 3 "" H 13850 7700 50  0000 C CNN
+	1    13850 8900
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR075
+U 1 1 58867CC1
+P 14100 9000
+F 0 "#PWR075" H 14100 8750 50  0001 C CNN
+F 1 "GND" H 14100 8850 50  0000 C CNN
+F 2 "" H 14100 9000 50  0000 C CNN
+F 3 "" H 14100 9000 50  0000 C CNN
+	1    14100 9000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR076
+U 1 1 58867D53
+P 13600 9000
+F 0 "#PWR076" H 13600 8750 50  0001 C CNN
+F 1 "GND" H 13600 8850 50  0000 C CNN
+F 2 "" H 13600 9000 50  0000 C CNN
+F 3 "" H 13600 9000 50  0000 C CNN
+	1    13600 9000
+	0    1    1    0   
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR077
+U 1 1 5886814A
+P 14100 8800
+F 0 "#PWR077" H 14100 8650 50  0001 C CNN
+F 1 "+5V" H 14100 8940 50  0000 C CNN
+F 2 "" H 14100 8800 50  0000 C CNN
+F 3 "" H 14100 8800 50  0000 C CNN
+	1    14100 8800
+	0    1    1    0   
+$EndComp
+Text Label 13000 8900 0    60   ~ 0
+PIC_PGC
+Wire Wire Line
+	14100 8900 14700 8900
+Text Label 14700 8900 2    60   ~ 0
+PIC_PGD
+Wire Wire Line
+	13000 8900 13600 8900
+Text Label 7300 9900 0    60   ~ 0
+PIC_PGD
+Text Label 7300 9800 0    60   ~ 0
+PIC_PGC
+Wire Wire Line
+	7300 9800 7700 9800
+Wire Wire Line
+	7300 9900 7700 9900
+Text Label 10200 11100 0    60   ~ 0
+PIC_VPP
+Text Label 13000 8800 0    60   ~ 0
+PIC_VPP
+Wire Wire Line
+	900  1400 1050 1400
+Text Label 3700 8000 2    60   ~ 0
+ICH_D0
+Text Label 3700 8100 2    60   ~ 0
+ICH_D1
+Text Label 3700 8200 2    60   ~ 0
+ICH_D2
+Text Label 3700 8300 2    60   ~ 0
+ICH_D3
+Text Label 3700 8400 2    60   ~ 0
+ICH_D4
+Text Label 3700 8500 2    60   ~ 0
+ICH_D5
+Text Label 3700 8600 2    60   ~ 0
+ICH_D6
+Text Label 3700 8700 2    60   ~ 0
+ICH_D7
+Wire Wire Line
+	3700 8000 3300 8000
+Wire Wire Line
+	3300 8100 3700 8100
+Wire Wire Line
+	3300 8200 3700 8200
+Wire Wire Line
+	3300 8300 3700 8300
+Wire Wire Line
+	3300 8400 3700 8400
+Wire Wire Line
+	3300 8500 3700 8500
+Wire Wire Line
+	3300 8600 3700 8600
+Wire Wire Line
+	3300 8700 3700 8700
+Text Label 10300 9200 2    60   ~ 0
+ICH_D0
+Text Label 10300 9300 2    60   ~ 0
+ICH_D1
+Text Label 10300 9400 2    60   ~ 0
+ICH_D2
+Text Label 10300 9500 2    60   ~ 0
+ICH_D3
+Text Label 10300 9600 2    60   ~ 0
+ICH_D4
+Text Label 10300 9700 2    60   ~ 0
+ICH_D5
+Text Label 10300 9800 2    60   ~ 0
+ICH_D6
+Text Label 10300 9900 2    60   ~ 0
+ICH_D7
+Wire Wire Line
+	10300 9200 9900 9200
+Wire Wire Line
+	10300 9300 9900 9300
+Wire Wire Line
+	9900 9400 10300 9400
+Wire Wire Line
+	10300 9500 9900 9500
+Wire Wire Line
+	10300 9600 9900 9600
+Wire Wire Line
+	10300 9700 9900 9700
+Wire Wire Line
+	10300 9800 9900 9800
+Wire Wire Line
+	10300 9900 9900 9900
+Text Label 3700 10500 2    60   ~ 0
+ICH_OBF
+Wire Wire Line
+	3300 10500 3700 10500
+Text Label 3700 10400 2    60   ~ 0
+ICH_ACK
+Wire Wire Line
+	3300 10400 3700 10400
+Text Label 3700 10300 2    60   ~ 0
+ICH_IBF
+Wire Wire Line
+	3300 10300 3700 10300
+Wire Wire Line
+	3900 9900 3900 10100
+Wire Wire Line
+	3900 10100 4800 10100
+Wire Wire Line
+	3800 10000 3800 10200
+Wire Wire Line
+	3800 10200 4750 10200
+Wire Wire Line
+	3900 9800 3900 9700
+Text Label 3700 10200 2    60   ~ 0
+ICH_STB
+Wire Wire Line
+	3300 10200 3700 10200
+Text Label 7300 9400 0    60   ~ 0
+ICH_OBF
+Text Label 7300 9500 0    60   ~ 0
+ICH_ACK
+Text Label 7300 9600 0    60   ~ 0
+ICH_IBF
+Text Label 7300 9700 0    60   ~ 0
+ICH_STB
+Wire Wire Line
+	7300 9700 7700 9700
+Wire Wire Line
+	7300 9600 7700 9600
+Wire Wire Line
+	7300 9500 7700 9500
+Wire Wire Line
+	7300 9400 7700 9400
+Wire Wire Line
+	13000 8800 13600 8800
+$Comp
+L tralala8088homebrew-rescue:C C19
+U 1 1 5895729E
+P 11050 10750
+F 0 "C19" H 11075 10850 50  0000 L CNN
+F 1 "100nF" H 11075 10650 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 11088 10600 50  0001 C CNN
+F 3 "" H 11050 10750 50  0000 C CNN
+	1    11050 10750
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:R R11
+U 1 1 5895742B
+P 11050 10450
+F 0 "R11" V 11130 10450 50  0000 C CNN
+F 1 "47K" V 11050 10450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10980 10450 50  0001 C CNN
+F 3 "" H 11050 10450 50  0000 C CNN
+	1    11050 10450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10900 10600 11050 10600
+Connection ~ 11050 10600
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR078
+U 1 1 58957C63
+P 11050 10300
+F 0 "#PWR078" H 11050 10150 50  0001 C CNN
+F 1 "+5V" H 11050 10440 50  0000 C CNN
+F 2 "" H 11050 10300 50  0000 C CNN
+F 3 "" H 11050 10300 50  0000 C CNN
+	1    11050 10300
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:GND #PWR079
+U 1 1 58957CFD
+P 11050 10900
+F 0 "#PWR079" H 11050 10650 50  0001 C CNN
+F 1 "GND" H 11050 10750 50  0000 C CNN
+F 2 "" H 11050 10900 50  0000 C CNN
+F 3 "" H 11050 10900 50  0000 C CNN
+	1    11050 10900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10600 8800 10600 9600
+Wire Wire Line
+	10800 8700 10800 10000
+Wire Wire Line
+	10900 10400 10900 10600
+Wire Wire Line
+	10200 11100 10600 11100
+Wire Wire Line
+	10600 11100 10600 10700
+Wire Wire Line
+	9900 10400 10600 10400
+$Comp
+L tralala8088homebrew-rescue:SW_PUSH SW2
+U 1 1 5897581C
+P 9900 10700
+F 0 "SW2" H 10050 10810 50  0000 C CNN
+F 1 "RESET_PIC" H 9900 10620 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm_H5mm" H 9900 10700 50  0001 C CNN
+F 3 "" H 9900 10700 50  0000 C CNN
+	1    9900 10700
+	0    1    1    0   
+$EndComp
+Connection ~ 9900 10400
+$Comp
+L tralala8088homebrew-rescue:GND #PWR080
+U 1 1 58975A4B
+P 9900 11000
+F 0 "#PWR080" H 9900 10750 50  0001 C CNN
+F 1 "GND" H 9900 10850 50  0000 C CNN
+F 2 "" H 9900 11000 50  0000 C CNN
+F 3 "" H 9900 11000 50  0000 C CNN
+	1    9900 11000
+	1    0    0    -1  
+$EndComp
+Text Label 11300 1600 0    60   ~ 0
+BUF_A8
+Text Label 11300 1700 0    60   ~ 0
+BUF_A9
+Wire Wire Line
+	11300 1600 11700 1600
+Wire Wire Line
+	11300 1700 11700 1700
+$Comp
+L tralala8088homebrew-rescue:74LS373 U7
+U 1 1 57E8E100
+P 6400 5750
+F 0 "U7" H 6400 5750 50  0000 C CNN
+F 1 "74HCT373" H 6450 5400 50  0000 C CNN
+F 2 "Package_DIP:DIP-20_W7.62mm" H 6400 5750 50  0001 C CNN
+F 3 "" H 6400 5750 50  0000 C CNN
+	1    6400 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11150 6600 11450 6600
+Connection ~ 11450 6600
+Connection ~ 11750 6600
+Connection ~ 12050 6600
+Connection ~ 12350 6600
+Connection ~ 12650 6600
+Connection ~ 12950 6600
+Connection ~ 13250 6600
+Connection ~ 13550 6600
+$Comp
+L tralala8088homebrew-rescue:GND #PWR081
+U 1 1 58B2A08A
+P 11150 6600
+F 0 "#PWR081" H 11150 6350 50  0001 C CNN
+F 1 "GND" H 11150 6450 50  0000 C CNN
+F 2 "" H 11150 6600 50  0000 C CNN
+F 3 "" H 11150 6600 50  0000 C CNN
+	1    11150 6600
+	1    0    0    -1  
+$EndComp
+Connection ~ 11150 6600
+Wire Wire Line
+	11150 6300 11450 6300
+Connection ~ 11450 6300
+Connection ~ 11750 6300
+Connection ~ 12050 6300
+Connection ~ 12350 6300
+Connection ~ 12650 6300
+Connection ~ 12950 6300
+Connection ~ 13250 6300
+Connection ~ 13550 6300
+$Comp
+L tralala8088homebrew-rescue:+5V #PWR082
+U 1 1 58B2A9A6
+P 11150 6300
+F 0 "#PWR082" H 11150 6150 50  0001 C CNN
+F 1 "+5V" H 11150 6440 50  0000 C CNN
+F 2 "" H 11150 6300 50  0000 C CNN
+F 3 "" H 11150 6300 50  0000 C CNN
+	1    11150 6300
+	1    0    0    -1  
+$EndComp
+Connection ~ 11150 6300
+$Comp
+L tralala8088homebrew-rescue:C C20
+U 1 1 58B2EFEE
+P 14150 6450
+F 0 "C20" H 14175 6550 50  0000 L CNN
+F 1 "100nF" H 14175 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 14188 6300 50  0001 C CNN
+F 3 "" H 14150 6450 50  0000 C CNN
+	1    14150 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:C C21
+U 1 1 58B3131A
+P 14450 6450
+F 0 "C21" H 14475 6550 50  0000 L CNN
+F 1 "100nF" H 14475 6350 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm" H 14488 6300 50  0001 C CNN
+F 3 "" H 14450 6450 50  0000 C CNN
+	1    14450 6450
+	1    0    0    -1  
+$EndComp
+Connection ~ 13850 6300
+Connection ~ 14150 6300
+Connection ~ 13850 6600
+Connection ~ 14150 6600
+$Comp
+L tralala8088homebrew-rescue:CP C22
+U 1 1 58B32B40
+P 14750 6450
+F 0 "C22" H 14775 6550 50  0000 L CNN
+F 1 "100uF" H 14775 6350 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 14788 6300 50  0001 C CNN
+F 3 "" H 14750 6450 50  0000 C CNN
+	1    14750 6450
+	1    0    0    -1  
+$EndComp
+Connection ~ 14450 6600
+Connection ~ 14450 6300
+Wire Wire Line
+	3300 2200 3400 2200
+Wire Wire Line
+	3400 2200 3500 2200
+Wire Wire Line
+	3300 2900 3400 2900
+Wire Wire Line
+	3400 2900 3500 2900
+Wire Wire Line
+	3200 2900 3300 2900
+Wire Wire Line
+	3200 2200 3300 2200
+Wire Wire Line
+	1350 1300 1500 1300
+Wire Wire Line
+	7450 3150 7450 3250
+Wire Wire Line
+	1700 5800 1950 5800
+Wire Wire Line
+	6850 8700 6550 8700
+Wire Wire Line
+	6850 9000 7700 9000
+Wire Wire Line
+	11450 6600 11750 6600
+Wire Wire Line
+	11750 6600 12050 6600
+Wire Wire Line
+	12050 6600 12350 6600
+Wire Wire Line
+	12350 6600 12650 6600
+Wire Wire Line
+	12650 6600 12950 6600
+Wire Wire Line
+	12950 6600 13250 6600
+Wire Wire Line
+	13250 6600 13550 6600
+Wire Wire Line
+	13550 6600 13850 6600
+Wire Wire Line
+	11450 6300 11750 6300
+Wire Wire Line
+	11750 6300 12050 6300
+Wire Wire Line
+	12050 6300 12350 6300
+Wire Wire Line
+	12350 6300 12650 6300
+Wire Wire Line
+	12650 6300 12950 6300
+Wire Wire Line
+	12950 6300 13250 6300
+Wire Wire Line
+	13250 6300 13550 6300
+Wire Wire Line
+	13550 6300 13850 6300
+Wire Wire Line
+	13850 6300 14150 6300
+Wire Wire Line
+	14150 6300 14450 6300
+Wire Wire Line
+	13850 6600 14150 6600
+Wire Wire Line
+	14150 6600 14450 6600
+Wire Wire Line
+	14450 6600 14750 6600
+Wire Wire Line
+	14450 6300 14750 6300
+NoConn ~ 11200 8400
+$Comp
+L Connector_modified:USB_B P6
+U 1 1 6171C13C
+P 11100 8500
+F 0 "P6" H 10870 8489 50  0000 R CNN
+F 1 "USB_B" H 10870 8398 50  0000 R CNN
+F 2 "Connector_USB:USB_B_Lumberg_2411_02_Horizontal" H 11250 8450 50  0001 C CNN
+F 3 " ~" H 11250 8450 50  0001 C CNN
+	1    11100 8500
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	10800 8500 9900 8500
+Wire Wire Line
+	9900 8600 10800 8600
+$Comp
+L power:GND #PWR0101
+U 1 1 617BFF95
+P 11150 9000
+F 0 "#PWR0101" H 11150 8750 50  0001 C CNN
+F 1 "GND" H 11155 8827 50  0000 C CNN
+F 2 "" H 11150 9000 50  0001 C CNN
+F 3 "" H 11150 9000 50  0001 C CNN
+	1    11150 9000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11200 8900 11200 8950
+Wire Wire Line
+	11200 8950 11150 8950
+Wire Wire Line
+	11150 8950 11150 9000
+Wire Wire Line
+	11150 8950 11100 8950
+Wire Wire Line
+	11100 8950 11100 8900
+Connection ~ 11150 8950
+$Comp
+L Device:LED D3
+U 1 1 6185DF14
+P 4500 9050
+F 0 "D3" V 4539 8932 50  0000 R CNN
+F 1 "LED_GREEN" V 4448 8932 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 4500 9050 50  0001 C CNN
+F 3 "~" H 4500 9050 50  0001 C CNN
+	1    4500 9050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D4
+U 1 1 6185EC7B
+P 5400 9450
+F 0 "D4" V 5439 9332 50  0000 R CNN
+F 1 "LED_YELLOW" V 5348 9332 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 5400 9450 50  0001 C CNN
+F 3 "~" H 5400 9450 50  0001 C CNN
+	1    5400 9450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D5
+U 1 1 6185F8C5
+P 6500 9750
+F 0 "D5" V 6539 9632 50  0000 R CNN
+F 1 "LED_RED" V 6448 9632 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 6500 9750 50  0001 C CNN
+F 3 "~" H 6500 9750 50  0001 C CNN
+	1    6500 9750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Diode:1N4148 D7
+U 1 1 618BDACB
+P 10750 10400
+F 0 "D7" H 10750 10600 50  0000 C CNN
+F 1 "1N4148" H 10850 10500 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 10750 10225 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 10750 10400 50  0001 C CNN
+	1    10750 10400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4148 D6
+U 1 1 618BEB98
+P 10600 10550
+F 0 "D6" V 10650 10600 50  0000 L CNN
+F 1 "1N4148" V 10750 10600 50  0000 L CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 10600 10375 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 10600 10550 50  0001 C CNN
+	1    10600 10550
+	0    1    1    0   
+$EndComp
+Connection ~ 10600 10400
+NoConn ~ 10800 8300
+Wire Wire Line
+	14600 5100 14500 5100
+Wire Wire Line
+	14500 5150 14500 5100
+Connection ~ 14500 5100
+Wire Wire Line
+	14500 5500 14500 5450
+Wire Wire Line
+	14500 5500 15000 5500
+Wire Wire Line
+	15000 5500 15000 5550
+Connection ~ 14500 5500
+Wire Wire Line
+	15000 5500 15000 5400
+Connection ~ 15000 5500
+Wire Wire Line
+	15000 5500 15500 5500
+Wire Wire Line
+	15500 5500 15500 5450
+Wire Wire Line
+	15500 5150 15500 5100
+Wire Wire Line
+	15400 5100 15500 5100
+Connection ~ 15500 5100
+Wire Wire Line
+	15500 5100 15500 5050
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 61D28D6A
+P 13900 7200
+F 0 "H1" V 13854 7350 50  0000 L CNN
+F 1 "MountingHole_Pad" V 13945 7350 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 13900 7200 50  0001 C CNN
+F 3 "~" H 13900 7200 50  0001 C CNN
+	1    13900 7200
+	0    1    1    0   
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 61D2DB8E
+P 13900 7400
+F 0 "H2" V 13854 7550 50  0000 L CNN
+F 1 "MountingHole_Pad" V 13945 7550 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 13900 7400 50  0001 C CNN
+F 3 "~" H 13900 7400 50  0001 C CNN
+	1    13900 7400
+	0    1    1    0   
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H3
+U 1 1 61D66310
+P 13900 7600
+F 0 "H3" V 13854 7750 50  0000 L CNN
+F 1 "MountingHole_Pad" V 13945 7750 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 13900 7600 50  0001 C CNN
+F 3 "~" H 13900 7600 50  0001 C CNN
+	1    13900 7600
+	0    1    1    0   
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H4
+U 1 1 61D9E9E7
+P 13900 7800
+F 0 "H4" V 13854 7950 50  0000 L CNN
+F 1 "MountingHole_Pad" V 13945 7950 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 13900 7800 50  0001 C CNN
+F 3 "~" H 13900 7800 50  0001 C CNN
+	1    13900 7800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	13800 7200 13750 7200
+Wire Wire Line
+	13750 7200 13750 7400
+Wire Wire Line
+	13800 7800 13750 7800
+Connection ~ 13750 7800
+Wire Wire Line
+	13800 7600 13750 7600
+Connection ~ 13750 7600
+Wire Wire Line
+	13750 7600 13750 7800
+Wire Wire Line
+	13800 7400 13750 7400
+Connection ~ 13750 7400
+Wire Wire Line
+	13750 7400 13750 7600
+Wire Wire Line
+	13750 7800 13750 7950
+$Comp
+L power:GND #PWR0102
+U 1 1 61DD772C
+P 13750 7950
+F 0 "#PWR0102" H 13750 7700 50  0001 C CNN
+F 1 "GND" H 13755 7777 50  0000 C CNN
+F 2 "" H 13750 7950 50  0001 C CNN
+F 3 "" H 13750 7950 50  0001 C CNN
+	1    13750 7950
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:PWR_FLAG #FLG?
+U 1 1 61269515
+P 14500 5050
+F 0 "#FLG?" H 14500 5145 50  0001 C CNN
+F 1 "PWR_FLAG" H 14500 5230 50  0000 C CNN
+F 2 "" H 14500 5050 50  0000 C CNN
+F 3 "" H 14500 5050 50  0000 C CNN
+	1    14500 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L tralala8088homebrew-rescue:PWR_FLAG #FLG?
+U 1 1 6126F80D
+P 13850 5050
+F 0 "#FLG?" H 13850 5145 50  0001 C CNN
+F 1 "PWR_FLAG" H 13850 5230 50  0000 C CNN
+F 2 "" H 13850 5050 50  0000 C CNN
+F 3 "" H 13850 5050 50  0000 C CNN
+	1    13850 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13750 5200 13800 5200
+Wire Wire Line
+	13800 5200 13800 5300
+Wire Wire Line
+	13800 5300 13750 5300
+Wire Wire Line
+	13800 5300 13800 5500
+Wire Wire Line
+	13800 5500 14500 5500
+Connection ~ 13800 5300
+$Comp
+L Diode:1N4002 D2
+U 1 1 618D4368
+P 14150 5100
+F 0 "D2" H 14150 4883 50  0000 C CNN
+F 1 "1N4002" H 14150 4974 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 14150 4925 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 14150 5100 50  0001 C CNN
+	1    14150 5100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	13850 5100 13850 5050
+Wire Wire Line
+	13850 5100 13750 5100
+Connection ~ 13850 5100
+Wire Wire Line
+	13850 5100 14000 5100
+Wire Wire Line
+	14300 5100 14500 5100
+$EndSCHEMATC

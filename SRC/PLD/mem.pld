@@ -1,0 +1,59 @@
+GAL16V8
+
+
+;  1       2       3    4      5         6       7        8        9    10 
+BUFA16 BUFA17 BUFA18  BUFA19  MRD      MWR      NC       NC       NC   GND
+
+; 11      12      13      14      15      16      17      18      19    20       
+  NC    ROMCE  RAM896K RAM768K RAM640K RAM512K RAM384K RAM256K RAM128K VCC
+
+
+;/* Ram chips de 64Kbytes */
+/RAM128K = /BUFA19 * /BUFA18 * /BUFA17 * /BUFA16 * /MRD 
+         + /BUFA19 * /BUFA18 * /BUFA17 * /BUFA16 * /MWR 
+         + /BUFA19 * /BUFA18 * /BUFA17 *  BUFA16 * /MRD 
+         + /BUFA19 * /BUFA18 * /BUFA17 *  BUFA16 * /MWR
+/RAM256K = /BUFA19 * /BUFA18 *  BUFA17 * /BUFA16 * /MRD 
+         + /BUFA19 * /BUFA18 *  BUFA17 * /BUFA16 * /MWR 
+         + /BUFA19 * /BUFA18 *  BUFA17 *  BUFA16 * /MRD
+         + /BUFA19 * /BUFA18 *  BUFA17 *  BUFA16 * /MWR 
+/RAM384K = /BUFA19 *  BUFA18 * /BUFA17 * /BUFA16 * /MRD 
+         + /BUFA19 *  BUFA18 * /BUFA17 * /BUFA16 * /MWR 
+         + /BUFA19 *  BUFA18 * /BUFA17 *  BUFA16 * /MRD
+         + /BUFA19 *  BUFA18 * /BUFA17 *  BUFA16 * /MWR
+/RAM512K = /BUFA19 *  BUFA18 *  BUFA17 * /BUFA16 * /MRD 
+         + /BUFA19 *  BUFA18 *  BUFA17 * /BUFA16 * /MWR 
+         + /BUFA19 *  BUFA18 *  BUFA17 *  BUFA16 * /MRD
+         + /BUFA19 *  BUFA18 *  BUFA17 *  BUFA16 * /MWR
+/RAM640K =  BUFA19 * /BUFA18 * /BUFA17 * /BUFA16 * /MRD
+         +  BUFA19 * /BUFA18 * /BUFA17 * /BUFA16 * /MWR
+         +  BUFA19 * /BUFA18 * /BUFA17 *  BUFA16 * /MRD
+         +  BUFA19 * /BUFA18 * /BUFA17 *  BUFA16 * /MWR
+/RAM768K =  BUFA19 * /BUFA18 *  BUFA17 * /BUFA16 * /MRD
+         +  BUFA19 * /BUFA18 *  BUFA17 * /BUFA16 * /MWR
+         +  BUFA19 * /BUFA18 *  BUFA17 *  BUFA16 * /MRD
+         +  BUFA19 * /BUFA18 *  BUFA17 *  BUFA16 * /MWR
+/RAM896K =  BUFA19 *  BUFA18 * /BUFA17 * /BUFA16 * /MRD
+         +  BUFA19 *  BUFA18 * /BUFA17 * /BUFA16 * /MWR
+         +  BUFA19 *  BUFA18 * /BUFA17 *  BUFA16 * /MRD
+         +  BUFA19 *  BUFA18 * /BUFA17 *  BUFA16 * /MWR
+/ROMCE   =  BUFA19 *  BUFA18 *  BUFA17 * /BUFA16 * /MRD
+         +  BUFA19 *  BUFA18 *  BUFA17 * /BUFA16 * /MWR
+         +  BUFA19 *  BUFA18 *  BUFA17 *  BUFA16 * /MRD
+         +  BUFA19 *  BUFA18 *  BUFA17 *  BUFA16 * /MWR
+
+DESCRIPTION
+
+;Name      MY_PCXT;
+;PartNo    2024112001;
+;Date      2024/11/20;
+;Revision  01;
+;Designer  PDSilva        ;
+;Company   Open Software Ltda;
+;Assembly  None;
+;Location  None;
+;Device    GAL16V8;
+;TOTAL 
+;SRAM = 640K bytes
+;ROM  = 32K bytes	
+;*/

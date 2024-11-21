@@ -1,0 +1,25 @@
+
+
+ Pin # | Name     | Pin Type
+-----------------------------
+   1   | BUFA16   | Input
+   2   | BUFA17   | Input
+   3   | BUFA18   | Input
+   4   | BUFA19   | Input
+   5   | MRD      | Input
+   6   | MWR      | Input
+   7   | NC       | Input
+   8   | NC       | Input
+   9   | NC       | Input
+  10   | GND      | GND
+  11   | NC       | Input
+  12   | ROMCE    | Output
+  13   | RAM896K  | Output
+  14   | RAM768K  | Output
+  15   | RAM640K  | Output
+  16   | RAM512K  | Output
+  17   | RAM384K  | Output
+  18   | RAM256K  | Output
+  19   | RAM128K  | Output
+  20   | VCC      | VCC
+

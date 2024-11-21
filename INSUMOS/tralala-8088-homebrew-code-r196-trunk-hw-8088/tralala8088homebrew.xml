@@ -1,0 +1,2257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/cartogan/Programs/tralala-8088-homebrew-code/trunk/hw/v0.1/tralala8088homebrew.sch</source>
+    <date>22.08.2021 (нд)  2:05:18</date>
+    <tool>Eeschema 5.1.10</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Tralala 8088 Homebrew Computer</title>
+        <company>Copyright (C) 2016, 2017 Nikolay Nikolov &lt;nickysn@users.sourceforge.net&gt;</company>
+        <rev>0.1</rev>
+        <date>2017-02-25</date>
+        <source>tralala8088homebrew.sch</source>
+        <comment number="1" value="PO Box 1866, Mountain View, CA 94042, USA."/>
+        <comment number="2" value="http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons,"/>
+        <comment number="3" value="License. To view a copy of this license, visit"/>
+        <comment number="4" value="This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported"/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U1">
+      <value>8284</value>
+      <footprint>Package_DIP:DIP-18_W7.62mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="8284" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E55EE3</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>DIL8</value>
+      <footprint>Package_DIP:DIP-8_W7.62mm_Socket</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="DIL8" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E56A1E</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>510</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E56E5E</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>510</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E57033</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>4.7uF</value>
+      <footprint>Capacitor_THT:C_Radial_D5.0mm_H11.0mm_P2.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="CP" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E573D9</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>10K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E577CE</tstamp>
+    </comp>
+    <comp ref="SW1">
+      <value>RESET_8088</value>
+      <footprint>Button_Switch_THT:SW_PUSH_6mm_H5mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="SW_PUSH" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E57949</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>1N4148</value>
+      <footprint>Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="D" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E5810B</tstamp>
+    </comp>
+    <comp ref="P2">
+      <value>CONN_02X20</value>
+      <footprint>Connector_IDC:IDC-Header_2x20_P2.54mm_Vertical</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="CONN_02X20" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E59B48</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>8088</value>
+      <footprint>Socket:DIP_Socket-40_W22.1_W22.86_W25.4_W27.94_W28.7_3M_240-3639-00-0602J</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="8088_Max_Mode" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E5D043</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E5D885</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E68D0A</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>8288</value>
+      <footprint>Package_DIP:DIP-20_W7.62mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="8288" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E7D979</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E7DDC2</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>74HCT245</value>
+      <footprint>Package_DIP:DIP-20_W7.62mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="74LS245" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E807AE</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E81A66</tstamp>
+    </comp>
+    <comp ref="U5">
+      <value>74HCT373</value>
+      <footprint>Package_DIP:DIP-20_W7.62mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="74LS373" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E834A0</tstamp>
+    </comp>
+    <comp ref="U6">
+      <value>74HCT373</value>
+      <footprint>Package_DIP:DIP-20_W7.62mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="74LS373" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E888B6</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E8A34D</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E8A4D6</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E8E469</tstamp>
+    </comp>
+    <comp ref="U8">
+      <value>SRAM_512Ko</value>
+      <footprint>Package_DIP:DIP-32_W15.24mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="SRAM_512Ko" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E762F9</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E799DC</tstamp>
+    </comp>
+    <comp ref="U9">
+      <value>SST39SF020</value>
+      <footprint>Socket:DIP_Socket-32_W11.9_W12.7_W15.24_W17.78_W18.5_3M_232-1285-00-0602J</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="SST39SF020" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E7BF03</tstamp>
+    </comp>
+    <comp ref="U11">
+      <value>8259A</value>
+      <footprint>Package_DIP:DIP-28_W15.24mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="8259A" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57EEC6D7</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57EECA0C</tstamp>
+    </comp>
+    <comp ref="U12">
+      <value>74HCT138</value>
+      <footprint>Package_DIP:DIP-16_W7.62mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="74LS138" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57EF1F9E</tstamp>
+    </comp>
+    <comp ref="C11">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57EF2548</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>4.7K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57EF5722</tstamp>
+    </comp>
+    <comp ref="P3">
+      <value>CONN_01X02</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="CONN_01X02" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>58027EEB</tstamp>
+    </comp>
+    <comp ref="P4">
+      <value>CONN_01X03</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="CONN_01X03" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5803B48F</tstamp>
+    </comp>
+    <comp ref="P5">
+      <value>CONN_01X03</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="CONN_01X03" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>580B87D1</tstamp>
+    </comp>
+    <comp ref="U13">
+      <value>82C55A</value>
+      <footprint>Package_DIP:DIP-40_W15.24mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="8255A" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>580C2860</tstamp>
+    </comp>
+    <comp ref="U14">
+      <value>7805</value>
+      <footprint>Package_TO_SOT_THT:TO-220-3_Vertical</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="7805" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>58374996</tstamp>
+    </comp>
+    <comp ref="C13">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>58374B66</tstamp>
+    </comp>
+    <comp ref="CON1">
+      <value>BARREL_JACK</value>
+      <footprint>Connector_BarrelJack:BarrelJack_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="BARREL_JACK" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5837734A</tstamp>
+    </comp>
+    <comp ref="C12">
+      <value>330nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>58377B51</tstamp>
+    </comp>
+    <comp ref="U10">
+      <value>74HCT00</value>
+      <footprint>Package_DIP:DIP-14_W7.62mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="74HC00" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>583CB136</tstamp>
+    </comp>
+    <comp ref="Q1">
+      <value>2N3904</value>
+      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="Q_NPN_EBC" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>583E221F</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>10K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>583E2656</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>100</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>583E27AC</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>10K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>583E5861</tstamp>
+    </comp>
+    <comp ref="Q2">
+      <value>2N3904</value>
+      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="Q_NPN_EBC" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>583E5FE7</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>100</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>583E659E</tstamp>
+    </comp>
+    <comp ref="R9">
+      <value>10K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>583E6B21</tstamp>
+    </comp>
+    <comp ref="Q3">
+      <value>2N3904</value>
+      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="Q_NPN_EBC" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>583E6C78</tstamp>
+    </comp>
+    <comp ref="R10">
+      <value>100</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>583E6D3B</tstamp>
+    </comp>
+    <comp ref="U15">
+      <value>PIC18(L)F4553-I/P</value>
+      <footprint>Package_DIP:DIP-40_W15.24mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="PIC18(L)F4553-I_P" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5863154C</tstamp>
+    </comp>
+    <comp ref="C15">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>58631CE2</tstamp>
+    </comp>
+    <comp ref="C14">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>58631D91</tstamp>
+    </comp>
+    <comp ref="C16">
+      <value>220nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>58639772</tstamp>
+    </comp>
+    <comp ref="Y1">
+      <value>20.000 MHz</value>
+      <footprint>Crystal:Crystal_HC49-U_Vertical</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="Crystal" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5863A609</tstamp>
+    </comp>
+    <comp ref="C17">
+      <value>22pF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5863BB1A</tstamp>
+    </comp>
+    <comp ref="C18">
+      <value>22pF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5863BF45</tstamp>
+    </comp>
+    <comp ref="P7">
+      <value>CONN_01X10</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="CONN_01X10" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>586458DB</tstamp>
+    </comp>
+    <comp ref="P8">
+      <value>CONN_02X03</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="CONN_02X03" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5886789D</tstamp>
+    </comp>
+    <comp ref="C19">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5895729E</tstamp>
+    </comp>
+    <comp ref="R11">
+      <value>47K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5895742B</tstamp>
+    </comp>
+    <comp ref="SW2">
+      <value>RESET_PIC</value>
+      <footprint>Button_Switch_THT:SW_PUSH_6mm_H5mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="SW_PUSH" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5897581C</tstamp>
+    </comp>
+    <comp ref="U7">
+      <value>74HCT373</value>
+      <footprint>Package_DIP:DIP-20_W7.62mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="74LS373" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E8E100</tstamp>
+    </comp>
+    <comp ref="C20">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>58B2EFEE</tstamp>
+    </comp>
+    <comp ref="C21">
+      <value>100nF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>58B3131A</tstamp>
+    </comp>
+    <comp ref="C22">
+      <value>100uF</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W2.5mm_P5.00mm</footprint>
+      <libsource lib="tralala8088homebrew-rescue" part="CP" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>58B32B40</tstamp>
+    </comp>
+    <comp ref="P6">
+      <value>USB_B</value>
+      <footprint>Connector_USB:USB_B_Lumberg_2411_02_Horizontal</footprint>
+      <datasheet> ~</datasheet>
+      <libsource lib="Connector_modified" part="USB_B" description="USB Type B connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6171C13C</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>LED_GREEN</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6185DF14</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>LED_YELLOW</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6185EC7B</tstamp>
+    </comp>
+    <comp ref="D5">
+      <value>LED_RED</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6185F8C5</tstamp>
+    </comp>
+    <comp ref="D7">
+      <value>1N4148</value>
+      <footprint>Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal</footprint>
+      <datasheet>https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf</datasheet>
+      <libsource lib="Diode" part="1N4148" description="100V 0.15A standard switching diode, DO-35"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>618BDACB</tstamp>
+    </comp>
+    <comp ref="D6">
+      <value>1N4148</value>
+      <footprint>Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal</footprint>
+      <datasheet>https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf</datasheet>
+      <libsource lib="Diode" part="1N4148" description="100V 0.15A standard switching diode, DO-35"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>618BEB98</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>1N4002</value>
+      <footprint>Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal</footprint>
+      <datasheet>http://www.vishay.com/docs/88503/1n4001.pdf</datasheet>
+      <libsource lib="Diode" part="1N4002" description="100V 1A General Purpose Rectifier Diode, DO-41"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>618D4368</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector_modified" part="USB_B">
+      <description>USB Type B connector</description>
+      <docs> ~</docs>
+      <footprints>
+        <fp>USB*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">USB_B</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VBUS" type="power_out"/>
+        <pin num="2" name="D-" type="BiDi"/>
+        <pin num="3" name="D+" type="BiDi"/>
+        <pin num="4" name="GND" type="power_out"/>
+        <pin num="5" name="Shield" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED">
+      <description>Light emitting diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Diode" part="1N4001">
+      <aliases>
+        <alias>1N4002</alias>
+        <alias>1N4003</alias>
+        <alias>1N4004</alias>
+        <alias>1N4005</alias>
+        <alias>1N4006</alias>
+        <alias>1N4007</alias>
+        <alias>BA157</alias>
+        <alias>BA158</alias>
+        <alias>BA159</alias>
+      </aliases>
+      <description>50V 1A General Purpose Rectifier Diode, DO-41</description>
+      <docs>http://www.vishay.com/docs/88503/1n4001.pdf</docs>
+      <footprints>
+        <fp>D*DO?41*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">1N4001</field>
+        <field name="Footprint">Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Diode" part="1N4148">
+      <aliases>
+        <alias>1N4448</alias>
+        <alias>1N4149</alias>
+        <alias>1N4151</alias>
+        <alias>1N914</alias>
+        <alias>BA243</alias>
+        <alias>BA244</alias>
+        <alias>BA282</alias>
+        <alias>BA283</alias>
+        <alias>BAV17</alias>
+        <alias>BAV18</alias>
+        <alias>BAV19</alias>
+        <alias>BAV20</alias>
+        <alias>BAV21</alias>
+        <alias>BAW75</alias>
+        <alias>BAW76</alias>
+        <alias>BAY93</alias>
+      </aliases>
+      <description>100V 0.15A standard switching diode, DO-35</description>
+      <docs>https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf</docs>
+      <footprints>
+        <fp>D*DO?35*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">1N4148</field>
+        <field name="Footprint">Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="74HC00">
+      <footprints>
+        <fp>14DIP300*</fp>
+        <fp>SO14*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">74HC00</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="input"/>
+        <pin num="2" name="~" type="input"/>
+        <pin num="3" name="~" type="output"/>
+        <pin num="4" name="~" type="input"/>
+        <pin num="5" name="~" type="input"/>
+        <pin num="6" name="~" type="output"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="~" type="output"/>
+        <pin num="9" name="~" type="input"/>
+        <pin num="10" name="~" type="input"/>
+        <pin num="11" name="~" type="output"/>
+        <pin num="12" name="~" type="input"/>
+        <pin num="13" name="~" type="input"/>
+        <pin num="14" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="74LS138">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">74LS138</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A0" type="input"/>
+        <pin num="2" name="A1" type="input"/>
+        <pin num="3" name="A2" type="input"/>
+        <pin num="4" name="E1" type="input"/>
+        <pin num="5" name="E2" type="input"/>
+        <pin num="6" name="E3" type="input"/>
+        <pin num="7" name="O7" type="output"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="O6" type="output"/>
+        <pin num="10" name="O5" type="output"/>
+        <pin num="11" name="O4" type="output"/>
+        <pin num="12" name="O3" type="output"/>
+        <pin num="13" name="O2" type="output"/>
+        <pin num="14" name="O1" type="output"/>
+        <pin num="15" name="O0" type="output"/>
+        <pin num="16" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="74LS245">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">74LS245</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A-&gt;B" type="input"/>
+        <pin num="2" name="A0" type="3state"/>
+        <pin num="3" name="A1" type="3state"/>
+        <pin num="4" name="A2" type="3state"/>
+        <pin num="5" name="A3" type="3state"/>
+        <pin num="6" name="A4" type="3state"/>
+        <pin num="7" name="A5" type="3state"/>
+        <pin num="8" name="A6" type="3state"/>
+        <pin num="9" name="A7" type="3state"/>
+        <pin num="10" name="GND" type="power_in"/>
+        <pin num="11" name="B7" type="3state"/>
+        <pin num="12" name="B6" type="3state"/>
+        <pin num="13" name="B5" type="3state"/>
+        <pin num="14" name="B4" type="3state"/>
+        <pin num="15" name="B3" type="3state"/>
+        <pin num="16" name="B2" type="3state"/>
+        <pin num="17" name="B1" type="3state"/>
+        <pin num="18" name="B0" type="3state"/>
+        <pin num="19" name="CE" type="input"/>
+        <pin num="20" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="74LS373">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">74LS373</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OE" type="input"/>
+        <pin num="2" name="O0" type="3state"/>
+        <pin num="3" name="D0" type="input"/>
+        <pin num="4" name="D1" type="input"/>
+        <pin num="5" name="O1" type="3state"/>
+        <pin num="6" name="O2" type="3state"/>
+        <pin num="7" name="D2" type="input"/>
+        <pin num="8" name="D3" type="input"/>
+        <pin num="9" name="O3" type="3state"/>
+        <pin num="10" name="GND" type="power_in"/>
+        <pin num="11" name="LE" type="input"/>
+        <pin num="12" name="O4" type="3state"/>
+        <pin num="13" name="D4" type="input"/>
+        <pin num="14" name="D5" type="input"/>
+        <pin num="15" name="O5" type="3state"/>
+        <pin num="16" name="O6" type="3state"/>
+        <pin num="17" name="D6" type="input"/>
+        <pin num="18" name="D7" type="input"/>
+        <pin num="19" name="O7" type="3state"/>
+        <pin num="20" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="7805">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">7805</field>
+      </fields>
+      <pins>
+        <pin num="GND" name="GND" type="input"/>
+        <pin num="VI" name="VI" type="input"/>
+        <pin num="VO" name="VO" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="8088_Max_Mode">
+      <footprints>
+        <fp>DIP*W15.24mm*</fp>
+        <fp>PDIP*W15.24mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">8088_Max_Mode</field>
+        <field name="Footprint">Housings_DIP:DIP-40_W15.24mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="A14" type="output"/>
+        <pin num="3" name="A13" type="output"/>
+        <pin num="4" name="A12" type="output"/>
+        <pin num="5" name="A11" type="output"/>
+        <pin num="6" name="A10" type="output"/>
+        <pin num="7" name="A9" type="output"/>
+        <pin num="8" name="A8" type="output"/>
+        <pin num="9" name="AD7" type="BiDi"/>
+        <pin num="10" name="AD6" type="BiDi"/>
+        <pin num="11" name="AD5" type="BiDi"/>
+        <pin num="12" name="AD4" type="BiDi"/>
+        <pin num="13" name="AD3" type="BiDi"/>
+        <pin num="14" name="AD2" type="BiDi"/>
+        <pin num="15" name="AD1" type="BiDi"/>
+        <pin num="16" name="AD0" type="BiDi"/>
+        <pin num="17" name="NMI" type="input"/>
+        <pin num="18" name="INTR" type="input"/>
+        <pin num="19" name="CLK" type="input"/>
+        <pin num="20" name="GND" type="power_in"/>
+        <pin num="21" name="RESET" type="input"/>
+        <pin num="22" name="READY" type="input"/>
+        <pin num="23" name="~TEST~" type="input"/>
+        <pin num="24" name="QS1" type="output"/>
+        <pin num="25" name="QS0" type="output"/>
+        <pin num="26" name="~S0~" type="output"/>
+        <pin num="27" name="~S1~" type="output"/>
+        <pin num="28" name="~S2~" type="output"/>
+        <pin num="29" name="~LOCK~" type="output"/>
+        <pin num="30" name="~RQ~/~GT1~" type="BiDi"/>
+        <pin num="31" name="~RQ~/~GT0~" type="BiDi"/>
+        <pin num="32" name="~RD~" type="output"/>
+        <pin num="33" name="MN/~MX~" type="input"/>
+        <pin num="34" name="HIGH" type="output"/>
+        <pin num="35" name="A19/S6" type="output"/>
+        <pin num="36" name="A18/S5" type="output"/>
+        <pin num="37" name="A17/S4" type="output"/>
+        <pin num="38" name="A16/S3" type="output"/>
+        <pin num="39" name="A15" type="output"/>
+        <pin num="40" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="8255A">
+      <footprints>
+        <fp>DIP*W15.24mm*</fp>
+        <fp>PDIP*W15.24mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">8255A</field>
+        <field name="Footprint">Housings_DIP:DIP-40_W15.24mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="PA3" type="BiDi"/>
+        <pin num="2" name="PA2" type="BiDi"/>
+        <pin num="3" name="PA1" type="BiDi"/>
+        <pin num="4" name="PA0" type="BiDi"/>
+        <pin num="5" name="~RD~" type="input"/>
+        <pin num="6" name="~CS~" type="input"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="A1" type="input"/>
+        <pin num="9" name="A0" type="input"/>
+        <pin num="10" name="PC7" type="BiDi"/>
+        <pin num="11" name="PC6" type="BiDi"/>
+        <pin num="12" name="PC5" type="BiDi"/>
+        <pin num="13" name="PC4" type="BiDi"/>
+        <pin num="14" name="PC0" type="BiDi"/>
+        <pin num="15" name="PC1" type="BiDi"/>
+        <pin num="16" name="PC2" type="BiDi"/>
+        <pin num="17" name="PC3" type="BiDi"/>
+        <pin num="18" name="PB0" type="BiDi"/>
+        <pin num="19" name="PB1" type="BiDi"/>
+        <pin num="20" name="PB2" type="BiDi"/>
+        <pin num="21" name="PB3" type="BiDi"/>
+        <pin num="22" name="PB4" type="BiDi"/>
+        <pin num="23" name="PB5" type="BiDi"/>
+        <pin num="24" name="PB6" type="BiDi"/>
+        <pin num="25" name="PB7" type="BiDi"/>
+        <pin num="26" name="VCC" type="power_in"/>
+        <pin num="27" name="D7" type="BiDi"/>
+        <pin num="28" name="D6" type="BiDi"/>
+        <pin num="29" name="D5" type="BiDi"/>
+        <pin num="30" name="D4" type="BiDi"/>
+        <pin num="31" name="D3" type="BiDi"/>
+        <pin num="32" name="D2" type="BiDi"/>
+        <pin num="33" name="D1" type="BiDi"/>
+        <pin num="34" name="D0" type="BiDi"/>
+        <pin num="35" name="RESET" type="input"/>
+        <pin num="36" name="~WR~" type="input"/>
+        <pin num="37" name="PA7" type="BiDi"/>
+        <pin num="38" name="PA6" type="BiDi"/>
+        <pin num="39" name="PA5" type="BiDi"/>
+        <pin num="40" name="PA4" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="8259A">
+      <footprints>
+        <fp>DIP*</fp>
+        <fp>PDIP*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">8259A</field>
+        <field name="Footprint">DIP-28</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~CS~" type="input"/>
+        <pin num="2" name="~RD~" type="input"/>
+        <pin num="3" name="~WR~" type="input"/>
+        <pin num="4" name="D7" type="BiDi"/>
+        <pin num="5" name="D6" type="BiDi"/>
+        <pin num="6" name="D5" type="BiDi"/>
+        <pin num="7" name="D4" type="BiDi"/>
+        <pin num="8" name="D3" type="BiDi"/>
+        <pin num="9" name="D2" type="BiDi"/>
+        <pin num="10" name="D1" type="BiDi"/>
+        <pin num="11" name="D0" type="BiDi"/>
+        <pin num="12" name="CAS0" type="input"/>
+        <pin num="13" name="CAS1" type="output"/>
+        <pin num="14" name="GND" type="power_in"/>
+        <pin num="15" name="CAS2" type="output"/>
+        <pin num="16" name="~SP~/~EN~" type="BiDi"/>
+        <pin num="17" name="INT" type="output"/>
+        <pin num="18" name="IR0" type="input"/>
+        <pin num="19" name="IR1" type="input"/>
+        <pin num="20" name="IR2" type="input"/>
+        <pin num="21" name="IR3" type="input"/>
+        <pin num="22" name="IR4" type="input"/>
+        <pin num="23" name="IR5" type="input"/>
+        <pin num="24" name="IR6" type="input"/>
+        <pin num="25" name="IR7" type="input"/>
+        <pin num="26" name="~INTA~" type="input"/>
+        <pin num="27" name="A0" type="input"/>
+        <pin num="28" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="8284">
+      <footprints>
+        <fp>DIP*W7.62mm*</fp>
+        <fp>PDIP*W7.62mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">8284</field>
+        <field name="Footprint">Housings_DIP:DIP-18_W7.62mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="CSYNC" type="input"/>
+        <pin num="2" name="PCLK" type="output"/>
+        <pin num="3" name="~AEN1~" type="input"/>
+        <pin num="4" name="RDY1" type="input"/>
+        <pin num="5" name="READY" type="output"/>
+        <pin num="6" name="RDY2" type="input"/>
+        <pin num="7" name="~AEN2~" type="input"/>
+        <pin num="8" name="CLK" type="output"/>
+        <pin num="9" name="GND" type="power_in"/>
+        <pin num="10" name="RESET" type="output"/>
+        <pin num="11" name="~RES~" type="input"/>
+        <pin num="12" name="OSC" type="output"/>
+        <pin num="13" name="F/~C~" type="input"/>
+        <pin num="14" name="EFI" type="input"/>
+        <pin num="15" name="~ASYNC~" type="input"/>
+        <pin num="16" name="X2" type="output"/>
+        <pin num="17" name="X1" type="input"/>
+        <pin num="18" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="8288">
+      <footprints>
+        <fp>DIP*W7.62mm*</fp>
+        <fp>PDIP*W7.62mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">8288</field>
+        <field name="Footprint">Housings_DIP:DIP-20_W7.62mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IOB" type="input"/>
+        <pin num="2" name="CLK" type="input"/>
+        <pin num="3" name="~S1~" type="input"/>
+        <pin num="4" name="DT/~R~" type="output"/>
+        <pin num="5" name="ALE" type="output"/>
+        <pin num="6" name="~AEN~" type="input"/>
+        <pin num="7" name="~MRDC~" type="output"/>
+        <pin num="8" name="~AMWC~" type="output"/>
+        <pin num="9" name="~MWTC~" type="output"/>
+        <pin num="10" name="GND" type="power_in"/>
+        <pin num="11" name="~IOWC~" type="output"/>
+        <pin num="12" name="~AIOWC~" type="output"/>
+        <pin num="13" name="~IORC~" type="output"/>
+        <pin num="14" name="~INTA~" type="output"/>
+        <pin num="15" name="CEN" type="input"/>
+        <pin num="16" name="DEN" type="output"/>
+        <pin num="17" name="MCE/~PDEN~" type="output"/>
+        <pin num="18" name="~S2~" type="input"/>
+        <pin num="19" name="~S0~" type="input"/>
+        <pin num="20" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="BARREL_JACK">
+      <fields>
+        <field name="Reference">CON</field>
+        <field name="Value">BARREL_JACK</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+        <pin num="3" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="C">
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="CONN_01X02">
+      <footprints>
+        <fp>Pin_Header_Straight_1X02</fp>
+        <fp>Pin_Header_Angled_1X02</fp>
+        <fp>Socket_Strip_Straight_1X02</fp>
+        <fp>Socket_Strip_Angled_1X02</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X02</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="CONN_01X03">
+      <footprints>
+        <fp>Pin_Header_Straight_1X03</fp>
+        <fp>Pin_Header_Angled_1X03</fp>
+        <fp>Socket_Strip_Straight_1X03</fp>
+        <fp>Socket_Strip_Angled_1X03</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X03</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="CONN_01X10">
+      <footprints>
+        <fp>Pin_Header_Straight_1X10</fp>
+        <fp>Pin_Header_Angled_1X10</fp>
+        <fp>Socket_Strip_Straight_1X10</fp>
+        <fp>Socket_Strip_Angled_1X10</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X10</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+        <pin num="7" name="P7" type="passive"/>
+        <pin num="8" name="P8" type="passive"/>
+        <pin num="9" name="P9" type="passive"/>
+        <pin num="10" name="P10" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="CONN_02X03">
+      <footprints>
+        <fp>Pin_Header_Straight_2X03</fp>
+        <fp>Pin_Header_Angled_2X03</fp>
+        <fp>Socket_Strip_Straight_2X03</fp>
+        <fp>Socket_Strip_Angled_2X03</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_02X03</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="CONN_02X20">
+      <footprints>
+        <fp>Pin_Header_Straight_2X20</fp>
+        <fp>Pin_Header_Angled_2X20</fp>
+        <fp>Socket_Strip_Straight_2X20</fp>
+        <fp>Socket_Strip_Angled_2X20</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_02X20</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+        <pin num="7" name="P7" type="passive"/>
+        <pin num="8" name="P8" type="passive"/>
+        <pin num="9" name="P9" type="passive"/>
+        <pin num="10" name="P10" type="passive"/>
+        <pin num="11" name="P11" type="passive"/>
+        <pin num="12" name="P12" type="passive"/>
+        <pin num="13" name="P13" type="passive"/>
+        <pin num="14" name="P14" type="passive"/>
+        <pin num="15" name="P15" type="passive"/>
+        <pin num="16" name="P16" type="passive"/>
+        <pin num="17" name="P17" type="passive"/>
+        <pin num="18" name="P18" type="passive"/>
+        <pin num="19" name="P19" type="passive"/>
+        <pin num="20" name="P20" type="passive"/>
+        <pin num="21" name="P21" type="passive"/>
+        <pin num="22" name="P22" type="passive"/>
+        <pin num="23" name="P23" type="passive"/>
+        <pin num="24" name="P24" type="passive"/>
+        <pin num="25" name="P25" type="passive"/>
+        <pin num="26" name="P26" type="passive"/>
+        <pin num="27" name="P27" type="passive"/>
+        <pin num="28" name="P28" type="passive"/>
+        <pin num="29" name="P29" type="passive"/>
+        <pin num="30" name="P30" type="passive"/>
+        <pin num="31" name="P31" type="passive"/>
+        <pin num="32" name="P32" type="passive"/>
+        <pin num="33" name="P33" type="passive"/>
+        <pin num="34" name="P34" type="passive"/>
+        <pin num="35" name="P35" type="passive"/>
+        <pin num="36" name="P36" type="passive"/>
+        <pin num="37" name="P37" type="passive"/>
+        <pin num="38" name="P38" type="passive"/>
+        <pin num="39" name="P39" type="passive"/>
+        <pin num="40" name="P40" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="CP">
+      <footprints>
+        <fp>CP*</fp>
+        <fp>C_Axial*</fp>
+        <fp>C_Radial*</fp>
+        <fp>TantalC*</fp>
+        <fp>C*elec</fp>
+        <fp>c_elec*</fp>
+        <fp>SMD*_Pol</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CP</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="Crystal">
+      <footprints>
+        <fp>Crystal*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Y</field>
+        <field name="Value">Crystal</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="D">
+      <footprints>
+        <fp>Diode_*</fp>
+        <fp>D-*</fp>
+        <fp>*SingleDiode</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="DIL8">
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">DIL8</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+        <pin num="7" name="P7" type="passive"/>
+        <pin num="8" name="P8" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="PIC18(L)F4553-I_P">
+      <footprints>
+        <fp>DIP*W15.24mm*</fp>
+        <fp>PDIP*W15.24mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">PIC18(L)F4553-I_P</field>
+        <field name="Footprint">Housings_DIP:DIP-40_W15.24mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Vpp/~MCLR~/RE3" type="input"/>
+        <pin num="2" name="RA0/AN0" type="BiDi"/>
+        <pin num="3" name="RA1/AN1" type="BiDi"/>
+        <pin num="4" name="RA2/AN2/Vref-/CVref" type="BiDi"/>
+        <pin num="5" name="RA3/AN3/Vref+" type="BiDi"/>
+        <pin num="6" name="RA4/T0CKI/C1OUT/RCV" type="BiDi"/>
+        <pin num="7" name="RA5/AN4/~SS~/HLVDIN/C2OUT" type="BiDi"/>
+        <pin num="8" name="CK1SPP/AN5/RE0" type="BiDi"/>
+        <pin num="9" name="CK2SPP/AN6/RE1" type="BiDi"/>
+        <pin num="10" name="OESPP/AN7/RE2" type="BiDi"/>
+        <pin num="11" name="VDD" type="power_in"/>
+        <pin num="12" name="VSS" type="power_in"/>
+        <pin num="13" name="OSC1/CLKI" type="input"/>
+        <pin num="14" name="RA6/OSC2/CLKO" type="BiDi"/>
+        <pin num="15" name="T1OSO/T13CKI/RC0" type="BiDi"/>
+        <pin num="16" name="~UOE~/CCP2/T1OSI/RC1" type="BiDi"/>
+        <pin num="17" name="P1A/CCP1/RC2" type="BiDi"/>
+        <pin num="18" name="VUSB" type="BiDi"/>
+        <pin num="19" name="SPP0/RD0" type="BiDi"/>
+        <pin num="20" name="SPP1/RD1" type="BiDi"/>
+        <pin num="21" name="SPP2/RD2" type="BiDi"/>
+        <pin num="22" name="SPP3/RD3" type="BiDi"/>
+        <pin num="23" name="VM/D-/RC4" type="BiDi"/>
+        <pin num="24" name="VP/D+/RC5" type="BiDi"/>
+        <pin num="25" name="TX/CK/RC6" type="BiDi"/>
+        <pin num="26" name="SDO/RX/DT/RC7" type="BiDi"/>
+        <pin num="27" name="SPP4/RD4" type="BiDi"/>
+        <pin num="28" name="P1B/SPP5/RD5" type="BiDi"/>
+        <pin num="29" name="P1C/SPP6/RD6" type="BiDi"/>
+        <pin num="30" name="P1D/SPP7/RD7" type="BiDi"/>
+        <pin num="31" name="VSS" type="power_in"/>
+        <pin num="32" name="VDD" type="power_in"/>
+        <pin num="33" name="RB0/AN12/INT0/FLT0/SDI/SDA" type="BiDi"/>
+        <pin num="34" name="RB1/AN10/INT1/SCK/SCL" type="BiDi"/>
+        <pin num="35" name="RB2/AN8/INT2/VMO" type="BiDi"/>
+        <pin num="36" name="RB3/AN9/CCP2/VPO" type="BiDi"/>
+        <pin num="37" name="RB4/AN11/KBI0/CSSPP" type="BiDi"/>
+        <pin num="38" name="RB5/KBI1/PGM" type="BiDi"/>
+        <pin num="39" name="RB6/KBI2/PGC" type="BiDi"/>
+        <pin num="40" name="RB7/KBI3/PGD" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="Q_NPN_EBC">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_NPN_EBC</field>
+      </fields>
+      <pins>
+        <pin num="1" name="E" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="R">
+      <footprints>
+        <fp>R_*</fp>
+        <fp>Resistor_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="SRAM_512Ko">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SRAM_512Ko</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A18" type="input"/>
+        <pin num="2" name="A16" type="input"/>
+        <pin num="3" name="A14" type="input"/>
+        <pin num="4" name="A12" type="input"/>
+        <pin num="5" name="A7" type="input"/>
+        <pin num="6" name="A6" type="input"/>
+        <pin num="7" name="A5" type="input"/>
+        <pin num="8" name="A4" type="input"/>
+        <pin num="9" name="A3" type="input"/>
+        <pin num="10" name="A2" type="input"/>
+        <pin num="11" name="A1" type="input"/>
+        <pin num="12" name="A0" type="input"/>
+        <pin num="13" name="D0" type="3state"/>
+        <pin num="14" name="D1" type="3state"/>
+        <pin num="15" name="D2" type="3state"/>
+        <pin num="16" name="GND" type="power_in"/>
+        <pin num="17" name="D3" type="3state"/>
+        <pin num="18" name="D4" type="3state"/>
+        <pin num="19" name="D5" type="3state"/>
+        <pin num="20" name="D6" type="3state"/>
+        <pin num="21" name="D7" type="3state"/>
+        <pin num="22" name="CE" type="input"/>
+        <pin num="23" name="A10" type="input"/>
+        <pin num="24" name="OE" type="input"/>
+        <pin num="25" name="A11" type="input"/>
+        <pin num="26" name="A9" type="input"/>
+        <pin num="27" name="A8" type="input"/>
+        <pin num="28" name="A13" type="input"/>
+        <pin num="29" name="WE" type="input"/>
+        <pin num="30" name="A17" type="input"/>
+        <pin num="31" name="A15" type="input"/>
+        <pin num="32" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="SST39SF020">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SST39SF020</field>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="input"/>
+        <pin num="2" name="A16" type="input"/>
+        <pin num="3" name="A15" type="input"/>
+        <pin num="4" name="A12" type="input"/>
+        <pin num="5" name="A7" type="input"/>
+        <pin num="6" name="A6" type="input"/>
+        <pin num="7" name="A5" type="input"/>
+        <pin num="8" name="A4" type="input"/>
+        <pin num="9" name="A3" type="input"/>
+        <pin num="10" name="A2" type="input"/>
+        <pin num="11" name="A1" type="input"/>
+        <pin num="12" name="A0" type="input"/>
+        <pin num="13" name="D0" type="3state"/>
+        <pin num="14" name="D1" type="3state"/>
+        <pin num="15" name="D2" type="3state"/>
+        <pin num="16" name="GND" type="power_in"/>
+        <pin num="17" name="D3" type="3state"/>
+        <pin num="18" name="D4" type="3state"/>
+        <pin num="19" name="D5" type="3state"/>
+        <pin num="20" name="D6" type="3state"/>
+        <pin num="21" name="D7" type="3state"/>
+        <pin num="22" name="CE" type="input"/>
+        <pin num="23" name="A10" type="input"/>
+        <pin num="24" name="OE" type="input"/>
+        <pin num="25" name="A11" type="input"/>
+        <pin num="26" name="A9" type="input"/>
+        <pin num="27" name="A8" type="input"/>
+        <pin num="28" name="A13" type="input"/>
+        <pin num="29" name="A14" type="input"/>
+        <pin num="30" name="A17" type="input"/>
+        <pin num="31" name="PGM" type="input"/>
+        <pin num="32" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="tralala8088homebrew-rescue" part="SW_PUSH">
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_PUSH</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector_modified">
+      <uri>/home/cartogan/Programs/tralala-8088-homebrew-code/trunk/hw/v0.1/libs/Connector_modified.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>/usr/share/kicad/library/Device.lib</uri>
+    </library>
+    <library logical="Diode">
+      <uri>/usr/share/kicad/library/Diode.lib</uri>
+    </library>
+    <library logical="tralala8088homebrew-rescue">
+      <uri>/home/cartogan/Programs/tralala-8088-homebrew-code/trunk/hw/v0.1/tralala8088homebrew-rescue.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+5V">
+      <node ref="R4" pin="1"/>
+      <node ref="C13" pin="1"/>
+      <node ref="P8" pin="2"/>
+      <node ref="U14" pin="VO"/>
+      <node ref="C9" pin="1"/>
+      <node ref="U9" pin="31"/>
+      <node ref="D5" pin="2"/>
+      <node ref="U12" pin="6"/>
+      <node ref="U3" pin="15"/>
+      <node ref="R11" pin="1"/>
+      <node ref="U3" pin="20"/>
+      <node ref="C3" pin="1"/>
+      <node ref="U2" pin="40"/>
+      <node ref="D4" pin="2"/>
+      <node ref="C2" pin="1"/>
+      <node ref="U10" pin="14"/>
+      <node ref="P7" pin="1"/>
+      <node ref="U10" pin="14"/>
+      <node ref="D3" pin="2"/>
+      <node ref="U15" pin="32"/>
+      <node ref="U8" pin="32"/>
+      <node ref="U15" pin="11"/>
+      <node ref="C6" pin="1"/>
+      <node ref="C10" pin="1"/>
+      <node ref="C20" pin="1"/>
+      <node ref="U9" pin="32"/>
+      <node ref="C22" pin="1"/>
+      <node ref="U11" pin="28"/>
+      <node ref="C15" pin="2"/>
+      <node ref="C14" pin="1"/>
+      <node ref="C21" pin="1"/>
+      <node ref="U13" pin="26"/>
+      <node ref="C11" pin="1"/>
+      <node ref="U7" pin="20"/>
+      <node ref="C7" pin="1"/>
+      <node ref="R1" pin="1"/>
+      <node ref="U6" pin="20"/>
+      <node ref="C8" pin="1"/>
+      <node ref="C4" pin="1"/>
+      <node ref="U4" pin="20"/>
+      <node ref="U12" pin="16"/>
+      <node ref="P5" pin="3"/>
+      <node ref="U5" pin="20"/>
+      <node ref="U1" pin="18"/>
+      <node ref="C5" pin="1"/>
+      <node ref="D1" pin="1"/>
+    </net>
+    <net code="2" name="/BUF_D1">
+      <node ref="U8" pin="14"/>
+      <node ref="U9" pin="14"/>
+      <node ref="U4" pin="17"/>
+      <node ref="U13" pin="33"/>
+    </net>
+    <net code="3" name="/BUF_D0">
+      <node ref="U13" pin="34"/>
+      <node ref="U9" pin="13"/>
+      <node ref="U8" pin="13"/>
+      <node ref="U4" pin="18"/>
+    </net>
+    <net code="4" name="Net-(U13-Pad17)">
+      <node ref="U13" pin="17"/>
+    </net>
+    <net code="5" name="Net-(U13-Pad25)">
+      <node ref="U13" pin="25"/>
+    </net>
+    <net code="6" name="Net-(U13-Pad24)">
+      <node ref="U13" pin="24"/>
+    </net>
+    <net code="7" name="Net-(U13-Pad23)">
+      <node ref="U13" pin="23"/>
+    </net>
+    <net code="8" name="Net-(U13-Pad22)">
+      <node ref="U13" pin="22"/>
+    </net>
+    <net code="9" name="Net-(U13-Pad21)">
+      <node ref="U13" pin="21"/>
+    </net>
+    <net code="10" name="Net-(U13-Pad20)">
+      <node ref="U13" pin="20"/>
+    </net>
+    <net code="11" name="Net-(U13-Pad19)">
+      <node ref="U13" pin="19"/>
+    </net>
+    <net code="12" name="Net-(U13-Pad18)">
+      <node ref="U13" pin="18"/>
+    </net>
+    <net code="13" name="/BUF_D2">
+      <node ref="U9" pin="15"/>
+      <node ref="U4" pin="16"/>
+      <node ref="U13" pin="32"/>
+      <node ref="U8" pin="15"/>
+    </net>
+    <net code="14" name="GND">
+      <node ref="C20" pin="2"/>
+      <node ref="U4" pin="10"/>
+      <node ref="C19" pin="2"/>
+      <node ref="U7" pin="10"/>
+      <node ref="C21" pin="2"/>
+      <node ref="U6" pin="10"/>
+      <node ref="U6" pin="1"/>
+      <node ref="SW2" pin="2"/>
+      <node ref="C22" pin="2"/>
+      <node ref="P6" pin="5"/>
+      <node ref="P6" pin="4"/>
+      <node ref="U5" pin="1"/>
+      <node ref="U7" pin="1"/>
+      <node ref="U12" pin="8"/>
+      <node ref="U3" pin="10"/>
+      <node ref="C4" pin="2"/>
+      <node ref="R2" pin="2"/>
+      <node ref="U3" pin="1"/>
+      <node ref="C3" pin="2"/>
+      <node ref="U2" pin="33"/>
+      <node ref="C2" pin="2"/>
+      <node ref="U2" pin="1"/>
+      <node ref="C5" pin="2"/>
+      <node ref="P2" pin="10"/>
+      <node ref="P2" pin="19"/>
+      <node ref="SW1" pin="1"/>
+      <node ref="C1" pin="2"/>
+      <node ref="P2" pin="29"/>
+      <node ref="P2" pin="39"/>
+      <node ref="P2" pin="30"/>
+      <node ref="U1" pin="3"/>
+      <node ref="U1" pin="9"/>
+      <node ref="U1" pin="7"/>
+      <node ref="U1" pin="13"/>
+      <node ref="R3" pin="2"/>
+      <node ref="U3" pin="6"/>
+      <node ref="C18" pin="1"/>
+      <node ref="U9" pin="16"/>
+      <node ref="P7" pin="10"/>
+      <node ref="C15" pin="1"/>
+      <node ref="C14" pin="2"/>
+      <node ref="C17" pin="1"/>
+      <node ref="C16" pin="2"/>
+      <node ref="P8" pin="5"/>
+      <node ref="P2" pin="9"/>
+      <node ref="U2" pin="23"/>
+      <node ref="U2" pin="20"/>
+      <node ref="C9" pin="2"/>
+      <node ref="P8" pin="6"/>
+      <node ref="U15" pin="31"/>
+      <node ref="U8" pin="16"/>
+      <node ref="U15" pin="12"/>
+      <node ref="Q3" pin="1"/>
+      <node ref="Q1" pin="1"/>
+      <node ref="Q2" pin="1"/>
+      <node ref="P5" pin="1"/>
+      <node ref="U1" pin="1"/>
+      <node ref="U10" pin="7"/>
+      <node ref="C10" pin="2"/>
+      <node ref="U11" pin="14"/>
+      <node ref="U10" pin="7"/>
+      <node ref="C6" pin="2"/>
+      <node ref="U14" pin="GND"/>
+      <node ref="C13" pin="2"/>
+      <node ref="CON1" pin="2"/>
+      <node ref="CON1" pin="3"/>
+      <node ref="C12" pin="2"/>
+      <node ref="U13" pin="7"/>
+      <node ref="C8" pin="2"/>
+      <node ref="C7" pin="2"/>
+      <node ref="C11" pin="2"/>
+      <node ref="U5" pin="10"/>
+    </net>
+    <net code="15" name="/BUF_A0">
+      <node ref="U5" pin="2"/>
+      <node ref="U8" pin="12"/>
+      <node ref="U13" pin="9"/>
+      <node ref="U9" pin="12"/>
+      <node ref="U11" pin="27"/>
+    </net>
+    <net code="16" name="/BUF_A1">
+      <node ref="U5" pin="5"/>
+      <node ref="U13" pin="8"/>
+      <node ref="U8" pin="11"/>
+      <node ref="U9" pin="11"/>
+    </net>
+    <net code="17" name="/IORC">
+      <node ref="U3" pin="13"/>
+      <node ref="U11" pin="2"/>
+      <node ref="U13" pin="5"/>
+    </net>
+    <net code="18" name="/BUF_D5">
+      <node ref="U9" pin="19"/>
+      <node ref="U13" pin="29"/>
+      <node ref="U8" pin="19"/>
+      <node ref="U4" pin="13"/>
+    </net>
+    <net code="19" name="/8255_CS">
+      <node ref="U12" pin="7"/>
+      <node ref="U13" pin="6"/>
+    </net>
+    <net code="20" name="/IOWC">
+      <node ref="U13" pin="36"/>
+      <node ref="U3" pin="11"/>
+      <node ref="U11" pin="3"/>
+    </net>
+    <net code="21" name="/BUF_D7">
+      <node ref="U4" pin="11"/>
+      <node ref="U13" pin="27"/>
+      <node ref="U8" pin="21"/>
+      <node ref="U9" pin="21"/>
+    </net>
+    <net code="22" name="/BUF_D6">
+      <node ref="U9" pin="20"/>
+      <node ref="U4" pin="12"/>
+      <node ref="U13" pin="28"/>
+      <node ref="U8" pin="20"/>
+    </net>
+    <net code="23" name="/BUF_D4">
+      <node ref="U9" pin="18"/>
+      <node ref="U4" pin="14"/>
+      <node ref="U8" pin="18"/>
+      <node ref="U13" pin="30"/>
+    </net>
+    <net code="24" name="/BUF_D3">
+      <node ref="U9" pin="17"/>
+      <node ref="U8" pin="17"/>
+      <node ref="U13" pin="31"/>
+      <node ref="U4" pin="15"/>
+    </net>
+    <net code="25" name="Net-(R5-Pad2)">
+      <node ref="R5" pin="2"/>
+      <node ref="U13" pin="14"/>
+    </net>
+    <net code="26" name="/ICH_STB">
+      <node ref="U15" pin="38"/>
+      <node ref="U13" pin="13"/>
+    </net>
+    <net code="27" name="/ICH_IBF">
+      <node ref="U15" pin="37"/>
+      <node ref="U13" pin="12"/>
+    </net>
+    <net code="28" name="Net-(P5-Pad2)">
+      <node ref="P5" pin="2"/>
+      <node ref="U2" pin="17"/>
+    </net>
+    <net code="29" name="Net-(U12-Pad15)">
+      <node ref="U12" pin="15"/>
+    </net>
+    <net code="30" name="/RESET">
+      <node ref="U2" pin="21"/>
+      <node ref="P2" pin="33"/>
+      <node ref="U13" pin="35"/>
+      <node ref="U1" pin="10"/>
+    </net>
+    <net code="31" name="Net-(Q1-Pad2)">
+      <node ref="Q1" pin="2"/>
+      <node ref="R5" pin="1"/>
+    </net>
+    <net code="32" name="Net-(R7-Pad2)">
+      <node ref="U13" pin="15"/>
+      <node ref="R7" pin="2"/>
+    </net>
+    <net code="33" name="Net-(Q2-Pad2)">
+      <node ref="Q2" pin="2"/>
+      <node ref="R7" pin="1"/>
+    </net>
+    <net code="34" name="Net-(Q1-Pad3)">
+      <node ref="Q1" pin="3"/>
+      <node ref="R6" pin="2"/>
+    </net>
+    <net code="35" name="Net-(D3-Pad1)">
+      <node ref="D3" pin="1"/>
+      <node ref="R6" pin="1"/>
+    </net>
+    <net code="36" name="/8259A_SP_EN">
+      <node ref="R4" pin="2"/>
+      <node ref="U11" pin="16"/>
+      <node ref="U10" pin="4"/>
+    </net>
+    <net code="37" name="Net-(Q3-Pad3)">
+      <node ref="R10" pin="2"/>
+      <node ref="Q3" pin="3"/>
+    </net>
+    <net code="38" name="Net-(D5-Pad1)">
+      <node ref="R10" pin="1"/>
+      <node ref="D5" pin="1"/>
+    </net>
+    <net code="39" name="Net-(Q3-Pad2)">
+      <node ref="Q3" pin="2"/>
+      <node ref="R9" pin="1"/>
+    </net>
+    <net code="40" name="Net-(R9-Pad2)">
+      <node ref="U13" pin="16"/>
+      <node ref="R9" pin="2"/>
+    </net>
+    <net code="41" name="Net-(Q2-Pad3)">
+      <node ref="R8" pin="2"/>
+      <node ref="Q2" pin="3"/>
+    </net>
+    <net code="42" name="Net-(D4-Pad1)">
+      <node ref="R8" pin="1"/>
+      <node ref="D4" pin="1"/>
+    </net>
+    <net code="43" name="Net-(C12-Pad1)">
+      <node ref="U14" pin="VI"/>
+      <node ref="C12" pin="1"/>
+      <node ref="D2" pin="1"/>
+    </net>
+    <net code="44" name="Net-(CON1-Pad1)">
+      <node ref="CON1" pin="1"/>
+      <node ref="D2" pin="2"/>
+    </net>
+    <net code="45" name="Net-(U10-Pad6)">
+      <node ref="U10" pin="6"/>
+      <node ref="U4" pin="19"/>
+    </net>
+    <net code="46" name="Net-(U10-Pad8)">
+      <node ref="U10" pin="8"/>
+      <node ref="U9" pin="22"/>
+    </net>
+    <net code="47" name="/AD1">
+      <node ref="U5" pin="4"/>
+      <node ref="U4" pin="3"/>
+      <node ref="U11" pin="10"/>
+      <node ref="U2" pin="15"/>
+      <node ref="P2" pin="2"/>
+    </net>
+    <net code="48" name="/AD0">
+      <node ref="U2" pin="16"/>
+      <node ref="U5" pin="3"/>
+      <node ref="U11" pin="11"/>
+      <node ref="U4" pin="2"/>
+      <node ref="P2" pin="1"/>
+    </net>
+    <net code="49" name="/AD2">
+      <node ref="P2" pin="3"/>
+      <node ref="U2" pin="14"/>
+      <node ref="U5" pin="7"/>
+      <node ref="U11" pin="9"/>
+      <node ref="U4" pin="4"/>
+    </net>
+    <net code="50" name="/AD3">
+      <node ref="U5" pin="8"/>
+      <node ref="U4" pin="5"/>
+      <node ref="U2" pin="13"/>
+      <node ref="U11" pin="8"/>
+      <node ref="P2" pin="4"/>
+    </net>
+    <net code="51" name="/AD4">
+      <node ref="U2" pin="12"/>
+      <node ref="U5" pin="13"/>
+      <node ref="P2" pin="5"/>
+      <node ref="U11" pin="7"/>
+      <node ref="U4" pin="6"/>
+    </net>
+    <net code="52" name="/AD5">
+      <node ref="U4" pin="7"/>
+      <node ref="U11" pin="6"/>
+      <node ref="U2" pin="11"/>
+      <node ref="U5" pin="14"/>
+      <node ref="P2" pin="6"/>
+    </net>
+    <net code="53" name="/AD6">
+      <node ref="U4" pin="8"/>
+      <node ref="U11" pin="5"/>
+      <node ref="U5" pin="17"/>
+      <node ref="P2" pin="7"/>
+      <node ref="U2" pin="10"/>
+    </net>
+    <net code="54" name="/AD7">
+      <node ref="U11" pin="4"/>
+      <node ref="U5" pin="18"/>
+      <node ref="U2" pin="9"/>
+      <node ref="U4" pin="9"/>
+      <node ref="P2" pin="8"/>
+    </net>
+    <net code="55" name="Net-(U11-Pad22)">
+      <node ref="U11" pin="22"/>
+    </net>
+    <net code="56" name="/INTA">
+      <node ref="U11" pin="26"/>
+      <node ref="U3" pin="14"/>
+    </net>
+    <net code="57" name="Net-(U11-Pad18)">
+      <node ref="U11" pin="18"/>
+    </net>
+    <net code="58" name="Net-(U11-Pad19)">
+      <node ref="U11" pin="19"/>
+    </net>
+    <net code="59" name="Net-(U11-Pad20)">
+      <node ref="U11" pin="20"/>
+    </net>
+    <net code="60" name="Net-(U11-Pad21)">
+      <node ref="U11" pin="21"/>
+    </net>
+    <net code="61" name="Net-(U11-Pad23)">
+      <node ref="U11" pin="23"/>
+    </net>
+    <net code="62" name="Net-(U11-Pad24)">
+      <node ref="U11" pin="24"/>
+    </net>
+    <net code="63" name="Net-(U11-Pad25)">
+      <node ref="U11" pin="25"/>
+    </net>
+    <net code="64" name="/MWTC">
+      <node ref="U3" pin="9"/>
+      <node ref="U8" pin="29"/>
+    </net>
+    <net code="65" name="/MRDC">
+      <node ref="U3" pin="7"/>
+      <node ref="U8" pin="24"/>
+      <node ref="U9" pin="24"/>
+    </net>
+    <net code="66" name="/BUF_A19">
+      <node ref="U7" pin="9"/>
+      <node ref="U10" pin="10"/>
+      <node ref="U10" pin="9"/>
+      <node ref="U8" pin="22"/>
+    </net>
+    <net code="67" name="/DTR">
+      <node ref="U4" pin="1"/>
+      <node ref="U3" pin="4"/>
+    </net>
+    <net code="68" name="/DEN">
+      <node ref="U3" pin="16"/>
+      <node ref="U10" pin="5"/>
+    </net>
+    <net code="69" name="/INTR">
+      <node ref="U2" pin="18"/>
+      <node ref="U11" pin="17"/>
+    </net>
+    <net code="70" name="Net-(U11-Pad15)">
+      <node ref="U11" pin="15"/>
+    </net>
+    <net code="71" name="Net-(U11-Pad13)">
+      <node ref="U11" pin="13"/>
+    </net>
+    <net code="72" name="Net-(U11-Pad12)">
+      <node ref="U11" pin="12"/>
+    </net>
+    <net code="73" name="/8259A_CS">
+      <node ref="U12" pin="14"/>
+      <node ref="U11" pin="1"/>
+    </net>
+    <net code="74" name="Net-(P2-Pad37)">
+      <node ref="P2" pin="37"/>
+      <node ref="P3" pin="1"/>
+    </net>
+    <net code="75" name="Net-(P2-Pad35)">
+      <node ref="P3" pin="2"/>
+      <node ref="P2" pin="35"/>
+    </net>
+    <net code="76" name="Net-(P2-Pad40)">
+      <node ref="P2" pin="40"/>
+      <node ref="P4" pin="3"/>
+    </net>
+    <net code="77" name="Net-(P2-Pad38)">
+      <node ref="P4" pin="2"/>
+      <node ref="P2" pin="38"/>
+    </net>
+    <net code="78" name="Net-(P2-Pad36)">
+      <node ref="P2" pin="36"/>
+      <node ref="P4" pin="1"/>
+    </net>
+    <net code="79" name="Net-(C1-Pad1)">
+      <node ref="U1" pin="11"/>
+      <node ref="D1" pin="2"/>
+      <node ref="SW1" pin="2"/>
+      <node ref="R1" pin="2"/>
+      <node ref="C1" pin="1"/>
+    </net>
+    <net code="80" name="Net-(P1-Pad1)">
+      <node ref="U1" pin="16"/>
+      <node ref="R3" pin="1"/>
+      <node ref="P1" pin="4"/>
+      <node ref="P1" pin="3"/>
+      <node ref="P1" pin="2"/>
+      <node ref="P1" pin="1"/>
+    </net>
+    <net code="81" name="Net-(U12-Pad11)">
+      <node ref="U12" pin="11"/>
+    </net>
+    <net code="82" name="/BUF_A8">
+      <node ref="U12" pin="5"/>
+      <node ref="U8" pin="27"/>
+      <node ref="U9" pin="27"/>
+      <node ref="U6" pin="2"/>
+    </net>
+    <net code="83" name="/BUF_A9">
+      <node ref="U9" pin="26"/>
+      <node ref="U8" pin="26"/>
+      <node ref="U6" pin="5"/>
+      <node ref="U12" pin="4"/>
+    </net>
+    <net code="84" name="/BUF_A7">
+      <node ref="U8" pin="5"/>
+      <node ref="U5" pin="19"/>
+      <node ref="U9" pin="5"/>
+      <node ref="U12" pin="3"/>
+    </net>
+    <net code="85" name="Net-(U12-Pad13)">
+      <node ref="U12" pin="13"/>
+    </net>
+    <net code="86" name="Net-(U12-Pad12)">
+      <node ref="U12" pin="12"/>
+    </net>
+    <net code="87" name="Net-(U12-Pad10)">
+      <node ref="U12" pin="10"/>
+    </net>
+    <net code="88" name="/BUF_A5">
+      <node ref="U8" pin="7"/>
+      <node ref="U5" pin="15"/>
+      <node ref="U9" pin="7"/>
+      <node ref="U12" pin="1"/>
+    </net>
+    <net code="89" name="/BUF_A6">
+      <node ref="U5" pin="16"/>
+      <node ref="U12" pin="2"/>
+      <node ref="U9" pin="6"/>
+      <node ref="U8" pin="6"/>
+    </net>
+    <net code="90" name="Net-(U12-Pad9)">
+      <node ref="U12" pin="9"/>
+    </net>
+    <net code="91" name="Net-(U7-Pad17)">
+      <node ref="U7" pin="17"/>
+    </net>
+    <net code="92" name="Net-(U7-Pad16)">
+      <node ref="U7" pin="16"/>
+    </net>
+    <net code="93" name="Net-(U7-Pad15)">
+      <node ref="U7" pin="15"/>
+    </net>
+    <net code="94" name="Net-(U7-Pad14)">
+      <node ref="U7" pin="14"/>
+    </net>
+    <net code="95" name="Net-(U7-Pad13)">
+      <node ref="U7" pin="13"/>
+    </net>
+    <net code="96" name="Net-(U7-Pad12)">
+      <node ref="U7" pin="12"/>
+    </net>
+    <net code="97" name="Net-(U7-Pad18)">
+      <node ref="U7" pin="18"/>
+    </net>
+    <net code="98" name="Net-(D6-Pad1)">
+      <node ref="U15" pin="1"/>
+      <node ref="SW2" pin="1"/>
+      <node ref="D7" pin="1"/>
+      <node ref="D6" pin="1"/>
+    </net>
+    <net code="99" name="Net-(U7-Pad19)">
+      <node ref="U7" pin="19"/>
+    </net>
+    <net code="100" name="/ICH_ACK">
+      <node ref="U13" pin="11"/>
+      <node ref="U15" pin="36"/>
+    </net>
+    <net code="101" name="/ICH_OBF">
+      <node ref="U13" pin="10"/>
+      <node ref="U15" pin="35"/>
+    </net>
+    <net code="102" name="/ICH_D7">
+      <node ref="U15" pin="30"/>
+      <node ref="U13" pin="37"/>
+    </net>
+    <net code="103" name="/ICH_D6">
+      <node ref="U15" pin="29"/>
+      <node ref="U13" pin="38"/>
+    </net>
+    <net code="104" name="/ICH_D5">
+      <node ref="U15" pin="28"/>
+      <node ref="U13" pin="39"/>
+    </net>
+    <net code="105" name="/ICH_D4">
+      <node ref="U13" pin="40"/>
+      <node ref="U15" pin="27"/>
+    </net>
+    <net code="106" name="/ICH_D3">
+      <node ref="U15" pin="22"/>
+      <node ref="U13" pin="1"/>
+    </net>
+    <net code="107" name="/ICH_D2">
+      <node ref="U13" pin="2"/>
+      <node ref="U15" pin="21"/>
+    </net>
+    <net code="108" name="Net-(C19-Pad1)">
+      <node ref="R11" pin="2"/>
+      <node ref="D7" pin="2"/>
+      <node ref="C19" pin="1"/>
+    </net>
+    <net code="109" name="/PIC_VPP">
+      <node ref="D6" pin="2"/>
+      <node ref="P8" pin="1"/>
+    </net>
+    <net code="110" name="Net-(P6-Pad3)">
+      <node ref="U15" pin="24"/>
+      <node ref="P6" pin="3"/>
+    </net>
+    <net code="111" name="Net-(P6-Pad2)">
+      <node ref="P6" pin="2"/>
+      <node ref="U15" pin="23"/>
+    </net>
+    <net code="112" name="Net-(P6-Pad1)">
+      <node ref="P6" pin="1"/>
+    </net>
+    <net code="114" name="Net-(P1-Pad5)">
+      <node ref="P1" pin="5"/>
+      <node ref="R2" pin="1"/>
+      <node ref="P1" pin="8"/>
+      <node ref="P1" pin="7"/>
+      <node ref="P1" pin="6"/>
+      <node ref="U1" pin="17"/>
+    </net>
+    <net code="115" name="Net-(P7-Pad9)">
+      <node ref="P7" pin="9"/>
+    </net>
+    <net code="116" name="Net-(C18-Pad2)">
+      <node ref="Y1" pin="2"/>
+      <node ref="C18" pin="2"/>
+      <node ref="U15" pin="13"/>
+    </net>
+    <net code="117" name="Net-(U15-Pad16)">
+      <node ref="U15" pin="16"/>
+    </net>
+    <net code="118" name="Net-(U15-Pad2)">
+      <node ref="U15" pin="2"/>
+    </net>
+    <net code="119" name="Net-(C16-Pad1)">
+      <node ref="U15" pin="18"/>
+      <node ref="C16" pin="1"/>
+    </net>
+    <net code="120" name="Net-(U15-Pad17)">
+      <node ref="U15" pin="17"/>
+    </net>
+    <net code="121" name="Net-(U15-Pad15)">
+      <node ref="U15" pin="15"/>
+    </net>
+    <net code="122" name="Net-(U15-Pad7)">
+      <node ref="U15" pin="7"/>
+    </net>
+    <net code="123" name="Net-(U15-Pad6)">
+      <node ref="U15" pin="6"/>
+    </net>
+    <net code="124" name="Net-(U15-Pad5)">
+      <node ref="U15" pin="5"/>
+    </net>
+    <net code="125" name="/PIC_PGD">
+      <node ref="P8" pin="4"/>
+      <node ref="U15" pin="40"/>
+    </net>
+    <net code="126" name="Net-(U15-Pad4)">
+      <node ref="U15" pin="4"/>
+    </net>
+    <net code="127" name="/TFT_SCK">
+      <node ref="U15" pin="34"/>
+      <node ref="P7" pin="3"/>
+    </net>
+    <net code="128" name="/TFT_MISO">
+      <node ref="P7" pin="2"/>
+      <node ref="U15" pin="33"/>
+    </net>
+    <net code="129" name="Net-(U15-Pad3)">
+      <node ref="U15" pin="3"/>
+    </net>
+    <net code="130" name="/PIC_PGC">
+      <node ref="P8" pin="3"/>
+      <node ref="U15" pin="39"/>
+    </net>
+    <net code="131" name="/ICH_D0">
+      <node ref="U13" pin="4"/>
+      <node ref="U15" pin="19"/>
+    </net>
+    <net code="132" name="/ICH_D1">
+      <node ref="U13" pin="3"/>
+      <node ref="U15" pin="20"/>
+    </net>
+    <net code="133" name="Net-(C17-Pad2)">
+      <node ref="U15" pin="14"/>
+      <node ref="C17" pin="2"/>
+      <node ref="Y1" pin="1"/>
+    </net>
+    <net code="134" name="/TFT_SD_CS">
+      <node ref="U15" pin="9"/>
+      <node ref="P7" pin="6"/>
+    </net>
+    <net code="135" name="/TFT_LCD_CS">
+      <node ref="P7" pin="5"/>
+      <node ref="U15" pin="8"/>
+    </net>
+    <net code="136" name="/TFT_MOSI">
+      <node ref="P7" pin="4"/>
+      <node ref="U15" pin="26"/>
+    </net>
+    <net code="137" name="/TFT_Reset">
+      <node ref="P7" pin="8"/>
+      <node ref="U15" pin="25"/>
+    </net>
+    <net code="138" name="/TFT_D_C">
+      <node ref="P7" pin="7"/>
+      <node ref="U15" pin="10"/>
+    </net>
+    <net code="139" name="Net-(U3-Pad12)">
+      <node ref="U3" pin="12"/>
+    </net>
+    <net code="140" name="Net-(U3-Pad17)">
+      <node ref="U3" pin="17"/>
+    </net>
+    <net code="141" name="/S2">
+      <node ref="U3" pin="18"/>
+      <node ref="U2" pin="28"/>
+      <node ref="P2" pin="31"/>
+    </net>
+    <net code="142" name="/S1">
+      <node ref="P2" pin="28"/>
+      <node ref="U3" pin="3"/>
+      <node ref="U2" pin="27"/>
+    </net>
+    <net code="143" name="/S0">
+      <node ref="P2" pin="27"/>
+      <node ref="U2" pin="26"/>
+      <node ref="U3" pin="19"/>
+    </net>
+    <net code="144" name="Net-(U3-Pad8)">
+      <node ref="U3" pin="8"/>
+    </net>
+    <net code="145" name="/ALE">
+      <node ref="U6" pin="11"/>
+      <node ref="U3" pin="5"/>
+      <node ref="U5" pin="11"/>
+      <node ref="U7" pin="11"/>
+    </net>
+    <net code="146" name="/CLK">
+      <node ref="U1" pin="8"/>
+      <node ref="U3" pin="2"/>
+      <node ref="P2" pin="20"/>
+      <node ref="U2" pin="19"/>
+    </net>
+    <net code="147" name="/QS0">
+      <node ref="U2" pin="25"/>
+      <node ref="P2" pin="25"/>
+    </net>
+    <net code="148" name="/A9">
+      <node ref="U6" pin="4"/>
+      <node ref="P2" pin="12"/>
+      <node ref="U2" pin="7"/>
+    </net>
+    <net code="149" name="/A8">
+      <node ref="U2" pin="8"/>
+      <node ref="P2" pin="11"/>
+      <node ref="U6" pin="3"/>
+    </net>
+    <net code="150" name="/A15">
+      <node ref="P2" pin="18"/>
+      <node ref="U2" pin="39"/>
+      <node ref="U6" pin="18"/>
+    </net>
+    <net code="151" name="/A14">
+      <node ref="P2" pin="17"/>
+      <node ref="U6" pin="17"/>
+      <node ref="U2" pin="2"/>
+    </net>
+    <net code="152" name="/A13">
+      <node ref="U6" pin="14"/>
+      <node ref="P2" pin="16"/>
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="153" name="/A12">
+      <node ref="U6" pin="13"/>
+      <node ref="P2" pin="15"/>
+      <node ref="U2" pin="4"/>
+    </net>
+    <net code="154" name="/A11">
+      <node ref="U2" pin="5"/>
+      <node ref="U6" pin="8"/>
+      <node ref="P2" pin="14"/>
+    </net>
+    <net code="155" name="/A10">
+      <node ref="U2" pin="6"/>
+      <node ref="P2" pin="13"/>
+      <node ref="U6" pin="7"/>
+    </net>
+    <net code="156" name="/A17_S4">
+      <node ref="U7" pin="4"/>
+      <node ref="U2" pin="37"/>
+      <node ref="P2" pin="22"/>
+    </net>
+    <net code="157" name="/QS1">
+      <node ref="P2" pin="26"/>
+      <node ref="U2" pin="24"/>
+    </net>
+    <net code="158" name="/A19_S6">
+      <node ref="U2" pin="35"/>
+      <node ref="U7" pin="8"/>
+      <node ref="P2" pin="24"/>
+    </net>
+    <net code="159" name="/A18_S5">
+      <node ref="U7" pin="7"/>
+      <node ref="U2" pin="36"/>
+      <node ref="P2" pin="23"/>
+    </net>
+    <net code="160" name="/A16_S3">
+      <node ref="P2" pin="21"/>
+      <node ref="U2" pin="38"/>
+      <node ref="U7" pin="3"/>
+    </net>
+    <net code="161" name="/READY">
+      <node ref="U2" pin="22"/>
+      <node ref="U1" pin="5"/>
+      <node ref="P2" pin="34"/>
+    </net>
+    <net code="162" name="/LOCK">
+      <node ref="P2" pin="32"/>
+      <node ref="U2" pin="29"/>
+    </net>
+    <net code="163" name="Net-(U1-Pad6)">
+      <node ref="U1" pin="6"/>
+    </net>
+    <net code="164" name="Net-(U1-Pad4)">
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="165" name="Net-(U1-Pad2)">
+      <node ref="U1" pin="2"/>
+    </net>
+    <net code="166" name="Net-(U1-Pad15)">
+      <node ref="U1" pin="15"/>
+    </net>
+    <net code="167" name="Net-(U1-Pad14)">
+      <node ref="U1" pin="14"/>
+    </net>
+    <net code="168" name="Net-(U1-Pad12)">
+      <node ref="U1" pin="12"/>
+    </net>
+    <net code="169" name="Net-(U2-Pad34)">
+      <node ref="U2" pin="34"/>
+    </net>
+    <net code="170" name="Net-(U2-Pad32)">
+      <node ref="U2" pin="32"/>
+    </net>
+    <net code="171" name="Net-(U2-Pad31)">
+      <node ref="U2" pin="31"/>
+    </net>
+    <net code="172" name="Net-(U2-Pad30)">
+      <node ref="U2" pin="30"/>
+    </net>
+    <net code="173" name="/BUF_A4">
+      <node ref="U8" pin="8"/>
+      <node ref="U9" pin="8"/>
+      <node ref="U5" pin="12"/>
+    </net>
+    <net code="174" name="/BUF_A15">
+      <node ref="U6" pin="19"/>
+      <node ref="U9" pin="3"/>
+      <node ref="U8" pin="31"/>
+    </net>
+    <net code="175" name="/BUF_A14">
+      <node ref="U6" pin="16"/>
+      <node ref="U9" pin="29"/>
+      <node ref="U8" pin="3"/>
+    </net>
+    <net code="176" name="/BUF_A13">
+      <node ref="U6" pin="15"/>
+      <node ref="U9" pin="28"/>
+      <node ref="U8" pin="28"/>
+    </net>
+    <net code="177" name="/BUF_A12">
+      <node ref="U8" pin="4"/>
+      <node ref="U6" pin="12"/>
+      <node ref="U9" pin="4"/>
+    </net>
+    <net code="178" name="/BUF_A11">
+      <node ref="U6" pin="9"/>
+      <node ref="U9" pin="25"/>
+      <node ref="U8" pin="25"/>
+    </net>
+    <net code="179" name="/BUF_A10">
+      <node ref="U9" pin="23"/>
+      <node ref="U8" pin="23"/>
+      <node ref="U6" pin="6"/>
+    </net>
+    <net code="180" name="/BUF_A16">
+      <node ref="U9" pin="2"/>
+      <node ref="U8" pin="2"/>
+      <node ref="U7" pin="2"/>
+    </net>
+    <net code="181" name="/BUF_A3">
+      <node ref="U9" pin="9"/>
+      <node ref="U5" pin="9"/>
+      <node ref="U8" pin="9"/>
+    </net>
+    <net code="182" name="/BUF_A2">
+      <node ref="U9" pin="10"/>
+      <node ref="U8" pin="10"/>
+      <node ref="U5" pin="6"/>
+    </net>
+    <net code="183" name="/BUF_A18">
+      <node ref="U7" pin="6"/>
+      <node ref="U8" pin="1"/>
+    </net>
+    <net code="184" name="/BUF_A17">
+      <node ref="U8" pin="30"/>
+      <node ref="U7" pin="5"/>
+      <node ref="U9" pin="30"/>
+    </net>
+    <net code="185" name="Net-(U9-Pad1)">
+      <node ref="U9" pin="1"/>
+    </net>
+  </nets>
+</export>

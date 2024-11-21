@@ -1,0 +1,21 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 73597380-d862-46cd-bad5-5d375f9a8ecd)
+
+  (paper "A4")
+
+  (title_block
+    (title "Tralala 8088 Homebrew Computer")
+    (date "2023-01-17")
+    (rev "1")
+    (company "Copyright (C) 2016, 2017, 2022, 2023 Nikolay Nikolov <nickysn@users.sourceforge.net>")
+    (comment 1 "PO Box 1866, Mountain View, CA 94042, USA.")
+    (comment 2 "http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons,")
+    (comment 3 "License. To view a copy of this license, visit")
+    (comment 4 "This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported")
+  )
+
+  (lib_symbols
+  )
+
+)

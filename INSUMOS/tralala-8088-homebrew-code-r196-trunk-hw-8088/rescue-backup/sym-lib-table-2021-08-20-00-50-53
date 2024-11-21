@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name tralala8088homebrew-rescue)(type Legacy)(uri ${KIPRJMOD}/tralala8088homebrew-rescue.lib)(options "")(descr ""))
+)
