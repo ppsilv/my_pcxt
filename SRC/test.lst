@@ -1,0 +1,86 @@
+     1                                  cpu	8086
+     2                                  
+     3                                  %include "macro.inc"
+     1                              <1> ;=========================================================================
+     2                              <1> ; macro.inc - Defines macros
+     3                              <1> ;       setloc
+     4                              <1> ;-------------------------------------------------------------------------
+     5                              <1> ;
+     6                              <1> ; Compiles with NASM 2.07, might work with other versions
+     7                              <1> ;
+     8                              <1> ; Copyright (C) 2011 - 2012 Sergey Kiselev.
+     9                              <1> ; Provided for hobbyist use on the Xi 8088 board.
+    10                              <1> ;
+    11                              <1> ; This program is free software: you can redistribute it and/or modify
+    12                              <1> ; it under the terms of the GNU General Public License as published by
+    13                              <1> ; the Free Software Foundation, either version 3 of the License, or
+    14                              <1> ; (at your option) any later version.
+    15                              <1> ;
+    16                              <1> ; This program is distributed in the hope that it will be useful,
+    17                              <1> ; but WITHOUT ANY WARRANTY; without even the implied warranty of
+    18                              <1> ; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    19                              <1> ; GNU General Public License for more details.
+    20                              <1> ;
+    21                              <1> ; You should have received a copy of the GNU General Public License
+    22                              <1> ; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    23                              <1> ;
+    24                              <1> ;=========================================================================
+    25                              <1> 
+    26                              <1> ;=========================================================================
+    27                              <1> ; setloc - Set location. Insert 0FFh bytes until specifed location is reached.
+    28                              <1> ;-------------------------------------------------------------------------
+    29                              <1> %imacro setloc  1.nolist
+    30                              <1> %assign pad_bytes (%1-($-$$)-START)
+    31                              <1> %if pad_bytes < 0
+    32                              <1> %assign over_bytes -pad_bytes
+    33                              <1> %error Preceding code extends beyond setloc location by over_bytes bytes
+    34                              <1> %endif
+    35                              <1> %if pad_bytes > 0
+    36                              <1> %warning Inserting pad_bytes bytes
+    37                              <1>  times  pad_bytes db 0FFh
+    38                              <1> %endif
+    39                              <1> %endm
+     4                                  
+     5                                  %define	START		0x000		
+     6                                  
+     7                                  org	START		
+     8                                  
+     9                                  
+    10 00000000 FF<rep E000h>           setloc	0E000h
+    10          ******************       warning: Inserting 57344 bytes [-w+user]
+    11                                  
+    12                                  reset:
+    13                                              
+    14 0000E000 FA                          		cli     ; Clear Interrupts until vectors defined
+    15 0000E001 FC                                  cld
+    16                                  .loop:            
+    17 0000E002 B000                                mov     al, 0x00
+    18 0000E004 E680                                out     0x80, al
+    19 0000E006 E680                                out     0x80, al
+    20                                  
+    21 0000E008 B9FF7F                              mov     cx, 0x7fff
+    22                                  .label01:
+    23 0000E00B 49                                  dec     cx
+    24 0000E00C 75FD                                jnz     .label01
+    25                                  
+    26 0000E00E B001                                mov     al, 0x01
+    27 0000E010 E680                                out     0x80, al
+    28 0000E012 E680                                out     0x80, al
+    29                                  
+    30 0000E014 B9FF7F                              mov     cx, 0x7fff
+    31                                  .label02:
+    32 0000E017 49                                  dec     cx
+    33 0000E018 75FD                                jnz     .label02
+    34                                  
+    35 0000E01A EBE6                                jmp     .loop    
+    36                                  
+    37                                  
+    38 0000E01C F4                                  hlt     ;stops cpu    
+    39                                  
+    40 0000E01D FF<rep 1FD3h>                   setloc	0FFF0h			; Power-On Entry Point, macro fills space from last line with FF
+    40          ******************       warning: Inserting 8147 bytes [-w+user]
+    41                                  start:
+    42 0000FFF0 EA[00E0]00F0                    jmp     0F000h:reset
+    43 0000FFF5 FF<rep Ah>                      setloc	0FFFFh			; Pad remainder of ROM
+    43          ******************       warning: Inserting 10 bytes [-w+user]
+    44 0000FFFF FF                      	      db	0ffh            

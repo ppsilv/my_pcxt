@@ -27,3 +27,13 @@ Mas isso não funciona como esperador e a solução foi esta abaixo:
          + /BUFA19 * /BUFA18 *  BUFA17 * /BUFA16 * /MWR 
          + /BUFA19 * /BUFA18 *  BUFA17 *  BUFA16 * /MRD
          + /BUFA19 * /BUFA18 *  BUFA17 *  BUFA16 * /MWR 
+
+
+para compilar
+
+galasm mem.pld
+
+ou
+
+galette mem.pld
+
