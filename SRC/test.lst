@@ -53,34 +53,88 @@
     13                                              
     14 0000E000 FA                          		cli     ; Clear Interrupts until vectors defined
     15 0000E001 FC                                  cld
-    16                                  .loop:            
-    17 0000E002 B000                                mov     al, 0x00
-    18 0000E004 E680                                out     0x80, al
-    19 0000E006 E680                                out     0x80, al
-    20                                  
-    21 0000E008 B9FF7F                              mov     cx, 0x7fff
-    22                                  .label01:
-    23 0000E00B 49                                  dec     cx
-    24 0000E00C 75FD                                jnz     .label01
+    16                                  
+    17 0000E002 B80000                          mov ax, 0x0000
+    18 0000E005 8EC0                            mov es, ax
+    19 0000E007 8ED0                            mov ss, ax
+    20 0000E009 B800F0                          mov ax, 0xF000
+    21 0000E00C 8ED8                            mov ds, ax
+    22 0000E00E 8EC8                    		mov cs, ax
+    23                                          ;Put 0x0000 in stack pointer
+    24 0000E010 31E4                            xor sp, sp
     25                                  
-    26 0000E00E B001                                mov     al, 0x01
-    27 0000E010 E680                                out     0x80, al
-    28 0000E012 E680                                out     0x80, al
-    29                                  
-    30 0000E014 B9FF7F                              mov     cx, 0x7fff
-    31                                  .label02:
-    32 0000E017 49                                  dec     cx
-    33 0000E018 75FD                                jnz     .label02
+    26 0000E012 B855AA                          mov ax, 0xAA55
+    27 0000E015 26A30000                        mov word es:[0x0], ax
+    28                                  
+    29 0000E019 31C0                            xor ax,ax
+    30                                  
+    31 0000E01B 26A10000                        mov ax,word es:[0x0] 
+    32 0000E01F 3D55AA                          cmp ax, 0xAA55
+    33 0000E022 7526                            jnz  .loop1   
     34                                  
-    35 0000E01A EBE6                                jmp     .loop    
-    36                                  
-    37                                  
-    38 0000E01C F4                                  hlt     ;stops cpu    
+    35                                  .loop:            
+    36 0000E024 B000                                mov     al, 0x00
+    37 0000E026 E680                                out     0x80, al
+    38 0000E028 E680                                out     0x80, al
     39                                  
-    40 0000E01D FF<rep 1FD3h>                   setloc	0FFF0h			; Power-On Entry Point, macro fills space from last line with FF
-    40          ******************       warning: Inserting 8147 bytes [-w+user]
-    41                                  start:
-    42 0000FFF0 EA[00E0]00F0                    jmp     0F000h:reset
-    43 0000FFF5 FF<rep Ah>                      setloc	0FFFFh			; Pad remainder of ROM
-    43          ******************       warning: Inserting 10 bytes [-w+user]
-    44 0000FFFF FF                      	      db	0ffh            
+    40 0000E02A B9FFFF                              mov     cx, 0xffff
+    41                                  .label01:
+    42 0000E02D 49                                  dec     cx
+    43 0000E02E 75FD                                jnz     .label01
+    44 0000E030 B9FFFF                              mov     cx, 0xffff
+    45                                  .label012:
+    46 0000E033 49                                  dec     cx
+    47 0000E034 75FD                                jnz     .label012
+    48                                  
+    49 0000E036 B001                                mov     al, 0x01
+    50 0000E038 E680                                out     0x80, al
+    51 0000E03A E680                                out     0x80, al
+    52                                  
+    53 0000E03C B9FFFF                              mov     cx, 0xffff
+    54                                  .label02:
+    55 0000E03F 49                                  dec     cx
+    56 0000E040 75FD                                jnz     .label02
+    57 0000E042 B9FFFF                              mov     cx, 0xffff
+    58                                  .label022:
+    59 0000E045 49                                  dec     cx
+    60 0000E046 75FD                                jnz     .label022
+    61                                  
+    62 0000E048 EBDA                                jmp     .loop    
+    63                                  
+    64                                  
+    65                                  .loop1:            
+    66 0000E04A B000                                mov     al, 0x00
+    67 0000E04C E680                                out     0x80, al
+    68 0000E04E E680                                out     0x80, al
+    69                                  
+    70 0000E050 B9FF3F                              mov     cx, 0x3fff
+    71                                  .label011:
+    72 0000E053 49                                  dec     cx
+    73 0000E054 75FD                                jnz     .label011
+    74                                  
+    75 0000E056 B001                                mov     al, 0x01
+    76 0000E058 E680                                out     0x80, al
+    77 0000E05A E680                                out     0x80, al
+    78                                  
+    79 0000E05C B9FF3F                              mov     cx, 0x3fff
+    80                                  .label021:
+    81 0000E05F 49                                  dec     cx
+    82 0000E060 75FD                                jnz     .label021
+    83                                  
+    84 0000E062 EBE6                                jmp     .loop1    
+    85                                  
+    86                                  
+    87                                  
+    88                                  
+    89                                  
+    90 0000E064 F4                                  hlt     ;stops cpu    
+    91                                  
+    92                                  
+    93                                  
+    94 0000E065 FF<rep 1F8Bh>                   setloc	0FFF0h			; Power-On Entry Point, macro fills space from last line with FF
+    94          ******************       warning: Inserting 8075 bytes [-w+user]
+    95                                  start:
+    96 0000FFF0 EA[00E0]00F0                    jmp     0F000h:reset
+    97 0000FFF5 FF<rep Ah>                      setloc	0FFFFh			; Pad remainder of ROM
+    97          ******************       warning: Inserting 10 bytes [-w+user]
+    98 0000FFFF FF                      	      db	0ffh            
