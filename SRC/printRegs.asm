@@ -13,6 +13,25 @@ printES:
         pop ES
         ret
 
+printBX:
+		push AX
+        push ES
+        mov al, 'B'
+        call printCH
+        mov al, 'X'
+        call printCH
+        mov al, ':'
+        call printCH
+        mov     AX, BX
+        call print_hex
+		mov  al, 0Dh
+		call printCH
+		mov  al, 0Ah
+		call printCH
+        pop ES
+		pop AX
+        ret
+
 ;=========================================================================
 ; print_digit - print hexadecimal digit
 ; Input:
