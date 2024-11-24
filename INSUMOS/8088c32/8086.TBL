@@ -1,0 +1,365 @@
+  1,"AL","CL","DL","BL","AH","CH","DH","BH"
+  2,"AX","CX","DX","BX","SP","BP","SI","DI"
+  3,"BX+SI","BX+DI","BP+SI","BP+DI","SI","DI","BP","BX"
+  4,"BX+SI","BX+DI","BP+SI","BP+DI","SI","DI","!*","BX"
+  5,"ES","CS","SS","DS"
+  6,"1","CL"
+  7,"ES","!*","SS","DS"
+*
+;NUM	START	LENGTH	EXP		LOW		HIGH	;COMMENT
+  1,	5,	 3,	@1,		0,		7	;Byte reg
+  2,	10,	 3,	@1,		0,		7	;Byte reg
+  3,	13,	 3,	@1,		0,		7	;Byte reg
+  4,	5,	 3,	@2,		0,		7	;Word reg
+  5,	10,	 3,	@2,		0,		7	;Word reg
+  6,	13,	 3,	@2,		0,		7	;Word reg
+  7,	13,	 3,	@3,		0,		7	;r/m Mode 00
+  8,	13,	 3,	@4,		0,		7	;r/m Mode 01 & 10
+  9,	3,	 2,	@5,		0,		3	;Seg reg
+ 10,	11,	 2,	@5,		0,		3	;Seg Reg
+ 11,	6,	 1,	@6,		0,		1	;COUNT = 1 or CL
+ 12,	8,	 8,	#,		-128,		255	;Unsigned byte
+ 13,	8,	 8,	#,		-128,		127	;Signed byte
+ 14,	16,	 8,	#,		-128,		255	;Unsigned byte
+ 15,	16,	 8,	#,		-128,		127	;Signed byte
+ 16,	24,	 8,	#,		-128,		255	;Unsigned byte
+ 17,	24,	 8,	#,		-128,		127	;Signed byte
+ 18,	32,	 8,	#,		-128,		255	;Unsigned byte
+ 19,	32,	 8,	#,		-128,		127	;Signed byte
+ 20,	8,	16,	{INV #} >> 16,	0,		65535	;Unsigned word
+ 21,	8,	16,	{INV #} >> 16,	-32768, 	65535	;Signed word
+ 22,	16,	16,	{INV #} >> 16,	0,		65535	;Unsigned word
+ 23,	16,	16,	{INV #} >> 16,	-32768, 	65535	;Signed word
+ 24,	24,	16,	{INV #} >> 16,	0,		65535	;Unsigned word
+ 25,	24,	16,	{INV #} >> 16,	-32768, 	65535	;Signed word
+ 26,	32,	16,	{INV #} >> 16,	0,		65535	;Unsigned word
+ 27,	32,	16,	{INV #} >> 16,	-32768, 	65535	;Signed word
+ 28,	8,	8,	#-$-`,		$+`-128,	$+`+127 ;Byte disp
+ 29,	8,	16,	INV{#-$-`}>>16, $+`-65536,	$+`+65536 ;Word disp
+ 30,	5,	8,	{{#&56}*4}|{#&7}, 0,		63	;ESC
+ 31,	11,	2,	@7,		0,		3	;Seg Reg
+ 32,	8,	32, INV{{{#&$F0000}<<12}|{#&$FFFF}}, 0,  $FFFFF ;FAR PTR
+*
+					;Common r/m
+  1, {5},{6}^03C0:				;mod 11: r16,r16
+  2, {2},{3}^02C0:				;mod 11: r8,r8
+  3, [{8}],{5}^0100:				;mod 00: [r/m],r16
+  4, [{8}],{2}^0000:				;mod 00: [r/m],r8
+  5, [{7}{15}],{5}^014000:			;mod 01: [r/m+d8],r16
+  6, [{7}{15}],{2}^004000:			;mod 01: [r/m+d8],r8
+  7, [{7}{23}],{5}^01800000:			;mod 10: [r/m+d16],r16
+  8, [{7}{23}],{2}^00800000:			;mod 10: [r/m+d16],r8
+  9, [{22}],{5}^01060000:			;mod 00: [mem],r16
+ 10, [{22}],{2}^00060000:			;mod 00: [mem],r8
+ 11, {5},[{8}]^0300:				;mod 00: r16,[r/m]
+ 12, {2},[{8}]^0200:				;mod 00: r8,[r/m]
+ 13, {5},[{7}{15}]^034000:			;mod 01: r16,[r/m+d8]
+ 14, {2},[{7}{15}]^024000:			;mod 01: r8,[r/m+d8]
+ 15, {5},[{7}{23}]^03800000:			;mod 10: r16,[r/m+d16]
+ 16, {2},[{7}{23}]^02800000:			;mod 10: r8,[r/m+d16]
+ 17, {5},[{22}]^03060000:			;mod 00: r16,[mem]
+ 18, {2},[{22}]^02060000:			;mod 00: r8,[mem]
+ 					;Immediate
+ 19, AL,{12}^0400:				;Short:  AL,imm8
+ 20, AX,{20}^050000:				;Short:  AX,imm16
+ 21, BYTEPTR[{8}],{14}^000000:			;mod 00: [r/m],imm8
+ 22, WORDPTR[{8}],{15}^030000:			;mod 00: [r/m],imm16 s. ext.
+ 23, WORDPTR[{8}],{23}^01000000: 		;mod 00: [r/m],imm16
+ 24, BYTEPTR[{7}{15}],{16}^00400000:		;mod 01: [r/m+d8],imm8
+ 25, WORDPTR[{7}{15}],{17}^03400000:		;mod 01: [r/m+d8],imm16 s. ext.
+ 26, WORDPTR[{7}{15}],{25}^0140000000:		;mod 01: [r/m+d8],imm16
+ 27, BYTEPTR[{7}{23}],{18}^0080000000:		;mod 10: [r/m+d16],imm8
+ 28, WORDPTR[{7}{23}],{19}^0380000000:		;mod 10: [r/m+d16],imm16 s. ext.
+ 29, WORDPTR[{7}{23}],{27}^018000000000: 	;mod 10: [r/m+d16],imm16
+ 30, BYTEPTR[{22}],{18}^0006000000:		;mod 00: [mem],imm8
+ 31, WORDPTR[{22}],{19}^0306000000:		;mod 00: [mem],imm16 s. ext.
+ 32, WORDPTR[{22}],{27}^010600000000:		;mod 00: [mem],imm16
+ 33, {3},{14}^00C000:				;mod 11: r8,imm8
+ 34, {6},{15}^03C000:				;mod 11: r16,imm16 s. ext.
+ 35, {6},{23}^01C00000:				;mod 11: r16,imm16
+ 					;MOV acc
+ 36, AL,[{21}]^000000:				;AL,[mem]
+ 37, AX,[{21}]^010000:				;AX,[mem]
+ 38, [{21}],AL^020000:				;[mem],AL
+ 39, [{21}],AX^030000:				;[mem],AX
+ 					;MOV seg
+ 40, {6},{10}^00C0:				;mod 11: r16,segreg
+ 41, {31},{6}^02C0:				;mod 11: segreg,r16
+ 42, [{8}],{10}^0000:				;mod 00: [r/m],segreg
+ 43, [{7}{15}],{10}^004000:			;mod 01: [r/m+d8],segreg
+ 44, [{7}{23}],{10}^00800000:			;mod 10: [r/m+d16],segreg
+ 45, [{22}],{10}^00060000:			;mod 00: [mem],segreg
+ 46, {31},[{8}]^0200:				;mod 00: segreg,[r/m]
+ 47, {31},[{7}{15}]^024000:			;mod 01: segreg,[r/m+d8]
+ 48, {31},[{7}{23}]^02800000:			;mod 10: segreg,[r/m+d16]
+ 49, {31},[{22}]^02060000:			;mod 00: segreg,[mem]
+ 
+ 50, [{8}]^0000: 				;mod 00: [r/m]
+ 51, [{7}{15}]^004000:				;mod 01: [r/m+d8]
+ 52, [{7}{23}]^00800000: 			;mod 10: [r/m+d16]
+ 53, [{22}]^00060000:				;mod 00: [mem]
+ 54, {6}^01C0:					;mod 11: r16
+ 55, {3}^00C0:					;mod 11: r8
+ 56, {4}^00:					;short:  r16
+ 
+ 58, {4},AX^00:					;XCHG r16,AX
+ 59, {29}^000000:				;16-bit (IP) disp
+ 60, {32}^0000000000:				;32-bit (CS:IP) addr
+ 61, {12}^0000:					;IN Port/INT
+ 62, {28}^0000:					;BYTE DISP
+ 63, {12},AL^0000:				;OUT port,AL
+ 64, {12},AX^0100:				;OUT port,AX
+ 					;COUNT - 1 or CL
+ 65, [{8}],{11}^1000:				;mod 00
+ 66, [{7}{15}],{11}^104000:			;mod 01
+ 67, [{7}{23}],{11}^10800000:			;mod 10
+ 68, [{22}],{11}^10060000:			;mod 00 [mem]
+ 69, {6},{11}^11C0:				;mod 11 16-bit
+ 70, {3},{11}^10C0:				;mod 11  8-bit
+ 
+ 71, {21}^000000:				;RET disp
+ 72, {9}^00:					;SEG segreg
+ 73, {1},{12}^0000:				;r8,imm8
+ 74, {4},{21}^080000:				;r16,imm16
+ 					;CALL/JMP
+ 75, {20},{24}^0000000000:			;IP,CS
+ 					;SIGN AND DIRECTION BITS REMOVED!
+ 80, {5},{6}^00C0:				;mod 11: r16,r16
+ 81, {5},[{8}]^0000:				;mod 00: r16,[r/m]
+ 82, {5},[{7}{15}]^004000:			;mod 01: r16,[r/m+d8]
+ 83, {5},[{7}{23}]^00800000:			;mod 10: r16,[r/m+d16]
+ 84, {5},[{22}]^00060000:			;mod 00: r16,[mem]
+ 85, {2},[{8}]^0000:				;mod 00: r8,[r/m]
+ 86, {2},[{7}{15}]^004000:			;mod 01: r8,[r/m+d8]
+ 87, {2},[{7}{23}]^00800000:			;mod 10: r8,[r/m+d16]
+ 88, {2},[{22}]^00060000:			;mod 00: r8,[mem]
+ 89, {2},{3}^00C0:				;mod 11: r8,r8
+ 90, AL,{12}^0000:				;Short:  AL,imm8
+ 91, AX,{20}^010000:				;Short:  AX,imm16
+ 					;ESC
+ 92, {30},[{8}]^0000:				;mod 00: imm,[r/m]
+ 93, {30},[{7}{15}]^004000:			;mod 01: imm,[r/m+d8]
+ 94, {30},[{7}{23}]^00800000:			;mod 10: imm,[r/m+d16]
+ 95, {30},[{22}]^00060000:			;mod 00: imm,[mem]
+ 96, {30},{6}^00C0:				;mod 11: imm,r16
+ 97, {30},{3}^00C0:				;mod 11: imm,r8
+
+*
+AAA^37:
+AAD^D50A:
+AAM^D40A:
+AAS^3F:
+ADC	|1-20^10:
+ADC	|21-35^8010:
+ADD	|1-20^00:
+ADD	|21-35^8000:
+AND	|1-20^20:
+AND	|21-35^8020:
+CALL	DWORDPTR|50-53^FF18:
+CALL	FARPTR|60|75^9A:
+CALL	NEARPTR|59^E8:
+CALL	WORDPTR|50-53^FF10:
+CALL	|50-54^FF10:
+CALL	|59^E8:
+CBW^98:
+CLC^F8:
+CLD^FC:
+CLI^FA:
+CMC^F5:
+CMP	|1-20^38:
+CMP	|21-35^8038:
+CMPSW^A7:
+CMPSB^A6:
+CWD^99:
+DAA^27:
+DAS^2F:
+DEC	WORDPTR|50-53^FF08:
+DEC	BYTEPTR|50-53^FE08:
+DEC	|56^48:
+DEC	|55^FE08:
+DIV	WORDPTR|50-53^F730:
+DIV	BYTEPTR|50-53^F630:
+DIV	|54|55^F630:
+ESC	|92-97^D8:
+HLT^F4:
+IDIV	WORDPTR|50-53^F738:
+IDIV	BYTEPTR|50-53^F638:
+IDIV	|54|55^F638:
+IMUL	WORDPTR|50-53^F728:
+IMUL	BYTEPTR|50-53^F628:
+IMUL	|54|55^F628:
+IN	AL,DX^EC:
+IN	AL,|61^E4:
+IN	AX,DX^ED:
+IN	AX,|61^E5:
+INC	WORDPTR|50-53^FF00:
+INC	BYTEPTR|50-53^FE00:
+INC	|56^40:
+INC	|55^FE00:
+INT	3^CC:
+INT	|61^CD:
+INTO^CE:
+IRET^CF:
+JA	|62^77:
+JAE	|62^73:
+JB	|62^72:
+JBE	|62^76:
+JC	|62^72:
+JCXZ	|62^E3:
+JE	|62^74:
+JG	|62^7F:
+JGE	|62^7D:
+JL	|62^7C:
+JLE	|62^7E:
+JNA	|62^76:
+JNAE	|62^72:
+JNB	|62^73:
+JNBE	|62^77:
+JNC	|62^73:
+JNE	|62^75:
+JNG	|62^7E:
+JNGE	|62^7C:
+JNL	|62^7D:
+JNLE	|62^7F:
+JNO	|62^71:
+JNP	|62^7B:
+JNS	|62^79:
+JNZ	|62^75:
+JO	|62^70:
+JP	|62^7A:
+JPE	|62^7A:
+JPO	|62^7B:
+JS	|62^78:
+JZ	|62^74:
+JMP	DWORDPTR|50-53^FF28:
+JMP	FARPTR|60|75^EA:
+JMP	NEARPTR|59^E9:
+JMP	WORDPTR|50-53^FF20:
+JMP	SHORT|62^EB:
+JMP	|50-54^FF20:
+JMP	|62^EB:
+JMP	|59^E9:
+LAHF^9F:
+LDS	|81-84^C5:
+LEA	|81-84^8D:
+LES	|81-84^C4:
+LOCK^F0:
+LODSB^AC:
+LODSW^AD:
+LOOP	|62^E2:
+LOOPE	|62^E1:
+LOOPNE	|62^E0:
+LOOPNZ	|62^E0:
+LOOPZ	|62^E1:
+MOV	|1-8^88:				;r,r; [r/m],r
+MOV	|38-39^A0:				;[mem],acc
+MOV	|9-16^88:				;[mem],r; r,[r/m]
+MOV	|36-37^A0:				;acc,[mem]
+MOV	|17-18^88:				;r,[mem]
+MOV	|40-49^8C:				;sreg,r/m r/m,sreg
+MOV	|73|74^B0:				;reg,imm
+MOV	|21|23|24|26|27|29|30|32|33|35^C6:	;r/m,imm
+MOVSB^A4:
+MOVSW^A5:
+MUL	WORDPTR|50-53^F720:
+MUL	BYTEPTR|50-53^F620:
+MUL	|54|55^F620:
+NEG	WORDPTR|50-53^F718:
+NEG	BYTEPTR|50-53^F618:
+NEG	|54|55^F618:
+NOP^90:
+NOT	WORDPTR|50-53^F710:
+NOT	BYTEPTR|50-53^F610:
+NOT	|54|55^F610:
+OR	|1-20^08:
+OR	|21-35^8008:
+OUT	DX,AL^EE:
+OUT	DX,AX^EF:
+OUT	|63|64^E6:
+POP	|56^58:
+POP	ES^07:
+POP	SS^17:
+POP	DS^1F:
+POP	WORDPTR|50-53^8F00:
+POPF^9D:
+PUSH	|56^50:
+PUSH	|72^06:
+PUSH	WORDPTR|50-53^FF30:
+PUSHF^9C:
+RCL	BYTEPTR|65-68^C010:
+RCL	WORDPTR|65-68^C110:
+RCL	|69|70^C010:
+RCR	BYTEPTR|65-68^C018:
+RCR	WORDPTR|65-68^C118:
+RCR	|69|70^C018:
+REP	MOVSB^F3A4:
+REP	MOVSW^F3A5:
+REP	STOSB^F3AA:
+REP	STOSW^F3AB:
+REPE	CMPSB^F3A6:
+REPE	CMPSW^F3A7:
+REPE	SCASB^F3AE:
+REPE	SCASW^F3AF:
+REPZ	CMPSB^F3A6:
+REPZ	CMPSW^F3A7:
+REPZ	SCASB^F3AE:
+REPZ	SCASW^F3AF:
+REPNE	CMPSB^F2A6:
+REPNE	CMPSW^F2A7:
+REPNE	SCASB^F2AE:
+REPNE	SCASW^F2AF:
+REPNZ	CMPSB^F2A6:
+REPNZ	CMPSW^F2A7:
+REPNZ	SCASB^F2AE:
+REPNZ	SCASW^F2AF:
+RET^C3:
+RET	|71^C2:
+RETN^C3:
+RETN	|71^C2:
+RETF^CB:
+RETF	|71^CA:
+ROL	BYTEPTR|65-68^C000:
+ROL	WORDPTR|65-68^C100:
+ROL	|69|70^C000:
+ROR	BYTEPTR|65-68^C008:
+ROR	WORDPTR|65-68^C108:
+ROR	|69|70^C008:
+SAHF^9E:
+SAL	BYTEPTR|65-68^C020:
+SAL	WORDPTR|65-68^C120:
+SAL	|69|70^C020:
+SAR	BYTEPTR|65-68^C038:
+SAR	WORDPTR|65-68^C138:
+SAR	|69|70^C038:
+SHL	BYTEPTR|65-68^C020:
+SHL	WORDPTR|65-68^C120:
+SHL	|69|70^C020:
+SHR	BYTEPTR|65-68^C028:
+SHR	WORDPTR|65-68^C128:
+SHR	|69|70^C028:
+SBB	|1-20^18:
+SBB	|21-35^8018:
+SCASB^AE:
+SCASW^AF:
+SEG	|72^26:
+STC^F9:
+STD^FD:
+STI^FB:
+STOSB^AA:
+STOSW^AB:
+SUB	|1-20^28:
+SUB	|21-35^8028:
+TEST	|3-10^84:
+TEST	|80-84^85:
+TEST	|85-89^84:
+TEST	|90-91^A8:
+TEST	|21|23|24|26|27|29|30|32|33|35^F6:
+WAIT^9B:
+XCHG	AX,|56^90:
+XCHG	|58^90:
+XCHG	|1-20^86:
+XLAT^D7:
+XLATB^D7:
+XOR	|1-20^30:
+XOR	|21-35^8030:
+
