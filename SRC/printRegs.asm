@@ -8,9 +8,38 @@ printES:
         call printCH
         mov al, 'S'
         call printCH
-        mov     AX, ES
+        mov AX, ES
         call print_hex
         pop ES
+        ret
+
+printDI:
+        push DI
+        mov al, 'D'
+        call printCH
+        mov al, 'I'
+        call printCH
+        mov AX, DI
+        call print_hex
+        pop DI
+        ret
+
+printAX:
+        push DI
+        push AX
+        mov DI, AX
+        mov al, 'A'
+        call printCH
+        mov al, 'X'
+        call printCH
+        mov AX, DI
+        call print_hex
+	mov  al, 0Dh
+	call printCH
+	mov  al, 0Ah
+	call printCH
+        pop AX
+        pop DI
         ret
 
 printBX:
@@ -24,10 +53,10 @@ printBX:
         call printCH
         mov     AX, BX
         call print_hex
-		mov  al, 0Dh
-		call printCH
-		mov  al, 0Ah
-		call printCH
+	mov  al, 0Dh
+	call printCH
+	mov  al, 0Ah
+	call printCH
         pop ES
 		pop AX
         ret

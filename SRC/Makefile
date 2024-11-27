@@ -42,5 +42,5 @@ mybios.rom: mybios.bin
 clean:
 	rm -f mybios.lst mybios.lst mybios.bin $(IMAGES)
 
-flash-mybios:
+flash:
 	minipro -p $(FLASH_ROM) -w mybios.bin

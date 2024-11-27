@@ -1,11 +1,13 @@
 cpu	8086
 
-%include "macro.inc"
+%include "macros.inc"
 
 %define	START		0x0000		
 %define DATE		'22/11/24'
 %define MODEL_BYTE	0FEh		; IBM PC/XT
 %define VERSION		'1.0.00'	; BIOS version
+
+mem_led_reg        equ     0x0501  ; next variable
 
 org	START		
 
@@ -21,10 +23,10 @@ welcome		db	"XT 8088 BIOS, Version "
 
 setloc	0E000h
 reset:
-                cli
+            cli
     		mov ax,0x40
     		mov ds,ax
-		mov word [0x72],0x0
+			mov word [0x72],0x0
     		xor ax,ax
     		jc l0xb3
     		jo l0xb3
@@ -63,8 +65,8 @@ l0xae: 		xor ax,0xaaaa
     		jz l0xb4
 l0xb3: 		jmp led3blinks
 l0xb4: 		cld                     
-                ;Verify if the board has at least 32kbytes of RAM
-                jmp testFirst64kb
+            ;Verify if the board has at least 32kbytes of RAM
+            jmp testFirst64kb
 
 initBios:
         mov ax, 0x0000
@@ -72,14 +74,14 @@ initBios:
         mov ss, ax                  ; Segmento Stack
         mov ax, 0xF000
         mov ds, ax
-	mov cs, ax
+		mov cs, ax
         ;Put 0x8000 in stack pointer top of the first 32kbytes of mem
         xor sp, sp          ;The minimum of 64k of ram are OK.
         xor ax, ax              ; Put flags in known state
         PUSH AX
         POPF
-        MOV SP,AX    
-
+		mov	al, 0x0
+		mov byte es:[mem_led_reg],al
    
 ;******************************************************
 ; END INITIALIZATION
@@ -93,6 +95,18 @@ initBios:
 
 		call memoryTest
 
+		;INIT: Here my code under test
+		call init_system_intr
+        mov al,0x0
+        mov byte es:[mem_led_reg],al
+
+.loop:	
+		call	UART_RX_blct
+		call	printch
+		jmp .loop		
+
+
+		;END: my code under test
 		jmp ledblinkOk
 
 %include "DRV16C550_8088.asm"
@@ -100,6 +114,8 @@ initBios:
 %include "errorLed.asm"
 %include "testSram.asm"
 %include "printRegs.asm"
+%include "pic8259A.asm"
+%include "pit8254.asm"
 
         setloc	0FFF0h			; Power-On Entry Point, macro fills space from last line with FF
 start:
