@@ -939,10 +939,10 @@
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid cc877a93-46c4-4c58-a2af-99e6bb1b30a0)
-    (property "Sheetname" "pic_timer" (at 186.69 50.0884 0)
+    (property "Sheetname" "pic_timer_rs232" (at 186.69 50.0884 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheetfile" "pic_timer.kicad_sch" (at 186.69 80.5946 0)
+    (property "Sheetfile" "pic_timer_rs232.kicad_sch" (at 186.69 80.5946 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
