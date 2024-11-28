@@ -81,3 +81,11 @@ pic_enable_ir:
 
 %include "intVect.asm"
 %include "picInit.asm"
+
+;#1 tentar testar sem ter terminado wireup de I/0 RD WR e dados no barramento
+;#2 negligenciar o pino de CS na hora de ligá-lo ao 74138 pois fiz uma gambeta
+;   para que o mesmo 74138 pudesse atuar com endereços 0x20 e 0x40
+;#3 negligenciar a forma de habilitar a interrupção na função pic_enable_ir
+;#4 A chave conectada ao pino da interrupção com certeza dava problemas pois
+;   foi tirar a chave e colocar o 8253 fazendo a interrupção que todos os
+;   probremas de reset acabaram.

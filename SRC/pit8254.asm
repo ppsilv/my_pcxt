@@ -15,7 +15,7 @@ PIT_CTRL_REG        EQU     0x43
 PIT_COUNTER0_INT    EQU     (PIC_INT_VEC + 0)
 SYSTEM_TICKS_SEC    EQU     100         ; 100 ticks per second = 100Hz
 
-sys_tick_count: dd 0
+sys_tick_count       equ     0x0502
 
 ;--------------------------------------
 ; void pit_init(void)
@@ -53,16 +53,16 @@ pit_init:
 get_sys_ticks:
         pushf
         cli
-        mov ax, word [sys_tick_count]
-        mov dx, word [sys_tick_count + 2]
+        mov ax, word es:[sys_tick_count]
+        mov dx, word es:[sys_tick_count + 2]
         popf
         ret
 
 ;--------------------------------------
 counter0_int_handler:
-        inc word [sys_tick_count]
+        inc word es:[sys_tick_count]
         jnz .1
-        inc word [sys_tick_count + 2]
+        inc word es:[sys_tick_count + 2]
 .1:
         pic_eoi_cmd
         iret

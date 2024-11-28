@@ -103,6 +103,8 @@ initBios:
 .loop:	
 		call	UART_RX_blct
 		call	printch
+		call    get_sys_ticks
+		call	printAX
 		jmp .loop		
 
 
