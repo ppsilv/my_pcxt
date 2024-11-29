@@ -192,6 +192,12 @@ print3:
 			pop  DS
 .fimPrint3:   ret		
 
+newLine:
+	mov  al, 0Dh
+	call printCH
+	mov  al, 0Ah
+	call printCH
+	ret
 
 ;print3:
 ;        	mov  al,byte ds:[bx]

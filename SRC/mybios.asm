@@ -104,7 +104,12 @@ initBios:
 		call	UART_RX_blct
 		call	printch
 		call    get_sys_ticks
-		call	printAX
+		push	AX
+		mov		AX, DX
+		call	printAX0
+		pop		AX
+		call	printAX0
+		call	newLine
 		jmp .loop		
 
 

@@ -42,6 +42,13 @@ printAX:
         pop DI
         ret
 
+printAX0:
+        push AX
+        call print_hex
+        pop AX
+        ret
+
+
 printBX:
 		push AX
         push ES
