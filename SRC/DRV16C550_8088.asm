@@ -121,7 +121,7 @@ LOOP_UART_TX:
 OUT_UART_TX:
 			POP	AX					; Good to send at this point, so	
 			CMP AL, 0x0D
-			JZ  println
+			JZ  uart_println
 			MOV	DX, uart_tx_rx
 			OUT	DX, AL		; Write the character to the UART transmit buffer
 			mov	cx, 0x2ff
@@ -132,12 +132,7 @@ FIM_UART_TX:
 			POP CX
 			POP DX
 			RET
-println:
-			call printlf
-			STC						; Set carry flag
-			JMP FIM_UART_TX
-
-printlf:
+uart_println:
 			MOV	DX, uart_tx_rx
 			OUT	DX, AL		; Send 0x0D
 			mov	cx, 0xff
@@ -147,20 +142,8 @@ printlf:
 			OUT	DX, AL		; Write the character to the UART transmit buffer
 			mov	CX, 0xff
 			call basicDelay
-			ret
-;printCH
-;parameters:
-;          bx = message address
-;
-printCH:
-	MOV	DX, uart_tx_rx
-   	OUT	DX, AL
-	mov	CX, 0xff
-.basicDelay:	
-    dec cx
-    jnz .basicDelay
-	ret
-
+			STC						; Set carry flag
+			JMP FIM_UART_TX
 
 ;;print2
 print2:
@@ -194,9 +177,9 @@ print3:
 
 newLine:
 	mov  al, 0Dh
-	call printCH
+	call UART_TX
 	mov  al, 0Ah
-	call printCH
+	call UART_TX
 	ret
 
 ;print3:
@@ -217,4 +200,58 @@ newLine:
 basicDelay:
         dec cx
         jnz basicDelay
+        ret
+
+
+ReadLine:
+        ;mov cl,0x0
+        mov  bx,  reg_buff_read
+
+        call printPrompt
+.loopP:  ;RX blocante
+        call UART_RX_blct       
+ ;       jnc  .loopP
+        call UART_TX
+
+        mov  byte es:[bx], al 
+        mov  byte es:[bx+1], 0x0 
+        inc  bx
+
+        CMP  AL, 0x0A
+        JNZ  .loopP
+        call newLine
+        call printPrompt
+        mov  BX, reg_buff_read
+        call printFromSram
+        ret
+
+printFromSram:
+        	mov  al,byte es:[bx]
+        	cmp  al,0h
+        	jz   .fimPrintFromSram
+.contFromSram:
+			call UART_TX
+			JNC	.contFromSram
+        	inc  bx
+        	jmp  printFromSram
+.fimPrintFromSram:  
+			ret	
+
+NewReadLine:
+		push 	DS
+		mov 	ax, 0x0
+		mov 	DS, AX
+        mov  	di,  reg_buff_read
+        ;call printPrompt
+.loopP:  ;RX blocante
+        call 	UART_RX_blct       
+		stosb
+        call 	UART_TX
+        CMP  	AL, 0x0A
+        JNZ  	.loopP
+		mov  	al,0x0
+		stosb
+        ;call 	newLine
+        ;call 	printPrompt
+		pop 	DS
         ret

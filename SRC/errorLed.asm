@@ -14,11 +14,7 @@ ledblinkOk:
 .label02:
                 dec     cx
                 jnz     .label02
-
-                call    UART_RX
-                jnc     .loop0
-                call    printch
-                jmp     .loop0         
+                ret      
 
 led2blinks:
 .loop0:

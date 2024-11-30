@@ -1,73 +1,19 @@
-
-
-
-
-printES:
-        push ES
-        mov al, 'E'
-        call printCH
-        mov al, 'S'
-        call printCH
-        mov AX, ES
-        call print_hex
-        pop ES
-        ret
-
-printDI:
-        push DI
-        mov al, 'D'
-        call printCH
-        mov al, 'I'
-        call printCH
-        mov AX, DI
-        call print_hex
-        pop DI
-        ret
-
-printAX:
-        push DI
-        push AX
-        mov DI, AX
-        mov al, 'A'
-        call printCH
-        mov al, 'X'
-        call printCH
-        mov AX, DI
-        call print_hex
-	mov  al, 0Dh
-	call printCH
-	mov  al, 0Ah
-	call printCH
-        pop AX
-        pop DI
-        ret
-
-printAX0:
-        push AX
-        call print_hex
-        pop AX
-        ret
-
-
-printBX:
-		push AX
-        push ES
-        mov al, 'B'
-        call printCH
-        mov al, 'X'
-        call printCH
-        mov al, ':'
-        call printCH
-        mov     AX, BX
-        call print_hex
-	mov  al, 0Dh
-	call printCH
-	mov  al, 0Ah
-	call printCH
-        pop ES
-		pop AX
-        ret
-
+	CPU 8086
+;=========================================================================
+; print_hex - print 16-bit number in hexadecimal
+; Input:
+;	AX - number to print
+; Output:
+;	none
+;-------------------------------------------------------------------------
+print_hex:
+    push    AX
+	xchg	al,ah
+	call	print_byte		; print the upper byte
+	xchg	al,ah
+	call	print_byte		; print the lower byte
+    pop     AX
+	ret
 ;=========================================================================
 ; print_digit - print hexadecimal digit
 ; Input:
@@ -84,23 +30,9 @@ print_digit:
 	jna	.1
 	add	al,'A'-'9'-1		; a hex digit
 .1:
-        call    printCH
+    call    UART_TX
 	pop	bx
 	pop	ax
-	ret
-
-;=========================================================================
-; print_hex - print 16-bit number in hexadecimal
-; Input:
-;	AX - number to print
-; Output:
-;	none
-;-------------------------------------------------------------------------
-print_hex:
-	xchg	al,ah
-	call	print_byte		; print the upper byte
-	xchg	al,ah
-	call	print_byte		; print the lower byte
 	ret
 ;=========================================================================
 ; print_byte - print a byte in hexadecimal
@@ -121,14 +53,15 @@ print_byte:
 	rol	al,1
 	call	print_digit
 	ret
-
-
-
+;=========================================================================
 ;byte_to_hex_str
 ;This function return in AX the ascii code for hexadecimal number from 0 to F
 ;Parameters:
 ;               AL = imput
 ;               AX = output
+;This routines expands the data 1 byte returns 2 bytes
+;Ex.: 0xA5 returns 4135 41 = 'A' 35 = '5' 
+;
 ;Changes CL
 byte_to_hex_str:
         PUSH CX
@@ -149,4 +82,77 @@ byte_to_hex_str:
         POP CX
         ret
 
+;==========================================================================
+;hex_str_to_hex
+;Parameters: DX = data to be converted
+;            bh = return data
+;
+;This routines compress the data 2 bytes returns 1 byte
+;Ex.: A5 in memory 41 35 41 = 'A' 35 = '5' returns 0xA5  A=1010 and 5 = 0101 
+;
+;A crude and simple implementation is to split 
+;the byte into two nibbles and then use each 
+;nibble as an index into a hex character "table".
+; cdecl calling convention (google if you're not familiar with)
+HEX_CHARSET		db 0,1,2,3,4,5,6,7,8,9,0xA,0xB,0xC,0xD,0xE,0xF
 
+; void byteToHex(byte val, char* buffer)
+hex_str_to_hex:
+    ; nibble 1
+	xor		BX, BX
+    mov 	ax,	dx
+	call	getNibble
+	shl		ah, 1
+	shl		ah, 1
+	shl		ah, 1
+	shl		ah, 1
+	mov		bh, ah
+    ; nibble 2
+    mov 	ax,	dx
+	mov		ah, al
+	call	getNibble
+	and		ah, 0x0F
+	or		bh, ah
+	ret
+		
+getNibble:	
+	cmp ah, 0x41
+	jge getHexSuperior
+	sub ah, 0x30
+	ret
+getHexSuperior:
+	sub ah, 0x37
+	ret
+
+;=======================================================	
+;nibbleToHex
+;Parameters AX = data to be converted
+;Return data in AL
+nibbleToHex:
+	and AX, 0Fh ; 
+	lea si, ds:[HEX_CHARSET]
+	add si, ax
+	lodsb
+	ret
+
+convertAddrToHex:
+	mov		si, reg_buff_read
+	mov		di, reg_buff_write
+
+	mov		dh, byte es:[si]
+	mov		dl, byte es:[si+1]
+	;mov		AX, DX
+	;call		print_hex
+	call	hex_str_to_hex
+	mov		byte es:[di], bh
+
+	mov		dh, byte es:[si+2]
+	mov		dl, byte es:[si+3]
+	call	hex_str_to_hex
+	mov		byte es:[di+1], bh
+
+	;call	newLine
+	;mov	ah, byte es:[di]
+	;mov	al, byte es:[di+1]
+	;call	print_hex
+	ret

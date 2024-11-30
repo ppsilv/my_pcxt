@@ -211,7 +211,7 @@ memoryTestEnd:
 		call	print2
 onlyTotal:		
 		mov		al, 0Dh
-		call	printCH
+		call	UART_TX
 		mov		bx, totalMem
 		call	print2
 		mov     ax, 17

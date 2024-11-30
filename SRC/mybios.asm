@@ -1,13 +1,12 @@
 cpu	8086
 
 %include "macros.inc"
+%include "vars.inc"
 
 %define	START		0x0000		
 %define DATE		'22/11/24'
 %define MODEL_BYTE	0FEh		; IBM PC/XT
 %define VERSION		'1.0.00'	; BIOS version
-
-mem_led_reg        equ     0x0501  ; next variable
 
 org	START		
 
@@ -20,7 +19,10 @@ welcome		db	"XT 8088 BIOS, Version "
 			db	"8088 MonitorV0 V ",VERSION ," 2447A 512 Sram Rom at29C512", 0Dh
 			db      0dh,"A total of 64k minimum are ok..", 0Dh, 0
 
-
+help_msg	db 0Dh,"==================", 0Dh
+			db "cmd d dump memory", 0Dh
+			db "    t show systick", 0Dh
+			db "    h for this help", 0Dh, 0
 setloc	0E000h
 reset:
             cli
@@ -95,26 +97,47 @@ initBios:
 
 		call memoryTest
 
-		;INIT: Here my code under test
 		call init_system_intr
         mov al,0x0
         mov byte es:[mem_led_reg],al
 
-.loop:	
+Mainloop:
+		call	printPrompt
 		call	UART_RX_blct
-		call	printch
+		call	UART_TX
+		cmp		al, 'd'
+		je 		show_dump
+		cmp		al, 'h'
+		je 		show_help_msg
+		cmp		al, 't'
+		je 		show_systic
+		cmp		al, 'p'
+		je 		show_reg
+
+		;CALL	newLine
+		jmp 	Mainloop	
+show_reg:
+		mov	AX, 0x1234
+		call	print_hex
+		call	newLine
+		jmp 	Mainloop		
+show_dump:
+		call	dump
+		jmp 	Mainloop		
+show_systic:
 		call    get_sys_ticks
 		push	AX
 		mov		AX, DX
-		call	printAX0
+		call	print_hex
 		pop		AX
-		call	printAX0
+		call	print_hex
 		call	newLine
-		jmp .loop		
+		jmp 	Mainloop		
+show_help_msg:
+		mov		BX, help_msg
+		call 	print2
+		jmp 	Mainloop
 
-
-		;END: my code under test
-		jmp ledblinkOk
 
 %include "DRV16C550_8088.asm"
 %include "screen.asm"
@@ -123,6 +146,8 @@ initBios:
 %include "printRegs.asm"
 %include "pic8259A.asm"
 %include "pit8254.asm"
+%include "math.asm"
+%include "mem_dump.asm"
 
         setloc	0FFF0h			; Power-On Entry Point, macro fills space from last line with FF
 start:

@@ -74,7 +74,7 @@ pic_enable_ir:
         mov al, 0FEh
         out PIC_IMR, al
         in al, PIC_IMR
-        call printAX
+        ;call print_hex
 
         popf
         ret
