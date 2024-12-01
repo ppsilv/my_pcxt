@@ -12,16 +12,16 @@ PIC_IRR             EQU     0x20
 PIC_IMR             EQU     0x21
 PIC_INT_VEC         EQU     0x08
 
-PIC_INIT        db "pc_init: init",0Dh, 0
-INIT_IRQ        db "pic_enable_ir: init",0Dh, 0
-INT_VECT        db "set_int_vector: init",0Dh, 0
+;PIC_INIT        db 0Dh,0Ah,"pc_init: init",0Dh, 0
+;INIT_IRQ        db 0Dh,0Ah,"pic_enable_ir: init",0Dh, 0
+;INT_VECT        db 0Dh,0Ah,"set_int_vector: init",0Dh, 0
 
 ;--------------------------------------
 ; void pic_init(void)
 ;--------------------------------------
 pic_init:
-        mov     bx, PIC_INIT 
-        call    print2
+        ;mov     si, PIC_INIT 
+        ;call    pstr
         pushf
         cli
         mov al, 0b00010111      ; ICW1
@@ -66,8 +66,8 @@ pic_disable_ir:
 ; void pic_enable_ir(uint8_t irNo)
 ;--------------------------------------
 pic_enable_ir:
-        mov     bx, INIT_IRQ 
-        call    print2
+        ;mov     si, INIT_IRQ 
+        ;call    pstr
 
         pushf
         cli

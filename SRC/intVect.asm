@@ -33,8 +33,8 @@ init_int_vectors:
 ; void set_int_vector(uint8_t intNo, void* ptr)
 ;--------------------------------------
 set_int_vector:
-        MOV bx, INT_VECT 
-        call    print2
+        ;MOV si, INT_VECT 
+        ;call    pstr
 
         push es
         xor ax, ax

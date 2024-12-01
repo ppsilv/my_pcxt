@@ -30,7 +30,7 @@ print_digit:
 	jna	.1
 	add	al,'A'-'9'-1		; a hex digit
 .1:
-    call    UART_TX
+    call    cout
 	pop	bx
 	pop	ax
 	ret
@@ -136,23 +136,19 @@ nibbleToHex:
 	ret
 
 convertAddrToHex:
-	mov		si, reg_buff_read
-	mov		di, reg_buff_write
+	;mov		si, reg_buff_read
+	;call	pstr_sram
 
-	mov		dh, byte es:[si]
-	mov		dl, byte es:[si+1]
-	;mov		AX, DX
-	;call		print_hex
+	mov		dh, byte es:[reg_buff_read]
+	mov		dl, byte es:[reg_buff_read+1]
+
 	call	hex_str_to_hex
-	mov		byte es:[di], bh
+	mov		byte es:[reg_buff_write], bh
 
-	mov		dh, byte es:[si+2]
-	mov		dl, byte es:[si+3]
+	mov		dh, byte es:[reg_buff_read+2]
+	mov		dl, byte es:[reg_buff_read+3]
+
 	call	hex_str_to_hex
-	mov		byte es:[di+1], bh
+	mov		byte es:[reg_buff_write+1], bh
 
-	;call	newLine
-	;mov	ah, byte es:[di]
-	;mov	al, byte es:[di+1]
-	;call	print_hex
 	ret

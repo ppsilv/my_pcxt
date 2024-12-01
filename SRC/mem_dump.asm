@@ -1,30 +1,31 @@
 
-msg01	db 0Dh,"Digite o endereco BX: ", 0
-msg02   db 0Dh,"<ESC>para novo segment <Enter>continua ES: ", 0
-msg03   db 0Dh,"Novo segment ES: ", 0
-msg04   db 0Dh,"Continua <Enter>: ", 0
-msg05   db 0Dh,"ES: ", 0
+msg01	db 0Dh,0Ah,"Digite o endereco BX: ", 0
+msg02   db 0Dh,0Ah,"<ESC>para novo segment <Enter>continua ES: ", 0
+msg03   db 0Dh,0Ah,"Novo segment ES: ", 0
+msg04   db 0Dh,0Ah,"<ESC>Fim, <Enter>Continua: ", 0
+msg05   db 0Dh,0Ah,"ES: ", 0
 
 loadBX:
         push    ES
         mov     AX, 0x0
         mov     ES, AX
-        mov     BX, msg01
-        call    print2
+        mov     si, msg01
+        call    pstr
         call    readAddress
-	mov 	ah, byte es:[di]
-	mov	al, byte es:[di+1]
+	mov 	ah, byte es:[reg_buff_write]
+	mov	al, byte es:[reg_buff_write+1]
         mov     BX, AX
+        ;call    print_hex
         pop     ES
         ret        
 showES:
         push BX
-        mov  BX, msg02
-        call print2
+        mov  si, msg02
+        call pstr
         mov  AX, ES
         call print_hex
         XOR  AX, AX
-        call UART_RX_blct
+        call cin_blct
         cmp  al, 0x0d
         je   .retorna
         call changeES
@@ -36,11 +37,11 @@ changeES:
         push    BX
         xor     AX, AX
         mov     ES, AX
-        mov     BX, msg03
-        call    print2
+        mov     si, msg03
+        call    pstr
         call    readAddress
-	mov 	ah, byte es:[di]
-	mov	al, byte es:[di+1]
+	mov 	ah, byte es:[reg_buff_write]
+	mov	al, byte es:[reg_buff_write+1]
         mov     ES, AX
         pop     BX
         ret
@@ -52,28 +53,27 @@ changeES:
 dump:
         call    showES
         call    loadBX
-Continua:
+NewBlock:
         push    BX
-        mov     BX, msg05
-        call    print2
+        mov     si, msg05
+        call    pstr
         mov     AX, ES
         call    print_hex      
         mov     al, ':'
-        call    UART_TX
+        call    cout
         pop     BX
         mov     AX, BX
         call    print_hex      
 
         mov  CL, 16
+        call newLine
 dump_01:        
-        mov  al, 0x0d
-        call UART_TX
         mov  AX, BX
         call print_hex
         mov  al, ':'
-        call UART_TX
+        call cout
         MOV  AL, ' '
-        CALL UART_TX
+        CALL cout
         
         ;;Write 16 bytes em hexadecimal
         MOV  CH, 16
@@ -81,19 +81,19 @@ dump_02:
         MOV  AL, ES:[BX]
         CALL byte_to_hex_str
         PUSH AX
-        CALL UART_TX
+        CALL cout
         POP  AX
         MOV  AL, AH
-        CALL UART_TX
+        CALL cout
         MOV  AL, ' '
-        CALL UART_TX
+        CALL cout
         INC  BX
         DEC  CH
         JNZ  dump_02
         ;;Wrote 16 bytes
 
         MOV  AL, ' '
-        CALL UART_TX
+        CALL cout
 
         SUB  BX, 16
 
@@ -105,47 +105,47 @@ dump_03:
         JC  printPonto ; Flag carry set to 1 AL < 0x20
         CMP  AL, 0x80
         JnC  printPonto ; Flag carry set to 0 AL > 0x80
-        CALL UART_TX
+        CALL cout
         INC  BX
         DEC  CH
         JNZ  dump_03
         jmp  dump_Fim
 printPonto:        
         MOV  AL, '.'
-        CALL UART_TX
+        CALL cout
         INC  BX
         DEC  CH
         JNZ  dump_03
         ;;Wrote 16 bytes
 
 dump_Fim:
+        call newLine
         DEC  CL
         JNZ  dump_01
-        call newLine
-        mov  AX, 0F000h
-        mov  DS, AX
+        ;;mov  AX, 0F000h
+        ;;mov  DS, AX
         jmp continua
         ret
 
 printPrompt:
         mov al, '>'
-        call UART_TX
+        call cout
         ret
 
-
 readAddress:
-        call NewReadLine
+        call readLine
         call convertAddrToHex
         ret
 
 continua:
         push BX
-        mov  BX, msg04
-        call print2
+        mov  si, msg04
+        call pstr
         XOR  AX, AX
         pop  BX
-        call UART_RX_blct
-        cmp  al, 0x0d
-        je   Continua
-        call NewReadLine
+        call cin_blct
+        cmp  al, cr
+        je   NewBlock
         ret
+
+

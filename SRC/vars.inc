@@ -1,3 +1,4 @@
+flagMemOk		    equ		0401h ;This location has 0 if memory block ok other wise has 1
 
 mem_led_reg         equ     0x0501  ;Led status register
 mem_timeout01       equ     0x0502  ;Timer timeout value Ex.: 5 seconds

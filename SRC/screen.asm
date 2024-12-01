@@ -6,8 +6,8 @@ curpos  db 0x1B,"[!;!H",0
 ; ESC [ 2 J
 ;
 scr_clear:
-        mov	bx, cls
-        call print2	
+        mov	si, cls
+        call    pstr	
         ret
 ;=====================
 ; ESC [ Pl ; Pc H
@@ -36,8 +36,8 @@ scr_goto:
 
 
         mov AX, 0x0
-        mov bx, AX
-        call print2
+        mov si, AX
+        call pstr
         POP DS
 		ret
 
@@ -49,7 +49,7 @@ s127 db "fn04",0dh,0
 s128 db "fn05",0dh,0
 
 TESTE:
-        call printch
+        call cout
 
         cmp   al, '0'
         jz    .fn00
@@ -66,28 +66,28 @@ TESTE:
         ret        
 
 .fn00: 
-        mov  bx, s123
-        call print2
+        mov  si, s123
+        call pstr
         ret
 .fn01: 
-        mov  bx, s124
-        call print2
+        mov  si, s124
+        call pstr
         ret        
 .fn02: 
-        mov  bx, s125
-        call print2
+        mov  si, s125
+        call pstr
         ret
 .fn03: 
-        mov  bx, s126
-        call print2
+        mov  si, s126
+        call pstr
         ret
 .fn04:   
-        mov  bx, s127
-        call print2
+        mov  si, s127
+        call pstr
         ret
 .fn05: 
-        mov  bx, s128
-        call print2
+        mov  si, s128
+        call pstr
         ret
 
         

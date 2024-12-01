@@ -13,16 +13,16 @@ org	START
 
 welcome		db	"XT 8088 BIOS, Version "
 			db	VERSION
-			db	". ", 0Dh
-			db	"Paulo Silva(pgordao) - Copyright (C) 2024", 0Dh
-			db	"CPU 8088-2   board: 8088BOAD2447-RA  ", 0Dh
-			db	"8088 MonitorV0 V ",VERSION ," 2447A 512 Sram Rom at29C512", 0Dh
-			db      0dh,"A total of 64k minimum are ok..", 0Dh, 0
+			db	". ", 0Dh,0Ah
+			db	"Paulo Silva(pgordao) - Copyright (C) 2024", 0Dh,0Ah
+			db	"CPU 8088-2   board: 8088BOAD2447-RA  ", 0Dh,0Ah
+			db	"8088 MonitorV0 V ",VERSION ," 2447A 512 Sram Rom at29C512", 0Dh,0Ah
+			db      0dh,"A total of 64k minimum are ok..", 0Dh,0Ah, 0
 
-help_msg	db 0Dh,"==================", 0Dh
-			db "cmd d dump memory", 0Dh
-			db "    t show systick", 0Dh
-			db "    h for this help", 0Dh, 0
+help_msg	db 0Dh,"==================", 0Dh,0Ah
+			db "cmd d dump memory", 0Dh,0Ah
+			db "    t show systick", 0Dh,0Ah
+			db "    h for this help", 0Dh,0Ah, 0
 setloc	0E000h
 reset:
             cli
@@ -92,8 +92,8 @@ initBios:
 		call configure_uart
 
 		call scr_clear
-		mov  bx, welcome
-		call print2
+		mov  si, welcome
+		call pstr
 
 		call memoryTest
 
@@ -103,8 +103,8 @@ initBios:
 
 Mainloop:
 		call	printPrompt
-		call	UART_RX_blct
-		call	UART_TX
+		call	cin_blct
+		call	cout
 		cmp		al, 'd'
 		je 		show_dump
 		cmp		al, 'h'
@@ -123,6 +123,7 @@ show_reg:
 		jmp 	Mainloop		
 show_dump:
 		call	dump
+		call	newLine
 		jmp 	Mainloop		
 show_systic:
 		call    get_sys_ticks
@@ -134,8 +135,8 @@ show_systic:
 		call	newLine
 		jmp 	Mainloop		
 show_help_msg:
-		mov		BX, help_msg
-		call 	print2
+		mov		si, help_msg
+		call 	pstr
 		jmp 	Mainloop
 
 

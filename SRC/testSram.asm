@@ -1,26 +1,25 @@
 ;-------------------------------------------------------------------------
 %define MIN_RAM_SIZE    64              ; At least 32 KiB to boot the system
-testMem:        db      "Testing memory:",0Dh , 0
-bloco01:        db      "10000 to 1FFFF", 0     ;128k
-bloco02:        db      "20000 to 2FFFF", 0     ;192k
-bloco03:        db      "30000 to 3FFFF", 0     ;256k
-bloco04:        db      "40000 to 4FFFF", 0     ;320k
-bloco05:        db      "50000 to 5FFFF", 0     ;384k
-bloco06:        db      "60000 to 6FFFF", 0     ;448k
-bloco07:        db      "70000 to 7FFFF", 0     ;512k
-blocoOK:        db      " segment OK", 0Dh, 0
-blocoNOK:       db      " segment NOT exists", 0Dh, 0
-totalMem:       db      "Total of memory: ",0
-qtdMem0:        db      "064.000 KBytes.", 0Dh, 0
-qtdMem1:        db      "131.072 KBytes.", 0Dh, 0
-qtdMem2:        db      "196.608 KBytes.", 0Dh, 0
-qtdMem3:        db      "262.144 KBytes.", 0Dh, 0
-qtdMem4:        db      "327.680 KBytes.", 0Dh, 0
-qtdMem5:        db      "393.216 KBytes.", 0Dh, 0
-qtdMem6:        db      "458.752 KBytes.", 0Dh, 0
-qtdMem7:        db      "524.288 KBytes.", 0Dh, 0
+testMem:        db      0Dh,0Ah,"Testing memory:",0Dh , 0
+bloco01:        db      0Dh,0Ah,"10000 to 1FFFF", 0     ;128k
+bloco02:        db      0Dh,0Ah,"20000 to 2FFFF", 0     ;192k
+bloco03:        db      0Dh,0Ah,"30000 to 3FFFF", 0     ;256k
+bloco04:        db      0Dh,0Ah,"40000 to 4FFFF", 0     ;320k
+bloco05:        db      0Dh,0Ah,"50000 to 5FFFF", 0     ;384k
+bloco06:        db      0Dh,0Ah,"60000 to 6FFFF", 0     ;448k
+bloco07:        db      0Dh,0Ah,"70000 to 7FFFF", 0     ;512k
+blocoOK:        db      " segment OK",0
+blocoNOK:       db      " segment NOT exists", 0Dh, 0Ah,0
+totalMem:       db      0Dh,0Ah,"Total of memory: ",0
+qtdMem0:        db      "064.000 KBytes.", 0Dh, 0Ah, 0
+qtdMem1:        db      "131.072 KBytes.", 0Dh, 0Ah, 0
+qtdMem2:        db      "196.608 KBytes.", 0Dh, 0Ah, 0
+qtdMem3:        db      "262.144 KBytes.", 0Dh, 0Ah, 0
+qtdMem4:        db      "327.680 KBytes.", 0Dh, 0Ah, 0
+qtdMem5:        db      "393.216 KBytes.", 0Dh, 0Ah, 0
+qtdMem6:        db      "458.752 KBytes.", 0Dh, 0Ah, 0
+qtdMem7:        db      "524.288 KBytes.", 0Dh, 0Ah, 0
 
-flagMemOk		equ		0401h ;This location has 0 if memory block ok other wise has 1
 
 ;-------------------------------------------------------------------------
 ; Test first 64 KiB (MIN_RAM_SIZE) of RAM
@@ -144,12 +143,12 @@ memoryTest:
 		mov  es, ax
 		mov  al,0
 		mov  byte es:[flagMemOk], al
-		mov  bx, testMem
-		call print2
+		mov  si, testMem
+		call pstr
 
 		;Block 1 64K
-		mov  bx, bloco01
-		call print2
+		mov  si, bloco01
+		call pstr
 		mov  ax, 0x1000
 		mov  ds, ax
 		mov  es, ax
@@ -161,8 +160,8 @@ memoryTest:
 		inc byte es:[flagMemOk]
 
 		;Block 2 64K
-		mov  bx, bloco02
-		call print2
+		mov  si, bloco02
+		call pstr
 		mov  ax, 0x2000
 		mov  ds, ax
 		mov  es, ax
@@ -174,8 +173,8 @@ memoryTest:
 		inc byte es:[flagMemOk]
 
 		;Block 3 64K
-		mov  bx, bloco03
-		call print2
+		mov  si, bloco03
+		call pstr
 		mov  ax, 0x3000
 		mov  ds, ax
 		mov  es, ax
@@ -186,8 +185,8 @@ memoryTest:
 		mov  es, ax
 		inc byte es:[flagMemOk]
 
-		mov  bx, bloco03
-		call print2
+		mov  si, bloco03
+		call pstr
 		mov  ax, 0x3000
 		mov  ds, ax
 		mov  es, ax
@@ -207,30 +206,28 @@ memoryTestEnd:
 		cmp		al, 7
 		jz      onlyTotal
 
-		mov		bx, blocoNOK
-		call	print2
+		mov		si, blocoNOK
+		call	pstr
 onlyTotal:		
-		mov		al, 0Dh
-		call	UART_TX
-		mov		bx, totalMem
-		call	print2
-		mov     ax, 17
+
+		mov		si, totalMem
+		call	pstr
+		mov     ax, 18
 		mov		cl, byte es:[flagMemOk]
 		mul		cl
 		;call	print_hex
-		mov		bx, qtdMem0
-		;call	printBX
-		add		bx, ax
-		;call	printBX
-		call 	print2
+		mov		si, qtdMem0
+		add		si, ax
+		call 	pstr
 
 		ret
+	
 
 segmentOK:
         mov		ax, 0xF000
         mov		ds, ax
-        mov		bx, blocoOK
-        call	print2
+        mov		si, blocoOK
+        call	pstr
 		ret
 
 ;-------------------------------------------------------------------------
