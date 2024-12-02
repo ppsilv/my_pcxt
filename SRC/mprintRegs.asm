@@ -6,6 +6,7 @@
 ; Output:
 ;	none
 ;-------------------------------------------------------------------------
+printw_hex:
 print_hex:
     push    AX
 	xchg	al,ah
@@ -13,6 +14,18 @@ print_hex:
 	xchg	al,ah
 	call	print_byte		; print the lower byte
     pop     AX
+	ret
+;=========================================================================
+; printb_hex - print 8-bit number in hexadecimal
+; Input:
+;	AL - number to print
+; Output:
+;	none
+;-------------------------------------------------------------------------
+printb_hex:
+    push    AX
+	call	print_byte		; print the upper byte
+	pop		AX
 	ret
 ;=========================================================================
 ; print_digit - print hexadecimal digit
@@ -135,20 +148,38 @@ nibbleToHex:
 	lodsb
 	ret
 
-convertAddrToHex:
-	;mov		si, reg_buff_read
-	;call	pstr_sram
 
-	mov		dh, byte es:[reg_buff_read]
-	mov		dl, byte es:[reg_buff_read+1]
-
+convertByteToHex:
+	mov		dh, byte es:[buff_read]
+	mov		dl, byte es:[buff_read+1]
 	call	hex_str_to_hex
-	mov		byte es:[reg_buff_write], bh
-
-	mov		dh, byte es:[reg_buff_read+2]
-	mov		dl, byte es:[reg_buff_read+3]
-
-	call	hex_str_to_hex
-	mov		byte es:[reg_buff_write+1], bh
-
+	mov		byte es:[buff_write], bh
 	ret
+
+convertWordToHex:
+	mov		dh, byte es:[buff_read]
+	mov		dl, byte es:[buff_read+1]
+	call	hex_str_to_hex
+	mov		byte es:[buff_write], bh
+	mov		dh, byte es:[buff_read+2]
+	mov		dl, byte es:[buff_read+3]
+	call	hex_str_to_hex
+	mov		byte es:[buff_write+1], bh
+	ret
+
+;==============================================================================
+;to_hex
+; convert ASCII letter to one nibble 0-F
+; 0-9 -> al-30
+; A-F -> al-7
+; entry: al
+; exit: al
+
+to_hex:  
+		sub al,	"0"
+		cmp al,	10
+		jl 	zero_nine
+		and al,	11011111b
+		sub al,	7
+zero_nine: 
+		ret

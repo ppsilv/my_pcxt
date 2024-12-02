@@ -11,18 +11,23 @@ cpu	8086
 org	START		
 
 
-welcome		db	"XT 8088 BIOS, Version "
-			db	VERSION
-			db	". ", 0Dh,0Ah
-			db	"Paulo Silva(pgordao) - Copyright (C) 2024", 0Dh,0Ah
-			db	"CPU 8088-2   board: 8088BOAD2447-RA  ", 0Dh,0Ah
-			db	"8088 MonitorV0 V ",VERSION ," 2447A 512 Sram Rom at29C512", 0Dh,0Ah
-			db      0dh,"A total of 64k minimum are ok..", 0Dh,0Ah, 0
+welcome		db	cr,lf,"XT 8088 BIOS, Version "
+			db	cr,lf,VERSION
+			db	cr,lf,". "
+			db	cr,lf,"Paulo Silva(pgordao) - Copyright (C) 2024"
+			db	cr,lf,"CPU 8088-2   board: 8088BOAD2447-RA  "
+			db	cr,lf,"8088 MonitorV0 V ",VERSION ," 2447A 512 Sram Rom at29C512"
+			db  cr,lf,"A total of 64k minimum are ok..", eos
 
-help_msg	db 0Dh,"==================", 0Dh,0Ah
-			db "cmd d dump memory", 0Dh,0Ah
-			db "    t show systick", 0Dh,0Ah
-			db "    h for this help", 0Dh,0Ah, 0
+help_msg	db cr,lf,"=========================="
+			db cr,lf,"cmd   description"
+			db cr,lf," d    dump memory using ES"
+			db cr,lf," e    edit memory "
+			db cr,lf," f    fill memory "
+			db cr,lf," l    load intel hex file"
+			db cr,lf," t    show systick"
+			db cr,lf," h    for this help", cr, lf, eos
+
 setloc	0E000h
 reset:
             cli
@@ -107,6 +112,8 @@ Mainloop:
 		call	cout
 		cmp		al, 'd'
 		je 		show_dump
+		cmp		al, 'e'
+		je		editmemory
 		cmp		al, 'h'
 		je 		show_help_msg
 		cmp		al, 't'
@@ -124,7 +131,11 @@ show_reg:
 show_dump:
 		call	dump
 		call	newLine
-		jmp 	Mainloop		
+		jmp 	Mainloop	
+editmemory:			
+		call	edit_memory
+		call	newLine
+		jmp 	Mainloop	
 show_systic:
 		call    get_sys_ticks
 		push	AX
@@ -144,11 +155,13 @@ show_help_msg:
 %include "screen.asm"
 %include "errorLed.asm"
 %include "testSram.asm"
-%include "printRegs.asm"
-%include "pic8259A.asm"
-%include "pit8254.asm"
-%include "math.asm"
-%include "mem_dump.asm"
+%include "mprintRegs.asm"
+%include "mpic8259A.asm"
+%include "mpit8254.asm"
+%include "mmath.asm"
+%include "mmemoryDump.asm"
+%include "meditMemory.asm"
+%include "minputs.asm"
 
         setloc	0FFF0h			; Power-On Entry Point, macro fills space from last line with FF
 start:

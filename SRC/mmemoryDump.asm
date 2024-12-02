@@ -1,58 +1,15 @@
 
-msg01	db 0Dh,0Ah,"Digite o endereco BX: ", 0
-msg02   db 0Dh,0Ah,"<ESC>para novo segment <Enter>continua ES: ", 0
-msg03   db 0Dh,0Ah,"Novo segment ES: ", 0
+
 msg04   db 0Dh,0Ah,"<ESC>Fim, <Enter>Continua: ", 0
 msg05   db 0Dh,0Ah,"ES: ", 0
 
-loadBX:
-        push    ES
-        mov     AX, 0x0
-        mov     ES, AX
-        mov     si, msg01
-        call    pstr
-        call    readAddress
-	mov 	ah, byte es:[reg_buff_write]
-	mov	al, byte es:[reg_buff_write+1]
-        mov     BX, AX
-        ;call    print_hex
-        pop     ES
-        ret        
-showES:
-        push BX
-        mov  si, msg02
-        call pstr
-        mov  AX, ES
-        call print_hex
-        XOR  AX, AX
-        call cin_blct
-        cmp  al, 0x0d
-        je   .retorna
-        call changeES
-.retorna:
-        pop BX
-        ret
-
-changeES:
-        push    BX
-        xor     AX, AX
-        mov     ES, AX
-        mov     si, msg03
-        call    pstr
-        call    readAddress
-	mov 	ah, byte es:[reg_buff_write]
-	mov	al, byte es:[reg_buff_write+1]
-        mov     ES, AX
-        pop     BX
-        ret
 ;=================================
 ; Dump memory
 ; Segment address: ES
 ; Memory  address: bx
 ;         
 dump:
-        call    showES
-        call    loadBX
+        call    readAddress
 NewBlock:
         push    BX
         mov     si, msg05
@@ -130,11 +87,6 @@ dump_Fim:
 printPrompt:
         mov al, '>'
         call cout
-        ret
-
-readAddress:
-        call readLine
-        call convertAddrToHex
         ret
 
 continua:

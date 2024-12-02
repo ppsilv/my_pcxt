@@ -86,15 +86,21 @@ basicDelay:
         ret
 
 readLine:
-        mov  	DI,  reg_buff_read        
+		push	DI
+		push	DX
+        mov  	DI,  buff_read   
+		mov		cl, 0x0     
 .loopP:  ;RX blocante
         call 	cin_blct       
 		stosb
+		inc		cl
         call 	cout
         CMP  	AL, cr
         JNZ  	.loopP
 		mov  	al,0x0
 		stosb
+		pop		DX
+		pop 	DI
         ret
 
 ;++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -169,3 +175,21 @@ cin_blct:
 			MOV DX, uart_tx_rx
 			IN	AL, DX			; Read the character from the UART receive buffer
 			RET
+
+space:  
+			mov al," "
+	    	call cout
+	    	ret
+
+get_hex: 
+		call cin
+		call to_hex
+		rol al,1
+		rol al,1
+		rol al,1
+		rol al,1
+		mov ah,al
+		call cin
+		call to_hex
+		add al, ah
+		ret			

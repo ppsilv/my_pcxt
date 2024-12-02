@@ -381,11 +381,11 @@ eos	equ 0
 cr	equ 13
 lf	equ 10
 
-pstr:    seg cs          ; override data segment for SI
-         mov al,[si]
-	 cmp al,eos
-         jnz pstr1
-	 ret
+pstr:   seg cs          ; override data segment for SI
+        mov al,[si]
+	    cmp al,eos
+        jnz pstr1
+	    ret
 
 pstr1:
 	 call cout
@@ -484,7 +484,6 @@ get_hex1: call cins1
 
 ; get record and write to SRAM
 ;
-
 esc     equ 1bh
 
 get_record: call cins
