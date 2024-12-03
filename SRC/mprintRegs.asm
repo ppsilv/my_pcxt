@@ -37,6 +37,7 @@ printb_hex:
 print_digit:
 	push	ax
 	push	bx
+	push	dx
 	and	al,0Fh
 	add	al,'0'			; convert to ASCII
 	cmp	al,'9'			; less or equal 9?
@@ -44,6 +45,7 @@ print_digit:
 	add	al,'A'-'9'-1		; a hex digit
 .1:
     call    cout
+	pop	dx
 	pop	bx
 	pop	ax
 	ret
@@ -150,13 +152,19 @@ nibbleToHex:
 
 
 convertByteToHex:
+	push	DX
+	push	BX
 	mov		dh, byte es:[buff_read]
 	mov		dl, byte es:[buff_read+1]
 	call	hex_str_to_hex
 	mov		byte es:[buff_write], bh
+	pop		BX
+	pop		DX
 	ret
 
 convertWordToHex:
+	push	DX
+	push	BX
 	mov		dh, byte es:[buff_read]
 	mov		dl, byte es:[buff_read+1]
 	call	hex_str_to_hex
@@ -165,6 +173,8 @@ convertWordToHex:
 	mov		dl, byte es:[buff_read+3]
 	call	hex_str_to_hex
 	mov		byte es:[buff_write+1], bh
+	pop		BX
+	pop		DX
 	ret
 
 ;==============================================================================
@@ -182,4 +192,13 @@ to_hex:
 		and al,	11011111b
 		sub al,	7
 zero_nine: 
+		ret
+
+; convert ASCII to 16-bit hex number
+; entry: string in inline buffer
+; exit: ax
+
+atohex:
+		call	convertWordToHex
+		mov		AX, word es:[buff_write]
 		ret

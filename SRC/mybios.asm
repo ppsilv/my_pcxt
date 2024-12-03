@@ -25,6 +25,9 @@ help_msg	db cr,lf,"=========================="
 			db cr,lf," e    edit memory "
 			db cr,lf," f    fill memory "
 			db cr,lf," l    load intel hex file"
+			db cr,lf," w    write 16-bit data to onchip peripherals"
+			db cr,lf," o    output byte to output port"
+			db cr,lf," i    input byte from input port"
 			db cr,lf," t    show systick"
 			db cr,lf," h    for this help", cr, lf, eos
 
@@ -114,6 +117,10 @@ Mainloop:
 		je 		show_dump
 		cmp		al, 'e'
 		je		editmemory
+		cmp		al, 'f'
+		je		fillMemory
+		cmp		al, 'l'
+		je		ldIntelHex
 		cmp		al, 'h'
 		je 		show_help_msg
 		cmp		al, 't'
@@ -121,7 +128,36 @@ Mainloop:
 		cmp		al, 'p'
 		je 		show_reg
 
+
+		cmp		al, 'w'
+		je 		writePeripherals
+		cmp		al, 'o'
+		je 		outByte
+		cmp		al, 'i'
+		je 		inByte
+
+
 		;CALL	newLine
+		jmp 	Mainloop	
+fillMemory:		
+		call 	fill_memory
+		call	newLine
+		jmp 	Mainloop	
+ldIntelHex:		
+		call 	load_intel_hex
+		call	newLine
+		jmp 	Mainloop	
+writePeripherals:
+		call 	write_peripherals
+		call	newLine
+		jmp 	Mainloop	
+outByte:
+		call 	outbyte
+		call	newLine
+		jmp 	Mainloop	
+inByte:		
+		call	inbyte
+		call	newLine
 		jmp 	Mainloop	
 show_reg:
 		mov	AX, 0x1234

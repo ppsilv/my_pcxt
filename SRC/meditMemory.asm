@@ -34,8 +34,6 @@ edit:
             inc     di
             jmp     edit        
 edit_memoryEnd:
-            mov     AX, CX
-            call    printw_hex
             ret
 
 
@@ -43,7 +41,7 @@ edit_memoryEnd:
 
 load_hex db cr, lf, "Load Intel hex file...",eos
 
-load:     mov si, load_hex
+load_intel_hex:     mov si, load_hex
           call pstr
 
           mov al,0
@@ -115,3 +113,116 @@ data_record:
             mov     byte es:[bcs_error],al ; set byte check sum error flag
 record_correct:
             jmp     get_record	; back to next record
+
+write_text:    db cr,lf,"Write peripherals with 16-bit data"
+               db cr,lf,"offset address FF:OFFSET=",eos
+word_text:     db cr,lf,"16-bit data=",eos
+outbyte_text:  db cr,lf,"output 16-bit data to output port"
+               db cr,lf,"port address=",eos
+inbyte_text:   db cr,lf,"input 16-bit data from input port"
+               db cr,lf,"port address=",eos
+
+; write peripheral
+
+write_peripherals:  
+            mov si,write_text
+            call pstr
+            ;call getstr_hex
+            ;call atohex
+            call inputAddress
+            push ax
+            mov  si,word_text
+            call pstr
+            ;call getstr_hex
+            ;call atohex
+            call inputAddress
+
+            mov bx,ax
+            pop ax
+            or  ax,0ff00h   ; PCB was set to FF
+            mov dx,ax
+            mov ax,bx
+            out dx,ax
+            ret
+
+outbyte:    
+            mov si,outbyte_text
+            call pstr
+            ;call getstr_hex
+            ;call atohex
+            call inputAddress
+            call newLine
+            call printw_hex
+            push ax
+            mov  si,word_text
+            call pstr
+            ;call getstr_hex
+            ;call atohex
+            call inputAddress
+            call newLine
+            call printw_hex
+
+            mov bx,ax
+            pop ax
+            mov dx,ax
+            mov ax,bx
+            out dx,al
+            ret
+
+inbyte:  
+            mov si,inbyte_text
+            call pstr
+            ;call getstr_hex
+            ;call atohex
+            call inputAddress
+            call newLine
+            call printw_hex
+            mov  dx, ax
+            in   ax, dx
+            call newLine
+            call printw_hex
+            ret
+inbyte8b_text   db cr,lf,"input  8-bit  data ",eos
+inbyte16b_text  db cr,lf,"input 16-bits data ",eos
+
+mem2fill1       db cr,lf,"Filling memory :",eos
+mem2fill2       db " size of ",eos
+mem2fill3       db " with ",eos
+                
+
+fill_memory:
+            call    readAddress
+            mov     DI, BX
+            mov     si, inbyte16b_text
+            call    pstr
+            call    inputAddress
+    		mov		ch, byte es:[buff_write]
+    		mov		cl, byte es:[buff_write+1]
+            mov     si, inbyte8b_text
+            call    pstr
+            call    inputData
+            push    AX
+            
+            mov     si, mem2fill1
+            call    pstr
+            mov     AX, DI
+            call    printw_hex
+
+    		
+            mov     si, mem2fill2
+            call    pstr
+            mov     AX, CX
+            call    printw_hex
+
+            mov     si, mem2fill3
+            call    pstr 		
+            pop     AX
+            call    printb_hex
+    		call	newLine
+loopFM:            
+            mov     byte es:[di], al 
+            inc     di
+            dec     cx
+            jnz loopFM
+            ret
+

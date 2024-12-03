@@ -40,10 +40,10 @@
 
 %macro pic_eoi_cmd 0
         push ax
-        mov al, byte es:[mem_led_reg]
-        inc al
-        mov byte es:[mem_led_reg],al
-        out 0x80, al 
+        ;mov al, byte es:[mem_led_reg]
+        ;inc al
+        ;mov byte es:[mem_led_reg],al
+        ;out 0x80, al 
         mov al, 0b00100000
         out PIC_REG_0, al
         pop ax

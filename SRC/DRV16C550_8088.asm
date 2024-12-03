@@ -74,10 +74,12 @@ configure_uart:
 			RET
 
 newLine:
+	push	AX
 	mov  al, 0Dh
 	call cout
 	mov  al, 0Ah
 	call cout
+	pop		AX
 	ret
 	
 basicDelay:
@@ -88,10 +90,14 @@ basicDelay:
 readLine:
 		push	DI
 		push	DX
+		push	CX
         mov  	DI,  buff_read   
-		mov		cl, 0x0     
+		mov		cl, 0x0
 .loopP:  ;RX blocante
-        call 	cin_blct       
+        call 	cin_blct    
+		;call	printb_hex   
+		cmp 	al, 0x08
+		je 		.loopP1
 		stosb
 		inc		cl
         call 	cout
@@ -99,9 +105,15 @@ readLine:
         JNZ  	.loopP
 		mov  	al,0x0
 		stosb
+		pop 	CX
 		pop		DX
 		pop 	DI
         ret
+.loopP1:		     
+		;call	printb_hex   
+		dec		cl
+		dec		DI
+		jmp 	.loopP
 
 ;++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;Mais funções

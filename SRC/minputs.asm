@@ -6,6 +6,8 @@ msg03   db 0Dh,0Ah,"Novo segment ES: ", 0
 inputAddress:
         call readLine
         call convertWordToHex
+	mov 	ah, byte es:[buff_write]
+	mov	al, byte es:[buff_write+1]
         ret
 
 loadBX:
@@ -15,8 +17,6 @@ loadBX:
         mov     si, msg01
         call    pstr
         call    inputAddress
-	mov 	ah, byte es:[buff_write]
-	mov	al, byte es:[buff_write+1]
         mov     BX, AX
         ;call    print_hex
         pop     ES
@@ -43,12 +43,11 @@ changeES:
         mov     si, msg03
         call    pstr
         call    inputAddress
-	mov 	ah, byte es:[buff_write]
-	mov	al, byte es:[buff_write+1]
         mov     ES, AX
         pop     BX
         ret
 
+;Return the address in: ES:BX
 readAddress:
         call    showES
         call    loadBX
@@ -56,22 +55,31 @@ readAddress:
 
 readByteHexX:
         clc
-        call readLine
-        cmp  cl, 1
+        call cin_blct
+        cmp  al, 0x1b
         je   readByteHexEnd   
-        call convertByteToHex
-        mov  al, byte es:[buff_write]
+        call to_hex
+        mov  ah, al
+        call print_digit
+        call cin_blct
+        cmp  al, 0x1b
+        je   readByteHexEnd   
+        call to_hex
+        shl  ah, 1
+        shl  ah, 1
+        shl  ah, 1
+        shl  ah, 1
+        or   al, ah
+        call  print_digit
         stc
 readByteHexEnd:        
-        ret            
+        ret          
 
-readByteHex:
+
+;Return byte in hexadecmal in: AL
+inputData:
         call readLine
         call convertByteToHex
         mov  al, byte es:[buff_write]
         ret
-readWordHex:
-        call readLine
-        call convertByteToHex
-        mov  AX, word es:[buff_write]
-        ret            
+           
