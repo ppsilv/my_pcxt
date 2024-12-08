@@ -115,237 +115,240 @@
     23 000000F1 0D0A636D6420202064-     			db cr,lf,"cmd   description"
     23 000000FA 65736372697074696F-
     23 00000103 6E                 
-    24 00000104 0D0A20642020202064-     			db cr,lf," d    dump memory using ES"
-    24 0000010D 756D70206D656D6F72-
-    24 00000116 79207573696E672045-
-    24 0000011F 53                 
-    25 00000120 0D0A20652020202065-     			db cr,lf," e    edit memory "
-    25 00000129 646974206D656D6F72-
-    25 00000132 7920               
-    26 00000134 0D0A20662020202066-     			db cr,lf," f    fill memory "
-    26 0000013D 696C6C206D656D6F72-
-    26 00000146 7920               
-    27 00000148 0D0A206C202020206C-     			db cr,lf," l    load intel hex file"
-    27 00000151 6F616420696E74656C-
-    27 0000015A 206865782066696C65 
-    28 00000163 0D0A20772020202077-     			db cr,lf," w    write 16-bit data to onchip peripherals"
-    28 0000016C 726974652031362D62-
-    28 00000175 697420646174612074-
-    28 0000017E 6F206F6E6368697020-
-    28 00000187 706572697068657261-
-    28 00000190 6C73               
-    29 00000192 0D0A206F202020206F-     			db cr,lf," o    output byte to output port"
-    29 0000019B 757470757420627974-
-    29 000001A4 6520746F206F757470-
-    29 000001AD 757420706F7274     
-    30 000001B4 0D0A20692020202069-     			db cr,lf," i    input byte from input port"
-    30 000001BD 6E7075742062797465-
-    30 000001C6 2066726F6D20696E70-
-    30 000001CF 757420706F7274     
-    31 000001D6 0D0A20732020202072-     			db cr,lf," s    read sector 1"
-    31 000001DF 65616420736563746F-
-    31 000001E8 722031             
-    32 000001EB 0D0A20742020202073-     			db cr,lf," t    show systick"
-    32 000001F4 686F77207379737469-
-    32 000001FD 636B               
-    33 000001FF 0D0A20682020202066-     			db cr,lf," h    for this help", cr, lf, eos
-    33 00000208 6F7220746869732068-
-    33 00000211 656C700D0A00       
-    34                                  
-    35 00000217 FF<rep CDE9h>           setloc	0D000h
-    35          ******************       warning: Inserting 52713 bytes [-w+user]
-    36                                  reset:
-    37 0000D000 FA                                  cli
-    38 0000D001 B84000                      		mov ax,0x40
-    39 0000D004 8ED8                        		mov ds,ax
-    40 0000D006 C70672000000            			mov word [0x72],0x0
-    41 0000D00C 31C0                        		xor ax,ax
-    42 0000D00E 7248                        		jc l0xb3
-    43 0000D010 7046                        		jo l0xb3
-    44 0000D012 7844                        		js l0xb3
-    45 0000D014 7542                        		jnz l0xb3
-    46 0000D016 7B40                        		jpo l0xb3
-    47 0000D018 83C001                      		add ax,0x1
-    48 0000D01B 743B                        		jz l0xb3
-    49 0000D01D 7A39                        		jpe l0xb3
-    50 0000D01F 2D0280                      		sub ax,0x8002
-    51 0000D022 7834                        		js l0xb3
-    52 0000D024 40                          		inc ax
-    53 0000D025 7131                        		jno l0xb3
-    54 0000D027 D1E0                        		shl ax,1
-    55 0000D029 732D                        		jnc l0xb3
-    56 0000D02B 752B                        		jnz l0xb3
-    57 0000D02D D1E0                        		shl ax,1
-    58 0000D02F 7227                        		jc l0xb3   
-    59 0000D031 BB5555                      		mov bx,0x5555
-    60 0000D034 89DD                    l0x8f:    	mov bp,bx
-    61 0000D036 89E9                        		mov cx,bp
-    62 0000D038 89CC                        		mov sp,cx
-    63 0000D03A 89E2                        		mov dx,sp
-    64 0000D03C 8ED2                        		mov ss,dx
-    65 0000D03E 8CD6                        		mov si,ss
-    66 0000D040 8EC6                        		mov es,si
-    67 0000D042 8CC7                        		mov di,es
-    68 0000D044 8EDF                        		mov ds,di
-    69 0000D046 8CD8                        		mov ax,ds
-    70 0000D048 3D5555                      		cmp ax,0x5555
-    71 0000D04B 7506                        		jnz l0xae
-    72 0000D04D F7D0                        		not ax
-    73 0000D04F 89C3                        		mov bx,ax
-    74 0000D051 EBE1                        		jmp short l0x8f
-    75 0000D053 35AAAA                  l0xae: 		xor ax,0xaaaa
-    76 0000D056 7403                        		jz l0xb4
-    77 0000D058 E9300D                  l0xb3: 		jmp led3blinks
-    78 0000D05B FC                      l0xb4: 		cld                     
-    79                                              ;Verify if the board has at least 32kbytes of RAM
-    80 0000D05C E9CC0E                              jmp testFirst64kb
-    81                                  
-    82                                  initBios:
-    83 0000D05F B80000                          mov ax, 0x0000
-    84 0000D062 8EC0                            mov es, ax
-    85 0000D064 8ED0                            mov ss, ax                  ; Segmento Stack
-    86 0000D066 B800F0                          mov ax, 0xF000
-    87 0000D069 8ED8                            mov ds, ax
-    88 0000D06B 8EC8                    		mov cs, ax
-    89                                          ;Put 0x8000 in stack pointer top of the first 32kbytes of mem
-    90 0000D06D 31E4                            xor sp, sp          ;The minimum of 64k of ram are OK.
-    91 0000D06F 31C0                            xor ax, ax              ; Put flags in known state
-    92 0000D071 50                              PUSH AX
-    93 0000D072 9D                              POPF
-    94 0000D073 B000                    		mov	al, 0x0
-    95 0000D075 26A20105                		mov byte es:[mem_led_reg],al
-    96                                     
-    97                                  ;******************************************************
-    98                                  ; END INITIALIZATION
-    99                                  ;======================================================
-   100                                  ;PUT MAIN CODE HERE
-   101 0000D079 E82301                  		call configure_uart
-   102                                  
-   103 0000D07C E82A0C                  		call scr_clear
-   104 0000D07F BE[0800]                		mov  si, welcome
-   105 0000D082 E89901                  		call pstr
-   106                                  
-   107 0000D085 E82F0F                  		call memoryTest
-   108                                  
-   109 0000D088 E8E810                  		call init_system
-   110 0000D08B B000                            mov al,0x0
-   111 0000D08D 26A20105                        mov byte es:[mem_led_reg],al
-   112                                  		;Checking cpu type
-   113 0000D091 E87C23                  		call cpu_check
-   114                                  		;Loading bios 
-   115 0000D094 E82B16                  		call BiosLoad
-   116                                  
-   117                                  Mainloop:
-   118 0000D097 E86F12                  		call	printPrompt
-   119 0000D09A E8C001                  		call	cin_blct
-   120 0000D09D E89F01                  		call	cout
-   121 0000D0A0 3C62                    		cmp		al, 'b'
-   122 0000D0A2 743A                    		je 		bootRecord
-   123 0000D0A4 3C64                    		cmp		al, 'd'
-   124 0000D0A6 7503E9AB00              		je 		show_dump
-   125 0000D0AB 3C65                    		cmp		al, 'e'
-   126 0000D0AD 7503E9AD00              		je		editmemory
-   127 0000D0B2 3C66                    		cmp		al, 'f'
-   128 0000D0B4 7467                    		je		fillMemory
-   129 0000D0B6 3C6C                    		cmp		al, 'l'
-   130 0000D0B8 746C                    		je		ldIntelHex
-   131 0000D0BA 3C68                    		cmp		al, 'h'
-   132 0000D0BC 7503E9BA00              		je 		show_help_msg
-   133 0000D0C1 3C73                    		cmp		al, 's'
-   134 0000D0C3 7421                    		je 		readSector1
-   135 0000D0C5 3C74                    		cmp		al, 't'
-   136 0000D0C7 7503E99C00              		je 		show_systic
-   137 0000D0CC 3C70                    		cmp		al, 'p'
-   138 0000D0CE 747A                    		je 		show_reg
-   139                                  
+    24 00000104 0D0A20622020202072-     			db cr,lf," b    read boot loader"
+    24 0000010D 65616420626F6F7420-
+    24 00000116 6C6F61646572       
+    25 0000011C 0D0A20642020202064-     			db cr,lf," d    dump memory using ES"
+    25 00000125 756D70206D656D6F72-
+    25 0000012E 79207573696E672045-
+    25 00000137 53                 
+    26 00000138 0D0A20652020202065-     			db cr,lf," e    edit memory "
+    26 00000141 646974206D656D6F72-
+    26 0000014A 7920               
+    27 0000014C 0D0A20662020202066-     			db cr,lf," f    fill memory "
+    27 00000155 696C6C206D656D6F72-
+    27 0000015E 7920               
+    28 00000160 0D0A206C202020206C-     			db cr,lf," l    load intel hex file"
+    28 00000169 6F616420696E74656C-
+    28 00000172 206865782066696C65 
+    29 0000017B 0D0A20772020202077-     			db cr,lf," w    write 16-bit data to onchip peripherals"
+    29 00000184 726974652031362D62-
+    29 0000018D 697420646174612074-
+    29 00000196 6F206F6E6368697020-
+    29 0000019F 706572697068657261-
+    29 000001A8 6C73               
+    30 000001AA 0D0A206F202020206F-     			db cr,lf," o    output byte to output port"
+    30 000001B3 757470757420627974-
+    30 000001BC 6520746F206F757470-
+    30 000001C5 757420706F7274     
+    31 000001CC 0D0A20692020202069-     			db cr,lf," i    input byte from input port"
+    31 000001D5 6E7075742062797465-
+    31 000001DE 2066726F6D20696E70-
+    31 000001E7 757420706F7274     
+    32 000001EE 0D0A20732020202072-     			db cr,lf," s    read sector 1"
+    32 000001F7 65616420736563746F-
+    32 00000200 722031             
+    33 00000203 0D0A20742020202073-     			db cr,lf," t    show systick"
+    33 0000020C 686F77207379737469-
+    33 00000215 636B               
+    34 00000217 0D0A20682020202066-     			db cr,lf," h    for this help", cr, lf, eos
+    34 00000220 6F7220746869732068-
+    34 00000229 656C700D0A00       
+    35                                  
+    36 0000022F FF<rep CDD1h>           setloc	0D000h
+    36          ******************       warning: Inserting 52689 bytes [-w+user]
+    37                                  reset:
+    38 0000D000 FA                                  cli
+    39 0000D001 B84000                      		mov ax,0x40
+    40 0000D004 8ED8                        		mov ds,ax
+    41 0000D006 C70672000000            			mov word [0x72],0x0
+    42 0000D00C 31C0                        		xor ax,ax
+    43 0000D00E 7248                        		jc l0xb3
+    44 0000D010 7046                        		jo l0xb3
+    45 0000D012 7844                        		js l0xb3
+    46 0000D014 7542                        		jnz l0xb3
+    47 0000D016 7B40                        		jpo l0xb3
+    48 0000D018 83C001                      		add ax,0x1
+    49 0000D01B 743B                        		jz l0xb3
+    50 0000D01D 7A39                        		jpe l0xb3
+    51 0000D01F 2D0280                      		sub ax,0x8002
+    52 0000D022 7834                        		js l0xb3
+    53 0000D024 40                          		inc ax
+    54 0000D025 7131                        		jno l0xb3
+    55 0000D027 D1E0                        		shl ax,1
+    56 0000D029 732D                        		jnc l0xb3
+    57 0000D02B 752B                        		jnz l0xb3
+    58 0000D02D D1E0                        		shl ax,1
+    59 0000D02F 7227                        		jc l0xb3   
+    60 0000D031 BB5555                      		mov bx,0x5555
+    61 0000D034 89DD                    l0x8f:    	mov bp,bx
+    62 0000D036 89E9                        		mov cx,bp
+    63 0000D038 89CC                        		mov sp,cx
+    64 0000D03A 89E2                        		mov dx,sp
+    65 0000D03C 8ED2                        		mov ss,dx
+    66 0000D03E 8CD6                        		mov si,ss
+    67 0000D040 8EC6                        		mov es,si
+    68 0000D042 8CC7                        		mov di,es
+    69 0000D044 8EDF                        		mov ds,di
+    70 0000D046 8CD8                        		mov ax,ds
+    71 0000D048 3D5555                      		cmp ax,0x5555
+    72 0000D04B 7506                        		jnz l0xae
+    73 0000D04D F7D0                        		not ax
+    74 0000D04F 89C3                        		mov bx,ax
+    75 0000D051 EBE1                        		jmp short l0x8f
+    76 0000D053 35AAAA                  l0xae: 		xor ax,0xaaaa
+    77 0000D056 7403                        		jz l0xb4
+    78 0000D058 E9300D                  l0xb3: 		jmp led3blinks
+    79 0000D05B FC                      l0xb4: 		cld                     
+    80                                              ;Verify if the board has at least 32kbytes of RAM
+    81 0000D05C E9CC0E                              jmp testFirst64kb
+    82                                  
+    83                                  initBios:
+    84 0000D05F B80000                          mov ax, 0x0000
+    85 0000D062 8EC0                            mov es, ax
+    86 0000D064 8ED0                            mov ss, ax                  ; Segmento Stack
+    87 0000D066 B800F0                          mov ax, 0xF000
+    88 0000D069 8ED8                            mov ds, ax
+    89 0000D06B 8EC8                    		mov cs, ax
+    90                                          ;Put 0x8000 in stack pointer top of the first 32kbytes of mem
+    91 0000D06D 31E4                            xor sp, sp          ;The minimum of 64k of ram are OK.
+    92 0000D06F 31C0                            xor ax, ax              ; Put flags in known state
+    93 0000D071 50                              PUSH AX
+    94 0000D072 9D                              POPF
+    95 0000D073 B000                    		mov	al, 0x0
+    96 0000D075 26A20105                		mov byte es:[mem_led_reg],al
+    97                                     
+    98                                  ;******************************************************
+    99                                  ; END INITIALIZATION
+   100                                  ;======================================================
+   101                                  ;PUT MAIN CODE HERE
+   102 0000D079 E82301                  		call configure_uart
+   103                                  
+   104 0000D07C E82A0C                  		call scr_clear
+   105 0000D07F BE[0800]                		mov  si, welcome
+   106 0000D082 E89901                  		call pstr
+   107                                  
+   108 0000D085 E82F0F                  		call memoryTest
+   109                                  
+   110 0000D088 E8E810                  		call init_system
+   111 0000D08B B000                            mov al,0x0
+   112 0000D08D 26A20105                        mov byte es:[mem_led_reg],al
+   113                                  		;Checking cpu type
+   114 0000D091 E87C23                  		call cpu_check
+   115                                  		;Loading bios 
+   116 0000D094 E82B16                  		call BiosLoad
+   117                                  
+   118                                  Mainloop:
+   119 0000D097 E86F12                  		call	printPrompt
+   120 0000D09A E8C001                  		call	cin_blct
+   121 0000D09D E89F01                  		call	cout
+   122 0000D0A0 3C62                    		cmp		al, 'b'
+   123 0000D0A2 743A                    		je 		bootRecord
+   124 0000D0A4 3C64                    		cmp		al, 'd'
+   125 0000D0A6 7503E9AB00              		je 		show_dump
+   126 0000D0AB 3C65                    		cmp		al, 'e'
+   127 0000D0AD 7503E9AD00              		je		editmemory
+   128 0000D0B2 3C66                    		cmp		al, 'f'
+   129 0000D0B4 7467                    		je		fillMemory
+   130 0000D0B6 3C6C                    		cmp		al, 'l'
+   131 0000D0B8 746C                    		je		ldIntelHex
+   132 0000D0BA 3C68                    		cmp		al, 'h'
+   133 0000D0BC 7503E9BA00              		je 		show_help_msg
+   134 0000D0C1 3C73                    		cmp		al, 's'
+   135 0000D0C3 7421                    		je 		readSector1
+   136 0000D0C5 3C74                    		cmp		al, 't'
+   137 0000D0C7 7503E99C00              		je 		show_systic
+   138 0000D0CC 3C70                    		cmp		al, 'p'
+   139 0000D0CE 747A                    		je 		show_reg
    140                                  
-   141 0000D0D0 3C77                    		cmp		al, 'w'
-   142 0000D0D2 745B                    		je 		writePeripherals
-   143 0000D0D4 3C6F                    		cmp		al, 'o'
-   144 0000D0D6 7460                    		je 		outByte
-   145 0000D0D8 3C69                    		cmp		al, 'i'
-   146 0000D0DA 7465                    		je 		inByte
-   147                                  
+   141                                  
+   142 0000D0D0 3C77                    		cmp		al, 'w'
+   143 0000D0D2 745B                    		je 		writePeripherals
+   144 0000D0D4 3C6F                    		cmp		al, 'o'
+   145 0000D0D6 7460                    		je 		outByte
+   146 0000D0D8 3C69                    		cmp		al, 'i'
+   147 0000D0DA 7465                    		je 		inByte
    148                                  
-   149                                  		;CALL	newLine
-   150 0000D0DC EBB9                    		jmp 	Mainloop	
-   151                                  bootRecord:
-   152 0000D0DE E8A309                  		call LOAD_BOOT_RECORD		
-   153 0000D0E1 E80401                  		call	newLine
-   154 0000D0E4 EBB1                    		jmp 	Mainloop	
-   155                                  readSector1:		
-   156 0000D0E6 B8C007                  	MOV AX, 0X07C0 	;0X07C0:0X0000
-   157 0000D0E9 8EC0                    	MOV ES, AX		;ES:BX = ADDRESS BUFFER
-   158 0000D0EB B80102                  	MOV AX, 0X0201	;READ ONE SECTOR
-   159 0000D0EE BB0000                  	MOV BX, 0X0000	;ES:BX = ADDRESS BUFFER
-   160 0000D0F1 B90100                  	MOV CX, 0X0001	;1 SECTOR
-   161 0000D0F4 BA8100                  	MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
-   162                                  
-   163 0000D0F7 E80F12                  		call	printPrompt
-   164 0000D0FA E86001                  		call	cin_blct
-   165 0000D0FD E83F01                  		call	cout
-   166 0000D100 E85D10                  		call 	to_hex
-   167 0000D103 88C1                    		mov		cl, al
-   168 0000D105 B8C007                  	MOV AX, 0X07C0 	;0X07C0:0X0000
-   169 0000D108 8EC0                    	MOV ES, AX		;ES:BX = ADDRESS BUFFER
-   170 0000D10A B80102                  	MOV AX, 0X0201	;READ ONE SECTOR
-   171 0000D10D BB0000                  	MOV BX, 0X0000	;ES:BX = ADDRESS BUFFER
-   172 0000D110 B500                    	MOV CH, 0X00	;
-   173 0000D112 BA8100                  	MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
-   174                                  		
+   149                                  
+   150                                  		;CALL	newLine
+   151 0000D0DC EBB9                    		jmp 	Mainloop	
+   152                                  bootRecord:
+   153 0000D0DE E84523                  		call 	BOOT_DRIVE		
+   154 0000D0E1 E80401                  		call	newLine
+   155 0000D0E4 EBB1                    		jmp 	Mainloop	
+   156                                  readSector1:		
+   157 0000D0E6 B8C007                  	MOV AX, 0X07C0 	;0X07C0:0X0000
+   158 0000D0E9 8EC0                    	MOV ES, AX		;ES:BX = ADDRESS BUFFER
+   159 0000D0EB B80102                  	MOV AX, 0X0201	;READ ONE SECTOR
+   160 0000D0EE BB0000                  	MOV BX, 0X0000	;ES:BX = ADDRESS BUFFER
+   161 0000D0F1 B90100                  	MOV CX, 0X0001	;1 SECTOR
+   162 0000D0F4 BA8100                  	MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
+   163                                  
+   164 0000D0F7 E80F12                  		call	printPrompt
+   165 0000D0FA E86001                  		call	cin_blct
+   166 0000D0FD E83F01                  		call	cout
+   167 0000D100 E85D10                  		call 	to_hex
+   168 0000D103 88C1                    		mov		cl, al
+   169 0000D105 B8C007                  	MOV AX, 0X07C0 	;0X07C0:0X0000
+   170 0000D108 8EC0                    	MOV ES, AX		;ES:BX = ADDRESS BUFFER
+   171 0000D10A B80102                  	MOV AX, 0X0201	;READ ONE SECTOR
+   172 0000D10D BB0000                  	MOV BX, 0X0000	;ES:BX = ADDRESS BUFFER
+   173 0000D110 B500                    	MOV CH, 0X00	;
+   174 0000D112 BA8100                  	MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
    175                                  		
-   176 0000D115 CD13                    	INT 0X13		;INT 13
-   177 0000D117 E8CE00                  		call	newLine
-   178 0000D11A E97AFF                  		jmp 	Mainloop	
-   179                                  fillMemory:		
-   180 0000D11D E87314                  		call 	fill_memory
-   181 0000D120 E8C500                  		call	newLine
-   182 0000D123 E971FF                  		jmp 	Mainloop	
-   183                                  ldIntelHex:		
-   184 0000D126 E86512                  		call 	load_intel_hex
-   185 0000D129 E8BC00                  		call	newLine
-   186 0000D12C E968FF                  		jmp 	Mainloop	
-   187                                  writePeripherals:
-   188 0000D12F E8B113                  		call 	write_peripherals
-   189 0000D132 E8B300                  		call	newLine
-   190 0000D135 E95FFF                  		jmp 	Mainloop	
-   191                                  outByte:
-   192 0000D138 E8C713                  		call 	outbyte
-   193 0000D13B E8AA00                  		call	newLine
-   194 0000D13E E956FF                  		jmp 	Mainloop	
-   195                                  inByte:		
-   196 0000D141 E8E613                  		call	inbyte
-   197 0000D144 E8A100                  		call	newLine
-   198 0000D147 E94DFF                  		jmp 	Mainloop	
-   199                                  show_reg:
-   200 0000D14A B83412                  		mov	AX, 0x1234
-   201 0000D14D E82E0F                  		call	print_hex
-   202 0000D150 E89500                  		call	newLine
-   203 0000D153 E941FF                  		jmp 	Mainloop		
-   204                                  show_dump:
-   205 0000D156 E83311                  		call	dump
-   206 0000D159 E88C00                  		call	newLine
-   207 0000D15C E938FF                  		jmp 	Mainloop	
-   208                                  editmemory:			
-   209 0000D15F E8DA11                  		call	edit_memory
-   210 0000D162 E88300                  		call	newLine
-   211 0000D165 E92FFF                  		jmp 	Mainloop	
-   212                                  show_systic:
-   213 0000D168 E85A10                  		call    get_sys_ticks
-   214 0000D16B 50                      		push	AX
-   215 0000D16C 89D0                    		mov		AX, DX
-   216 0000D16E E80D0F                  		call	print_hex
-   217 0000D171 58                      		pop		AX
-   218 0000D172 E8090F                  		call	print_hex
-   219 0000D175 E87000                  		call	newLine
-   220 0000D178 E91CFF                  		jmp 	Mainloop		
-   221                                  show_help_msg:
-   222 0000D17B BE[D500]                		mov		si, help_msg
-   223 0000D17E E89D00                  		call 	pstr
-   224 0000D181 E913FF                  		jmp 	Mainloop
-   225                                  
+   176                                  		
+   177 0000D115 CD13                    	INT 0X13		;INT 13
+   178 0000D117 E8CE00                  		call	newLine
+   179 0000D11A E97AFF                  		jmp 	Mainloop	
+   180                                  fillMemory:		
+   181 0000D11D E87314                  		call 	fill_memory
+   182 0000D120 E8C500                  		call	newLine
+   183 0000D123 E971FF                  		jmp 	Mainloop	
+   184                                  ldIntelHex:		
+   185 0000D126 E86512                  		call 	load_intel_hex
+   186 0000D129 E8BC00                  		call	newLine
+   187 0000D12C E968FF                  		jmp 	Mainloop	
+   188                                  writePeripherals:
+   189 0000D12F E8B113                  		call 	write_peripherals
+   190 0000D132 E8B300                  		call	newLine
+   191 0000D135 E95FFF                  		jmp 	Mainloop	
+   192                                  outByte:
+   193 0000D138 E8C713                  		call 	outbyte
+   194 0000D13B E8AA00                  		call	newLine
+   195 0000D13E E956FF                  		jmp 	Mainloop	
+   196                                  inByte:		
+   197 0000D141 E8E613                  		call	inbyte
+   198 0000D144 E8A100                  		call	newLine
+   199 0000D147 E94DFF                  		jmp 	Mainloop	
+   200                                  show_reg:
+   201 0000D14A B83412                  		mov	AX, 0x1234
+   202 0000D14D E82E0F                  		call	print_hex
+   203 0000D150 E89500                  		call	newLine
+   204 0000D153 E941FF                  		jmp 	Mainloop		
+   205                                  show_dump:
+   206 0000D156 E83311                  		call	dump
+   207 0000D159 E88C00                  		call	newLine
+   208 0000D15C E938FF                  		jmp 	Mainloop	
+   209                                  editmemory:			
+   210 0000D15F E8DA11                  		call	edit_memory
+   211 0000D162 E88300                  		call	newLine
+   212 0000D165 E92FFF                  		jmp 	Mainloop	
+   213                                  show_systic:
+   214 0000D168 E85A10                  		call    get_sys_ticks
+   215 0000D16B 50                      		push	AX
+   216 0000D16C 89D0                    		mov		AX, DX
+   217 0000D16E E80D0F                  		call	print_hex
+   218 0000D171 58                      		pop		AX
+   219 0000D172 E8090F                  		call	print_hex
+   220 0000D175 E87000                  		call	newLine
+   221 0000D178 E91CFF                  		jmp 	Mainloop		
+   222                                  show_help_msg:
+   223 0000D17B BE[D500]                		mov		si, help_msg
+   224 0000D17E E89D00                  		call 	pstr
+   225 0000D181 E913FF                  		jmp 	Mainloop
    226                                  
-   227                                  %include "DRV16C550.asm"
+   227                                  
+   228                                  %include "DRV16C550.asm"
      1                              <1>         CPU 8086
      2                              <1>    
      3                              <1> 
@@ -555,7 +558,7 @@
    205 0000D283 E8DA0E              <1> 		call to_hex
    206 0000D286 00E0                <1> 		add al, ah
    207 0000D288 C3                  <1> 		ret			
-   228                                  %include "DRVCH376S.asm"
+   229                                  %include "DRVCH376S.asm"
      1                              <1> 
      2                              <1> 
      3                              <1> 
@@ -1904,7 +1907,7 @@
   1288 0000DA87 53                  <1> 	PUSH BX			;STORE BX
   1289 0000DA88 51                  <1> 	PUSH CX			;STORE CX
   1290 0000DA89 1E                  <1> 	PUSH DS			;STORE DS
-  1291 0000DA8A B800F4              <1> 	MOV AX, 0XF400	;
+  1291 0000DA8A B80014              <1> 	MOV AX, 0X1400	;
   1292 0000DA8D 8ED8                <1> 	MOV DS, AX		;SET DS 0XF400 UPPER RAM
   1293 0000DA8F BB0000              <1> 	MOV BX, 0X0000	;SET BX 0 FOR INDEX
   1294                              <1> 					;READ MBR
@@ -1935,7 +1938,7 @@
   1319 0000DABB E4E0                <1> 	IN AL, 0XE0			;READ NUMBER OF BYTES FROM DATA PORT 
   1320 0000DABD B400                <1> 	MOV AH, 0X00		;CLEAR AH
   1321 0000DABF 89C1                <1> 	MOV CX, AX			;SET CX TO NUMBER OF BYTES
-  1322                              <1>   .READ_MBR_LOOP:		;LOOP LABLE
+  1322                              <1> .READ_MBR_LOOP:			;LOOP LABLE
   1323 0000DAC1 E4E0                <1> 	IN AL, 0XE0			;READ BYTE
   1324 0000DAC3 8807                <1> 	MOV [BX], AL		;WRITE BYTE TO DS:BX
   1325 0000DAC5 43                  <1> 	INC BX				;INC INDEX
@@ -2204,9 +2207,9 @@
   1581 0000DC9B 00                  <1> 	db 0		; Sectors per track
   1582 0000DC9C 00                  <1> 	db 0		; reserved
   1583                              <1>     
-   229                                  ;%include "DRVch376s2.asm"
-   230                                  
-   231                                  %include "screen.asm"
+   230                                  ;%include "DRVch376s2.asm"
+   231                                  
+   232                                  %include "screen.asm"
      1                              <1> 
      2 0000DC9D 1B5B324A00          <1> cls     db 0x1B,"[2J",0
      3 0000DCA2 1B5B213B214800      <1> curpos  db 0x1B,"[!;!H",0
@@ -2302,7 +2305,7 @@
     93                              <1>         
     94                              <1> 
     95                              <1> 
-   232                                  %include "errorLed.asm"
+   233                                  %include "errorLed.asm"
      1                              <1> 
      2                              <1> ledblinkOk:
      3                              <1> .loop0:
@@ -2419,7 +2422,7 @@
    114 0000DDD7 75F7                <1>                 jnz     .longDelay
    115                              <1>                 ;mov     bx, 3 
    116 0000DDD9 EBD8                <1>                 jmp     .loop0         
-   233                                  %include "testSram.asm"
+   234                                  %include "testSram.asm"
      1                              <1> ;-------------------------------------------------------------------------
      2                              <1> %define MIN_RAM_SIZE    64              ; At least 32 KiB to boot the system
      3 0000DDDB 0D0A54657374696E67- <1> testMem:        db      0Dh,0Ah,"Testing memory:",0Dh , 0
@@ -2698,7 +2701,7 @@
    254                              <1> ;	nop
    255                              <1> ;	loop	.3
    256                              <1> ;	jmp	.1
-   234                                  %include "mprintRegs.asm"
+   235                                  %include "mprintRegs.asm"
      1                              <1> 	CPU 8086
      2                              <1> ;=========================================================================
      3                              <1> ; print_hex - print 16-bit number in hexadecimal
@@ -2904,7 +2907,7 @@
    202 0000E16B E8C9FF              <1> 		call	convertWordToHex
    203 0000E16E 26A18F05            <1> 		mov		AX, word es:[buff_write]
    204 0000E172 C3                  <1> 		ret
-   235                                  %include "mHardwareInit.asm"
+   236                                  %include "mHardwareInit.asm"
      1                              <1>         CPU 8086
      2                              <1>         BITS 16
      3                              <1> 
@@ -2921,7 +2924,7 @@
     14                              <1> 
     15                              <1> 
     16                              <1> 
-   236                                  %include "mpic8259A.asm"
+   237                                  %include "mpic8259A.asm"
      1                              <1>         CPU 8086
      2                              <1>         BITS 16
      3                              <1> 
@@ -3013,7 +3016,7 @@
     89                              <1> ;#4 A chave conectada ao pino da interrupção com certeza dava problemas pois
     90                              <1> ;   foi tirar a chave e colocar o 8253 fazendo a interrupção que todos os
     91                              <1> ;   probremas de reset acabaram.
-   237                                  %include "mpit8254.asm"
+   238                                  %include "mpit8254.asm"
      1                              <1>         CPU 8086
      2                              <1>         BITS 16
      3                              <1> 
@@ -3154,7 +3157,7 @@
    130 0000E23A 58                  <1> 	POP AX
    131                              <1> 
    132 0000E23B C3                  <1> 	RET
-   238                                  %include "mmath.asm"
+   239                                  %include "mmath.asm"
      1                              <1> 
      2                              <1> 
      3                              <1>  
@@ -3173,7 +3176,7 @@
     16                              <1> move: 
     17 0000E260 2688161C06          <1>         mov byte es:[ghi+4], dl
     18 0000E265 CD03                <1>         int 3
-   239                                  %include "mmemoryDump.asm"
+   240                                  %include "mmemoryDump.asm"
      1                              <1> 
      2                              <1> 
      3 0000E267 0D0A3C4553433E4669- <1> msg04   db 0Dh,0Ah,"<ESC>Fim, <Enter>Continua: ", 0
@@ -3280,7 +3283,7 @@
    101 0000E323 C3                  <1>         ret
    102                              <1> 
    103                              <1> 
-   240                                  %include "meditMemory.asm"
+   241                                  %include "meditMemory.asm"
      1                              <1> ;=================================
      2                              <1> ; Edit memory
      3                              <1> ; Segment address: ES
@@ -3535,7 +3538,7 @@
    226 0000E5DD 75F9                <1>             jnz loopFM
    227 0000E5DF C3                  <1>             ret
    228                              <1> 
-   241                                  %include "minputs.asm"
+   242                                  %include "minputs.asm"
      1 0000E5E0 0D0A44696769746520- <1> msg01	db 0Dh,0Ah,"Digite o endereco: ", 0
      1 0000E5E9 6F20656E6465726563- <1>
      1 0000E5F2 6F3A2000            <1>
@@ -3630,8 +3633,8 @@
     83 0000E6BD 26A08F05            <1>         mov  al, byte es:[buff_write]
     84 0000E6C1 C3                  <1>         ret
     85                              <1>            
-   242                                  ;===========================
-   243                                  %include "code/bios.asm"
+   243                                  ;===========================
+   244                                  %include "code/bios.asm"
      1                              <1> 
      2                              <1> 
      3                              <1> BiosLoad:
@@ -5231,12 +5234,28 @@
    241 0000F422 E8F9DD              <2>         call    pstr
    242 0000F425 C3                  <2> 	ret
    243                              <2> 
+   244                              <2> BOOT_DRIVE:		
+   245 0000F426 B8C007              <2> 	MOV AX, 0X07C0 	;0X07C0:0X0000
+   246 0000F429 8EC0                <2> 	MOV ES, AX		;ES:BX = ADDRESS BUFFER
+   247 0000F42B B80102              <2> 	MOV AX, 0X0201	;READ ONE SECTOR
+   248 0000F42E BB0000              <2> 	MOV BX, 0X0000	;ES:BX = ADDRESS BUFFER
+   249 0000F431 B90100              <2> 	MOV CX, 0X0001	;1 SECTOR
+   250 0000F434 BA8100              <2> 	MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
+   251 0000F437 CD13                <2> 	INT 0X13		;INT 13
+   252 0000F439 B8C007              <2> 	MOV AX, 0X07C0	;SEGMENT
+   253 0000F43C 8ED8                <2> 	MOV DS, AX		;SET DS
+   254 0000F43E 8EC0                <2> 	MOV ES, AX		;SET ES
+   255 0000F440 B80000              <2> 	MOV AX, 0X0000	;ZERO AX
+   256 0000F443 BB0000              <2> 	MOV BX, 0X0000	;ZERO BX
+   257 0000F446 B90000              <2> 	MOV CX, 0X0000	;ZERO CX
+   258 0000F449 BA0000              <2> 	MOV DX, 0X0000	;ZERO DX
+   259 0000F44C EA0000C007          <2> 	JMP 0X07C0:0X0000	;JMP FAR 0X07C0:0X0000	
    390                              <1> 
-   244                                  
-   245 0000F426 FF<rep BCAh>                    setloc	0FFF0h			; Power-On Entry Point, macro fills space from last line with FF
-   245          ******************       warning: Inserting 3018 bytes [-w+user]
-   246                                  start:
-   247 0000FFF0 EA[00D0]00F0                    jmp     0F000h:reset
-   248 0000FFF5 FF<rep Ah>                      setloc	0FFFFh			; Pad remainder of ROM
-   248          ******************       warning: Inserting 10 bytes [-w+user]
-   249 0000FFFF FF                      	      db	0ffh            
+   245                                  
+   246 0000F451 FF<rep B9Fh>                    setloc	0FFF0h			; Power-On Entry Point, macro fills space from last line with FF
+   246          ******************       warning: Inserting 2975 bytes [-w+user]
+   247                                  start:
+   248 0000FFF0 EA[00D0]00F0                    jmp     0F000h:reset
+   249 0000FFF5 FF<rep Ah>                      setloc	0FFFFh			; Pad remainder of ROM
+   249          ******************       warning: Inserting 10 bytes [-w+user]
+   250 0000FFFF FF                      	      db	0ffh            

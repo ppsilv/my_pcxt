@@ -11,9 +11,7 @@ cpu	8086
 org	START		
 
 
-welcome		db	cr,lf,"XT 8088 BIOS, Version "
-			db	cr,lf,VERSION
-			db	cr,lf,". "
+welcome		db	cr,lf,"XT 8088 BIOS, Version ",VERSION
 			db	cr,lf,"Paulo Silva(pgordao) - Copyright (C) 2024"
 			db	cr,lf,"CPU 8088-2   board: 8088BOAD2447-RA  "
 			db	cr,lf,"8088 MonitorV0 V ",VERSION ," 2447A 512 Sram Rom at29C512"
@@ -21,6 +19,7 @@ welcome		db	cr,lf,"XT 8088 BIOS, Version "
 
 help_msg	db cr,lf,"=========================="
 			db cr,lf,"cmd   description"
+			db cr,lf," b    read boot loader"
 			db cr,lf," d    dump memory using ES"
 			db cr,lf," e    edit memory "
 			db cr,lf," f    fill memory "
@@ -149,7 +148,7 @@ Mainloop:
 		;CALL	newLine
 		jmp 	Mainloop	
 bootRecord:
-		call LOAD_BOOT_RECORD		
+		call 	BOOT_DRIVE		
 		call	newLine
 		jmp 	Mainloop	
 readSector1:		
