@@ -21,20 +21,10 @@ SYSTEM_TICKS_SEC    EQU     100         ; 100 ticks per second = 100Hz
 pit_init:
         pushf
         cli
-        mov al, 0b00110110      ; Counter 0, binary, mode 3, write both bytes
-        out PIT_CTRL_REG, al
 
-        mov ax, ((SYSTEM_PCLK + (SYSTEM_TICKS_SEC / 2)) / SYSTEM_TICKS_SEC) ; set system tick counter
-        out PIT_COUNTER_0, al
-        xchg ah, al
-        out PIT_COUNTER_0, al
+        call init8253
 
-        ;mov ax, counter0_int_handler
-        ;push ax
-        ;mov al, PIT_COUNTER0_INT
-        ;push ax
         call set_int_vector     ; => set_int_vector(PIT_COUNTER0_INT, &counter0_int_handler);
-        ;add sp, 4
 
 ; enable pin IR0 in the PIC
         xor ax, ax
@@ -51,8 +41,12 @@ pit_init:
 get_sys_ticks:
         pushf
         cli
-        mov ax, word es:[sys_tick_count]
-        mov dx, word es:[sys_tick_count + 2]
+        mov AX, 0x0040
+        mov ES, AX
+        MOV BX, 0x006C			;SET BX TO TICK COUNTER
+        mov ax, word es:[BX]
+        mov dx, word es:[BX + 2]
+        sti
         popf
         ret
 
@@ -72,5 +66,67 @@ counter0_int_handler:
         iret
 
 ;--------------------------------------
+; void set_int_vector(uint8_t intNo, void* ptr)
+;--------------------------------------
+set_int_vector:
+        ;MOV si, INT_VECT 
+        ;call    pstr
 
+        push es
+        xor ax, ax
+        mov es, ax
 
+        cli
+
+        mov word es:[8h*4], INT08
+        mov word es:[8h*4+2], 0F000h
+
+        pop es
+        ret
+myInit8253:
+        mov al, 0b00110110      ; Counter 0, binary, mode 3, write both bytes
+        out PIT_CTRL_REG, al
+
+        mov ax, ((SYSTEM_PCLK + (SYSTEM_TICKS_SEC / 2)) / SYSTEM_TICKS_SEC) ; set system tick counter
+        out PIT_COUNTER_0, al
+        xchg ah, al
+        out PIT_COUNTER_0, al
+        ret
+
+init8253:
+
+	PUSH AX
+	PUSH CX
+
+	MOV AL, 0X36 		;00110110b  
+			        ;CHANNEL 0
+			        ;WRITE LOW BYTE THEN HIGH BYTE
+			        ;MODE 3 
+			        ;16 BIT COUNTER 
+			
+	OUT 0X43, AL		;CONTROL REG
+
+	MOV CX, 0XFFFF		;COUNT 
+
+	MOV AL, CL		;WRITE LOW BYTE OF COUNT
+	OUT 0X40, AL		;PORT 0X40 ;INTERNAL FLIP-FLOP INC
+			
+	MOV AL, CH		;WRITE HIGH BYTE OF COUNT 
+	OUT 0X40, AL		;PORT 040
+
+	;;;;;;;;;;;
+	;TEST TONE
+	;;;;;;;;;;;
+	MOV AL, 0X03		;ENABLE SPK AND TIMMER 2 'GO'
+	OUT 0X61, AL		;PORT 0X61 CONTROL PORT
+	MOV AL, 0XB6
+	OUT 0X43, AL
+	MOV AL, 0X00
+	OUT 0X42, AL
+	MOV AL, 0X05
+	OUT 0X42, AL
+
+	POP CX
+	POP AX
+
+	RET

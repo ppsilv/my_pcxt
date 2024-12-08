@@ -4549,7 +4549,7 @@
     (property "Reference" "P1" (at 179.07 111.3282 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "CH376S_0xE0" (at 179.07 113.6396 0)
+    (property "Value" "HEADER" (at 179.07 113.6396 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical" (at 177.8 124.46 0)

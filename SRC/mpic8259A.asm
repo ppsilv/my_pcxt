@@ -79,8 +79,8 @@ pic_enable_ir:
         popf
         ret
 
-%include "intVect.asm"
-%include "picInit.asm"
+;%include "intVect.asm"
+
 
 ;#1 tentar testar sem ter terminado wireup de I/0 RD WR e dados no barramento
 ;#2 negligenciar o pino de CS na hora de ligá-lo ao 74138 pois fiz uma gambeta

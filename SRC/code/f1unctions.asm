@@ -31,5 +31,19 @@ loopP:  ;RX blocante
         mov  BX, reg_buff_read
         call printFromDram
         ret
+str_8088        db      0Dh, 0Ah,"Cpu  8088  sem  FPU",0
+str_v20         db      0Dh, 0Ah,"Cpu Nec V20 sem FPU",0
+cpu_check:
+	xor	al, al				; Clean out al to set ZF
+	mov	al, 40h				; mul on V20 does not affect the zero flag
+	mul	al				;   but on an 8088 the zero flag is used
+	jz	.have_v20			; Was zero flag set?
+	mov	si, offset str_8088		;   No, so we have an 8088 CPU
+        call    pstr
+	ret
+.have_v20:
+	mov	si, offset str_v20		;   Otherwise we have a V20 CPU
+        call    pstr
+	ret        
 
 

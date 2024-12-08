@@ -18,9 +18,9 @@ DUMP_REGISTERS:
 	POP AX
 	PUSH AX
 	MOV AL, AH
-	CALL WIRTE_AL_INT10_E
+	CALL WRITE_AL_INT10_E
 	POP AX
-	CALL WIRTE_AL_INT10_E
+	CALL WRITE_AL_INT10_E
 	
 	MOV AH, 0X0E
 	MOV AL, ' '
@@ -34,9 +34,9 @@ DUMP_REGISTERS:
 	POP AX
 	PUSH AX
 	MOV AL, AH
-	CALL WIRTE_AL_INT10_E
+	CALL WRITE_AL_INT10_E
 	POP AX
-	CALL WIRTE_AL_INT10_E
+	CALL WRITE_AL_INT10_E
 	
 	MOV AH, 0X0E
 	MOV AL, ' '
@@ -50,9 +50,9 @@ DUMP_REGISTERS:
 	POP AX
 	PUSH AX
 	MOV AL, AH
-	CALL WIRTE_AL_INT10_E
+	CALL WRITE_AL_INT10_E
 	POP AX
-	CALL WIRTE_AL_INT10_E
+	CALL WRITE_AL_INT10_E
 	
 	MOV AH, 0X0E
 	MOV AL, ' '
@@ -66,9 +66,9 @@ DUMP_REGISTERS:
 	POP AX
 	PUSH AX
 	MOV AL, AH
-	CALL WIRTE_AL_INT10_E
+	CALL WRITE_AL_INT10_E
 	POP AX
-	CALL WIRTE_AL_INT10_E
+	CALL WRITE_AL_INT10_E
 	
 	MOV AH, 0X0E
 	MOV AL, 0X0D
@@ -80,7 +80,7 @@ DUMP_REGISTERS:
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;WRITE TO SCREEN;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
-WIRTE_AL_INT10_E:
+WRITE_AL_INT10_E:
 
 	PUSH AX
 	PUSH BX
@@ -135,6 +135,15 @@ WAIT_1:
 	MOV CX, 0XFFFF
   .LOOP1:
 	LOOP .LOOP1
+	POP CX
+	RET
+
+WAIT_2:
+	PUSH CX
+	MOV CX, 0xFFFF		; 65536 runs = ~300k cycles = 40ms
+DELAY: LOOP DELAY
+	MOV CX, 0xFFFF		; 65536 runs = ~300k cycles = 40ms
+DELAY2: LOOP DELAY2
 	POP CX
 	RET
 
@@ -217,5 +226,18 @@ WAIT_512:
 	POP CX
 	RET
 
-
+str_8088        db      0Dh, 0Ah,"Cpu  8088 detected sem  FPU",0Dh, 0Ah,0
+str_v20         db      0Dh, 0Ah,"Cpu Nec V20 detected sem FPU",0Dh, 0Ah,0
+cpu_check:
+	xor	al, al				; Clean out al to set ZF
+	mov	al, 40h				; mul on V20 does not affect the zero flag
+	mul	al				;   but on an 8088 the zero flag is used
+	jz	.have_v20			; Was zero flag set?
+	mov	si,  str_8088		;   No, so we have an 8088 CPU
+        call    pstr
+	ret
+.have_v20:
+	mov	si,  str_v20		;   Otherwise we have a V20 CPU
+        call    pstr
+	ret
 

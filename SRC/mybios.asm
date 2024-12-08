@@ -28,10 +28,11 @@ help_msg	db cr,lf,"=========================="
 			db cr,lf," w    write 16-bit data to onchip peripherals"
 			db cr,lf," o    output byte to output port"
 			db cr,lf," i    input byte from input port"
+			db cr,lf," s    read sector 1"
 			db cr,lf," t    show systick"
 			db cr,lf," h    for this help", cr, lf, eos
 
-setloc	0E000h
+setloc	0D000h
 reset:
             cli
     		mov ax,0x40
@@ -105,14 +106,20 @@ initBios:
 
 		call memoryTest
 
-		call init_system_intr
+		call init_system
         mov al,0x0
         mov byte es:[mem_led_reg],al
+		;Checking cpu type
+		call cpu_check
+		;Loading bios 
+		call BiosLoad
 
 Mainloop:
 		call	printPrompt
 		call	cin_blct
 		call	cout
+		cmp		al, 'b'
+		je 		bootRecord
 		cmp		al, 'd'
 		je 		show_dump
 		cmp		al, 'e'
@@ -123,6 +130,8 @@ Mainloop:
 		je		ldIntelHex
 		cmp		al, 'h'
 		je 		show_help_msg
+		cmp		al, 's'
+		je 		readSector1
 		cmp		al, 't'
 		je 		show_systic
 		cmp		al, 'p'
@@ -138,6 +147,34 @@ Mainloop:
 
 
 		;CALL	newLine
+		jmp 	Mainloop	
+bootRecord:
+		call LOAD_BOOT_RECORD		
+		call	newLine
+		jmp 	Mainloop	
+readSector1:		
+	MOV AX, 0X07C0 	;0X07C0:0X0000
+	MOV ES, AX		;ES:BX = ADDRESS BUFFER
+	MOV AX, 0X0201	;READ ONE SECTOR
+	MOV BX, 0X0000	;ES:BX = ADDRESS BUFFER
+	MOV CX, 0X0001	;1 SECTOR
+	MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
+
+		call	printPrompt
+		call	cin_blct
+		call	cout
+		call 	to_hex
+		mov		cl, al
+	MOV AX, 0X07C0 	;0X07C0:0X0000
+	MOV ES, AX		;ES:BX = ADDRESS BUFFER
+	MOV AX, 0X0201	;READ ONE SECTOR
+	MOV BX, 0X0000	;ES:BX = ADDRESS BUFFER
+	MOV CH, 0X00	;
+	MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
+		
+		
+	INT 0X13		;INT 13
+		call	newLine
 		jmp 	Mainloop	
 fillMemory:		
 		call 	fill_memory
@@ -187,17 +224,23 @@ show_help_msg:
 		jmp 	Mainloop
 
 
-%include "DRV16C550_8088.asm"
+%include "DRV16C550.asm"
+%include "DRVCH376S.asm"
+;%include "DRVch376s2.asm"
+
 %include "screen.asm"
 %include "errorLed.asm"
 %include "testSram.asm"
 %include "mprintRegs.asm"
+%include "mHardwareInit.asm"
 %include "mpic8259A.asm"
 %include "mpit8254.asm"
 %include "mmath.asm"
 %include "mmemoryDump.asm"
 %include "meditMemory.asm"
 %include "minputs.asm"
+;===========================
+%include "code/bios.asm"
 
         setloc	0FFF0h			; Power-On Entry Point, macro fills space from last line with FF
 start:

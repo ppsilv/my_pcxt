@@ -3,6 +3,7 @@
 BiosLoad:
 		CALL LOAD_INT_VECTOR_TABLE	;COPIES INTERRUPT VECTOR TABLE TO ADDRESS 0X0000:0X0000
 		CALL LOAD_BIOS_DATA_AREA	;COPIES BIOS DATA TO ADDRESS 0X0000:0X0400
+		call INITIALIZE_CH376S_0XE0
         ret
 
 
@@ -34,7 +35,7 @@ LOAD_BIOS_DATA_AREA:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;BIOS DATA AREA
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-%INCLUDE "asm/bios_data.asm"
+%INCLUDE "code/asm/bios_data.asm"
 
 
 INT_VECTOR_TABLE:
@@ -176,13 +177,13 @@ INT08: ;Reserved
 	POP BX			;RESTORE BX
 
 
-    	MOV AL, 0x20
-    	OUT 0x20, AL	
+    MOV AL, 0x20
+    OUT 0x20, AL	
 	POP AX			;RESTORE AX
 	IRET			;RETURN FROM INTERRUPT	
 
 ;INT09:	
-%INCLUDE "asm/int09.asm"
+%INCLUDE "code/asm/int09.asm"
 
 INT0A: ;Reserved
 	MOV AH, 0X0E		;SET AH 0X0E FOR TELOTYPE
@@ -245,7 +246,7 @@ INT0F: ;Printer
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;INT 0X10
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-%INCLUDE "asm/int10.asm"
+%INCLUDE "code/asm/int10.asm"
 
 INT11: ;Equipment Check	
 	PUSH DS			;STORE DS
@@ -271,12 +272,14 @@ INT12: ;Memory
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;INT 0X13
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-%INCLUDE "asm/int13.asm"
+;;%INCLUDE "code/asm/int13.asm"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;INT14: ;Communications
 ;	IRET
-%INCLUDE "serial2.inc"
+;%INCLUDE "code/serial2.inc"
+INT14:
+	iret
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 INT15: ;Cassette
@@ -300,7 +303,7 @@ INT15: ;Cassette
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;INT 0X16
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-%INCLUDE "asm/int16.asm"
+%INCLUDE "code/asm/int16.asm"
 	
 INT17: ;Printer	
 	IRET
@@ -383,5 +386,5 @@ INT1F: ;Video Graphics Characters
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;EXTRA FUNCTIONS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-%INCLUDE "asm/functions.asm"
+%INCLUDE "code/asm/functions.asm"
 

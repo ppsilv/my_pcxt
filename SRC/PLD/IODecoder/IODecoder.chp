@@ -17,7 +17,7 @@
                           |                 |
                        A6 |  7           18 | COM1CS
                           |                 |
-                     IORW |  8           17 | NC
+                     IORW |  8           17 | CH376S
                           |                 |
                        A7 |  9           16 | NC
                           |                 |

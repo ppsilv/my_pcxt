@@ -13,24 +13,20 @@
 ;40:66	byte	CGA current color palette mask setting (port 3d9h)
 ;				EGA and VGA values emulate the CGA
 INT10:  ;Video
-	;MOV DX, 0X3f8
-	;OUT DX, AL
-	call printch 
-	IRET
-	CMP AH, 0X00		;SET VIDEO MODE		
-	JZ INT10_AH_00	
-	CMP AH, 0X02 		;SET CURSOR POSITION
-	JZ INT10_AH_02	
-	CMP AH, 0X05 		;SELECT ACTIVE DISPLAY PAGE  
-	JZ INT10_AH_05	
+	;CMP AH, 0X00		;SET VIDEO MODE		
+	;JZ INT10_AH_00	
+	;CMP AH, 0X02 		;SET CURSOR POSITION
+	;JZ INT10_AH_02	
+	;CMP AH, 0X05 		;SELECT ACTIVE DISPLAY PAGE  
+	;JZ INT10_AH_05	
 	CMP AH, 0X09 		;WRITE CHARACTER AND ATTRIBUTE AT CURSOR POSITION
 	JZ INT10_AH_09	
-	CMP AH, 0X0B 		;SET PALETTE CGA
-	JZ INT10_AH_0B		;
+	;CMP AH, 0X0B 		;SET PALETTE CGA
+	;JZ INT10_AH_0B		;
 	CMP AH, 0x0E        ;TELETYPE
 	JZ .TELETYPE       
-	CMP AH, 0X0F 		;GET CURRENT VIDEO MODE
-	JZ INT10_AH_0F		;	
+	;CMP AH, 0X0F 		;GET CURRENT VIDEO MODE
+	;JZ INT10_AH_0F		;	
 
 	IRET			;END
 	;DEBUGING	
@@ -55,6 +51,29 @@ INT10:  ;Video
 	
 		
    .TELETYPE: 	;0X0450
+ 	PUSH AX
+	PUSH BX
+	PUSH CX
+	PUSH DX
+	PUSH DI
+	PUSH SI
+	PUSH DS
+	PUSH ES
+
+	mov		SI, BX
+	call	cout
+
+    POP ES
+	POP DS
+	POP SI
+	POP DI
+	POP DX
+	POP CX
+	POP BX
+	POP AX
+	;STI
+	IRET
+
  	PUSH AX
 	PUSH BX
 	PUSH CX
@@ -428,26 +447,28 @@ INT10_AH_09:
 	PUSH CX			;STORE CX
 	PUSH BX			;STORE BX
 	PUSH AX			;STORE AX
-	PUSH BX			;STORE BX
-	PUSH AX			;STORE AX
-		
-	MOV AX, 0X0040
-	MOV DS, AX					;Set data segment
-	MOV AH, 0X00				;ah=0
-	MOV AL, BYTE [0X51]			;Current Row
-	MOV CX, WORD [0x04A] 		;number of cols per row
-	ADD CX, CX					;Double col for hidden char data
-	MUL CL						;mul Current row * cols
-	MOV BH, 0X00				;BH=0
-	MOV BL, BYTE [0X50]			;Set current col
-	ADD BX, BX					;Double col for hidden char data
-	ADD BX, AX					;Add in row
-	MOV AX, 0XB800				;
-	MOV DS, AX					;Set video segment
-	POP AX						;RESTORE AX
-	POP DX						;RESTORE BX
-	MOV AH, DL					;GET ATTRIBUTES	
-	MOV [BX], AX				
+	;PUSH BX			;STORE BX
+	;PUSH AX			;STORE AX
+
+	CALL	cout
+
+	;MOV AX, 0X0040
+	;MOV DS, AX					;Set data segment
+	;MOV AH, 0X00				;ah=0
+	;MOV AL, BYTE [0X51]			;Current Row
+	;MOV CX, WORD [0x04A] 		;number of cols per row
+	;ADD CX, CX					;Double col for hidden char data
+	;MUL CL						;mul Current row * cols
+	;MOV BH, 0X00				;BH=0
+	;MOV BL, BYTE [0X50]			;Set current col
+	;ADD BX, BX					;Double col for hidden char data
+	;ADD BX, AX					;Add in row
+	;MOV AX, 0XB800				;
+	;MOV DS, AX					;Set video segment
+	;POP AX						;RESTORE AX
+	;POP DX						;RESTORE BX
+	;MOV AH, DL					;GET ATTRIBUTES	
+	;MOV [BX], AX				
 	
 	POP AX			;RESTORE AX
 	POP BX			;RESTORE BX

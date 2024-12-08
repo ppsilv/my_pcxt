@@ -18,7 +18,7 @@
   14   | A14      | Input
   15   | NC       | NC
   16   | NC       | NC
-  17   | NC       | NC
+  17   | CH376S   | Output
   18   | COM1CS   | Output
   19   | LPT1CS   | Output
   20   | CS8255   | Output
