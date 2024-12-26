@@ -14,7 +14,7 @@
   10   | GND      | GND
   11   | NC       | Input
   12   | ROMCE    | Output
-  13   | RAM896K  | Output
+  13   | RAM740K  | Output
   14   | RAM768K  | Output
   15   | RAM640K  | Output
   16   | RAM512K  | Output

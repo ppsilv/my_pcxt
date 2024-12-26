@@ -8,8 +8,12 @@ bloco04:        db      0Dh,0Ah,"40000 to 4FFFF", 0     ;320k
 bloco05:        db      0Dh,0Ah,"50000 to 5FFFF", 0     ;384k
 bloco06:        db      0Dh,0Ah,"60000 to 6FFFF", 0     ;448k
 bloco07:        db      0Dh,0Ah,"70000 to 7FFFF", 0     ;512k
-blocoOK:        db      " segment OK",0
-blocoNOK:       db      " segment NOT exists", 0Dh, 0Ah,0
+bloco08:        db      0Dh,0Ah,"80000 to 8FFFF", 0     ;640k
+bloco09:        db      0Dh,0Ah,"90000 to 9FFFF", 0     ;768k
+
+
+blocoOK:        db      " segment OK.",0
+blocoNOK:       db      " segment DO NOT exist.", 0Dh, 0Ah,0
 totalMem:       db      0Dh,0Ah,"Total of memory: ",0
 qtdMem0:        db      "064.000 KBytes.", 0Dh, 0Ah, 0
 qtdMem1:        db      "131.072 KBytes.", 0Dh, 0Ah, 0
@@ -19,6 +23,8 @@ qtdMem4:        db      "327.680 KBytes.", 0Dh, 0Ah, 0
 qtdMem5:        db      "393.216 KBytes.", 0Dh, 0Ah, 0
 qtdMem6:        db      "458.752 KBytes.", 0Dh, 0Ah, 0
 qtdMem7:        db      "524.288 KBytes.", 0Dh, 0Ah, 0
+qtdMem8:        db      "655.360 KBytes.", 0Dh, 0Ah, 0
+qtdMem9:        db      "786.432 KBytes.", 0Dh, 0Ah, 0
 
 
 ;-------------------------------------------------------------------------
@@ -185,9 +191,10 @@ memoryTest:
 		mov  es, ax
 		inc byte es:[flagMemOk]
 
-		mov  si, bloco03
+		;Block 4 64K
+		mov  si, bloco04
 		call pstr
-		mov  ax, 0x3000
+		mov  ax, 0x4000
 		mov  ds, ax
 		mov  es, ax
 		call    test64kb
@@ -196,6 +203,72 @@ memoryTest:
 		mov	 ax,0x0
 		mov  es, ax
 		inc byte es:[flagMemOk]
+
+		;Block 5 64K
+		mov  si, bloco05
+		call pstr
+		mov  ax, 0x5000
+		mov  ds, ax
+		mov  es, ax
+		call    test64kb
+		jc	memoryTestEnd
+		call segmentOK
+		mov	 ax,0x0
+		mov  es, ax
+		inc byte es:[flagMemOk]
+
+		;Block 6 64K
+		mov  si, bloco06
+		call pstr
+		mov  ax, 0x6000
+		mov  ds, ax
+		mov  es, ax
+		call    test64kb
+		jc	memoryTestEnd
+		call segmentOK
+		mov	 ax,0x0
+		mov  es, ax
+		inc byte es:[flagMemOk]
+
+		;Block 7 64K
+		mov  si, bloco07
+		call pstr
+		mov  ax, 0x7000
+		mov  ds, ax
+		mov  es, ax
+		call    test64kb
+		jc	memoryTestEnd
+		call segmentOK
+		mov	 ax,0x0
+		mov  es, ax
+		inc byte es:[flagMemOk]
+
+		;Block 8 64K
+		mov  si, bloco08
+		call pstr
+		mov  ax, 0x8000
+		mov  ds, ax
+		mov  es, ax
+		call    test64kb
+		jc	memoryTestEnd
+		call segmentOK
+		mov	 ax,0x0
+		mov  es, ax
+		inc byte es:[flagMemOk]
+
+		;Block 9 64K
+		mov  si, bloco09
+		call pstr
+		mov  ax, 0x9000
+		mov  ds, ax
+		mov  es, ax
+		call    test64kb
+		jc	memoryTestEnd
+		call segmentOK
+		mov	 ax,0x0
+		mov  es, ax
+		inc byte es:[flagMemOk]
+
 
 memoryTestEnd:
 		pop  	ds

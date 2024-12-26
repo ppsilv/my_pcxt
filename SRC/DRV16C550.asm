@@ -127,9 +127,9 @@ lf	equ 10
 pstr:   
 		mov al,cs:[si]
 		cmp al,eos
-		jnz pstr1
+		jnz .pstr1
 		ret
-pstr1:
+.pstr1:
 		call cout
 		inc si
 		jmp pstr
@@ -137,14 +137,15 @@ pstr1:
 pstr_sram:
 		mov ax, 0x0
         mov ES, AX 
+.cont:		
 		mov al,es:[si]
 		cmp al,eos
-		jnz .pstr1
+		jnz .pstr2
 		ret
-.pstr1:
+.pstr2:
 		call cout
 		inc si
-		jmp pstr_sram
+		jmp .cont
 
 ;=================================================================================
 ;cout

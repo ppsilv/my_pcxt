@@ -16,7 +16,7 @@ welcome		db	cr,lf,"XT 8088 BIOS, Version ",VERSION
 			db	cr,lf,"CPU 8088-2   board: 8088BOAD2447-RA  "
 			db	cr,lf,"8088 MonitorV0 V ",VERSION ," 2447A 512 Sram Rom at29C512"
 			db  cr,lf,"A total of 64k minimum are ok..", eos
-
+biosloaded	db  cr,lf,"Bios loaded...", eos
 help_msg	db cr,lf,"=========================="
 			db cr,lf,"cmd   description"
 			db cr,lf," b    read boot loader"
@@ -24,10 +24,12 @@ help_msg	db cr,lf,"=========================="
 			db cr,lf," e    edit memory "
 			db cr,lf," f    fill memory "
 			db cr,lf," l    load intel hex file"
-			db cr,lf," w    write 16-bit data to onchip peripherals"
+			db cr,lf," p    write 16-bit data to onchip peripherals"
 			db cr,lf," o    output byte to output port"
 			db cr,lf," i    input byte from input port"
 			db cr,lf," s    read sector 1"
+			db cr,lf," W    write sector "
+			db cr,lf," w    write sector 1"
 			db cr,lf," t    show systick"
 			db cr,lf," h    for this help", cr, lf, eos
 
@@ -112,7 +114,9 @@ initBios:
 		call cpu_check
 		;Loading bios 
 		call BiosLoad
-
+		mov	 BX, biosloaded
+		mov	 Ah, 0x10
+		INT	 0x10
 Mainloop:
 		call	printPrompt
 		call	cin_blct
@@ -129,15 +133,19 @@ Mainloop:
 		je		ldIntelHex
 		cmp		al, 'h'
 		je 		show_help_msg
+		cmp		al, 'j'
+		je 		jump
 		cmp		al, 's'
 		je 		readSector1
+		cmp		al, 'W'
+		je 		writeSector
+		cmp		al, 'w'
+		je 		writeSector1
 		cmp		al, 't'
 		je 		show_systic
-		cmp		al, 'p'
+		cmp		al, 'r'
 		je 		show_reg
-
-
-		cmp		al, 'w'
+		cmp		al, 'q'
 		je 		writePeripherals
 		cmp		al, 'o'
 		je 		outByte
@@ -147,6 +155,9 @@ Mainloop:
 
 		;CALL	newLine
 		jmp 	Mainloop	
+jump:
+	jmp	jump01	
+	jmp 	Mainloop	
 bootRecord:
 		call 	BOOT_DRIVE		
 		call	newLine
@@ -170,9 +181,35 @@ readSector1:
 	MOV BX, 0X0000	;ES:BX = ADDRESS BUFFER
 	MOV CH, 0X00	;
 	MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
-		
-		
 	INT 0X13		;INT 13
+		call	newLine
+		jmp 	Mainloop	
+;AH = 03h
+;AL = number of sectors to read (must be nonzero)
+;CH = low eight bits of cylinder number
+;CL = sector number 1-63 (bits 0-5)
+;high two bits of cylinder (bits 6-7, hard disk only)
+;DH = head number
+;DL = drive number (bit 7 set for hard disk)
+;ES:BX -> data buffer		
+writeSector:		
+		MOV AX, 0X07C0 	;0X07C0:0X0000
+		MOV ES, AX		;ES:BX = ADDRESS BUFFER
+		MOV AX, 0X0301	;WRITE ONE SECTOR
+		MOV BX, 0x0 	;ES:BX = ADDRESS BUFFER
+		MOV CX, 0X0001	;1 SECTOR
+		MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
+		INT 0X13		;INT 13
+		call	newLine
+		jmp 	Mainloop	
+writeSector1:		
+		MOV AX, 0XF000 	;0X07C0:0X0000
+		MOV ES, AX		;ES:BX = ADDRESS BUFFER
+		MOV AX, 0X0301	;READ ONE SECTOR
+		MOV BX, sector1	;ES:BX = ADDRESS BUFFER
+		MOV CX, 0X0001	;1 SECTOR
+		MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
+		INT 0X13		;INT 13
 		call	newLine
 		jmp 	Mainloop	
 fillMemory:		
@@ -245,4 +282,4 @@ show_help_msg:
 start:
         jmp     0F000h:reset
         setloc	0FFFFh			; Pad remainder of ROM
-	      db	0ffh            
+	      db	086h            
