@@ -1,5 +1,5 @@
 # my_pcxt
-A try to make a pc-xt boar with SRAM
+A try to make a pc-xt board with SRAM
 
 ## PC-XT I/O Addresses
 
