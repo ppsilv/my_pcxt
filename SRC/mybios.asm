@@ -19,7 +19,7 @@ welcome		db	cr,lf,"XT 8088 BIOS, Version ",VERSION
 biosloaded	db  cr,lf,"Bios loaded...", eos
 help_msg	db cr,lf,"=========================="
 			db cr,lf,"cmd   description"
-			db cr,lf," b    read boot loader"
+			db cr,lf," b    load boot sector and run loader"
 			db cr,lf," d    dump memory using ES"
 			db cr,lf," e    edit memory "
 			db cr,lf," f    fill memory "
@@ -28,8 +28,8 @@ help_msg	db cr,lf,"=========================="
 			db cr,lf," o    output byte to output port"
 			db cr,lf," i    input byte from input port"
 			db cr,lf," s    read sector 1"
-			db cr,lf," W    write sector "
-			db cr,lf," w    write sector 1"
+			db cr,lf," W    write sector from buffer 07C0:0000"
+			db cr,lf," w    write sector from buffer 07C0:sector1"
 			db cr,lf," t    show systick"
 			db cr,lf," h    for this help", cr, lf, eos
 
@@ -163,10 +163,10 @@ bootRecord:
 		call	newLine
 		jmp 	Mainloop	
 readSector1:		
-	MOV AX, 0X07C0 	;0X07C0:0X0000
+	MOV AX, 0x0 	;0000:7C00
 	MOV ES, AX		;ES:BX = ADDRESS BUFFER
 	MOV AX, 0X0201	;READ ONE SECTOR
-	MOV BX, 0X0000	;ES:BX = ADDRESS BUFFER
+	MOV BX, 0X7C00	;ES:BX = ADDRESS BUFFER 0000:7C00
 	MOV CX, 0X0001	;1 SECTOR
 	MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
 
@@ -175,10 +175,10 @@ readSector1:
 		call	cout
 		call 	to_hex
 		mov		cl, al
-	MOV AX, 0X07C0 	;0X07C0:0X0000
+	MOV AX, 0x0 	;0000:7C00
 	MOV ES, AX		;ES:BX = ADDRESS BUFFER
 	MOV AX, 0X0201	;READ ONE SECTOR
-	MOV BX, 0X0000	;ES:BX = ADDRESS BUFFER
+	MOV BX, 0x7C00	;ES:BX = ADDRESS BUFFER 0000:7C00
 	MOV CH, 0X00	;
 	MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
 	INT 0X13		;INT 13
@@ -193,19 +193,19 @@ readSector1:
 ;DL = drive number (bit 7 set for hard disk)
 ;ES:BX -> data buffer		
 writeSector:		
-		MOV AX, 0X07C0 	;0X07C0:0X0000
+		MOV AX, 0x0 	;0000:7C00
 		MOV ES, AX		;ES:BX = ADDRESS BUFFER
 		MOV AX, 0X0301	;WRITE ONE SECTOR
-		MOV BX, 0x0 	;ES:BX = ADDRESS BUFFER
+		MOV BX, 0x7C00 	;ES:BX = ADDRESS BUFFER 0000:7C00
 		MOV CX, 0X0001	;1 SECTOR
 		MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C
 		INT 0X13		;INT 13
 		call	newLine
 		jmp 	Mainloop	
 writeSector1:		
-		MOV AX, 0XF000 	;0X07C0:0X0000
+		MOV AX, 0XF000 	;
 		MOV ES, AX		;ES:BX = ADDRESS BUFFER
-		MOV AX, 0X0301	;READ ONE SECTOR
+		MOV AX, 0X0301	;WRITE ONE SECTOR
 		MOV BX, sector1	;ES:BX = ADDRESS BUFFER
 		MOV CX, 0X0001	;1 SECTOR
 		MOV DX, 0X0081	;DRIVE TO BOOT UP 0=A, 80=C

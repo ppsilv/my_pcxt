@@ -1,0 +1,20 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid a5678d92-eff0-4388-a3ef-61e972c918fc)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (text "01 - GPIO02 SDA\n02 - GPIO03 SCL\n03 - GPIO04\n04 - GPIO17\n05 - GPIO27\n06 - GPIO22\n07 - GPIO10 MISO\n08 - GPIO09 MOSI\n09 - GPIO11 SCK\n10 - GPIO00\n11 - GPIO05\n12 - GPIO06\n13 - GPIO13\n14 - GPIO19\n15 - GPIO26\n\n\n\n16 - GPIO14 TXD\n17 - GPIO15 RXD\n18 - GPIO18\n19 - GPIO23\n20 - GPIO24\n21 - GPIO08\n22 - GPIO07\n23 - GPIO01\n24 - GPIO12\n25 - GPIO16\n26 - GPIO20\n27 - GPIO21\n"
+    (at 15.24 74.93 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 3abdf4ae-74bd-44f7-938c-c41bc5747ce2)
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
